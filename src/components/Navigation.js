@@ -1,26 +1,45 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
 import { Link } from 'gatsby';
 import styled from 'styled-components'
 
-const MyNav = styled.nav`
-  background-color: red;
-  ul {
-    display: flex;
-    list-style: none;
-  }
+const NavItems = styled.ul`
+margin: 0;
+padding: 0;
+display: flex;
+list-style: none;
 `
-
-export default class Navigation extends Component {
+export class Navigation extends Component {
   render() {
+    const { children, navItems } = this.props;
     return (
-      <MyNav>
-        <ul>
+      <nav>
+        <NavItems>
           <li><Link to="">Home</Link></li>
           <li><Link to="">About</Link></li>
           <li><Link to="">Work</Link></li>
           <li><Link to="">Blog</Link></li>
-        </ul>
-      </MyNav>
+          {navItems}
+        </NavItems>
+        {children}
+      </nav>
     )
   }
 }
+
+const MainNavWrap = styled(Navigation)`
+width: 100%;
+background-color: red;
+`
+export class MainNavigation extends Component {
+  render() {
+    const { children } = this.props;
+    return (
+      <Fragment>
+        <MainNavWrap />
+        {children}
+      </Fragment>
+    )
+  }
+}
+
+

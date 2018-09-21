@@ -1,8 +1,7 @@
 import React from 'react'
-import { Link } from 'gatsby'
 import { SkipNavLink, SkipNavContent } from '@reach/skip-nav'
 
-import Navigation from './Navigation';
+import { MainNavigation } from './Navigation';
 
 import "@reach/skip-nav/styles.css";
 
@@ -13,7 +12,7 @@ class Layout extends React.Component {
     return (
       <div style={{"backgroundColor": "#ccc"}}>
         <SkipNavLink>Skip To Main Content</SkipNavLink>
-        <Navigation />
+        <MainNavigation />
         <SkipNavContent>
           {children}
         </SkipNavContent>
