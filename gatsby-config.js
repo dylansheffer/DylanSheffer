@@ -66,6 +66,7 @@ module.exports = {
           families: ['Fira Mono']
         }
       }
-    }
+    },
+    `gatsby-plugin-styled-components`,
   ],
 }
