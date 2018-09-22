@@ -13,20 +13,13 @@ import '../styles/style.scss';
 class Layout extends React.Component {
   render() {
     const { children } = this.props;
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    const siteDescription = get(
-      this,
-      'props.data.site.siteMetadata.description'
-    )
     return (
       <Fragment>
         <Helmet
           htmlAttributes={{ lang: 'en' }}
           meta={[
-            { name: 'description', content: siteDescription },
             { name: 'viewport', content: 'width=device-width,initial-scale=1'}
           ]}
-          title={siteTitle}
         />
         <SkipNavLink>Skip To Main Content</SkipNavLink>
         <MainNavigation />
@@ -39,14 +32,3 @@ class Layout extends React.Component {
 }
 
 export default Layout
-
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-        description
-      }
-    }
-  }
-`

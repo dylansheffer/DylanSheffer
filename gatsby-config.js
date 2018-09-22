@@ -10,9 +10,16 @@ module.exports = {
     {
       resolve: `gatsby-source-filesystem`,
       options: {
-        path: `${__dirname}/src/pages`,
         name: 'pages',
+        path: `${__dirname}/src/pages`,
       },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `img`,
+        path: `${__dirname}/src/img/`
+      }
     },
     {
       resolve: `gatsby-transformer-remark`,
@@ -54,7 +61,7 @@ module.exports = {
         background_color: `#2d2a2e`,
         theme_color: `#2d2a2e`,
         display: `minimal-ui`,
-        icon: `src/assets/Dylan-Sheffer-Icon.png`,
+        icon: `src/img/Dylan-Sheffer-Icon.png`,
       },
     },
     `gatsby-plugin-offline`,

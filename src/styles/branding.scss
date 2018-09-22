@@ -26,3 +26,6 @@ $monospace: 'Fira Mono', monospace;
         content: "";
     }
 }
+@include headings-all-selector(".white") {
+    color: $white;
+}
