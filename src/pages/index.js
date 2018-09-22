@@ -16,12 +16,11 @@ class Index extends React.Component {
     return (
       <Layout>
         <Helmet
-          htmlAttributes={{ lang: 'en' }}
-          meta={[{ name: 'description', content: siteDescription }]}
+          meta={[ { name: 'description', content: siteDescription }]}
           title={siteTitle}
         />
         <h1>Dylan Sheffer</h1>
-        <h2>Web Developer. A11y Advocate. Tea Enthusiast.</h2>
+        <h2 className="no-md">Web Developer. A11y Advocate. Tea Enthusiast.</h2>
       </Layout>
     )
   }

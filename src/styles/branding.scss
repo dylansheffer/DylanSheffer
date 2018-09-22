@@ -1,0 +1,28 @@
+@import 'mixins';
+
+// Variables
+$main-bg: #2d2a2e;
+$med-bg: #221f22;
+$dark-bg: #19181a;
+$red: #ff6188;
+$green: #a9dc76;
+$yellow: #ffd866;
+$orange: #fc9867;
+$purple: #ab9df2;
+$blue: #78dce8;
+$white: #fcfcfa;
+$grey: #BDBBBD;
+$dark-grey: #727072;
+$monospace: 'Fira Mono', monospace;
+
+// Headings
+@include markdown-headings(1, 4);
+@include headings-all {
+    color: $yellow;
+    font-family: $monospace;
+}
+@include headings-all-selector(".no-md") {
+    &::before {
+        content: "";
+    }
+}

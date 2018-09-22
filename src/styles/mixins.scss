@@ -1,0 +1,31 @@
+@import 'functions';
+
+// Headings
+@mixin markdown-headings($from: 1, $to: 6){
+    @for $i from $from through $to{
+      h#{$i}{
+        font-weight: 300;
+        @content;
+        &::before {
+            content: str-insert(repeat("#", $i), " ", $i+1);
+        }
+      }
+    }
+}
+
+@mixin headings-all(){
+    h1, h2, h3, h4, h5, h6, {
+        @content
+  }
+}
+
+@mixin headings-all-selector($selector){
+  h1#{$selector},
+  h2#{$selector},
+  h3#{$selector},
+  h4#{$selector},
+  h5#{$selector},
+  h6#{$selector}{
+      @content
+  }
+}
