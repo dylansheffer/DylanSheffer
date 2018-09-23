@@ -3,9 +3,9 @@ import { Link } from 'gatsby';
 
 export class Navigation extends Component {
   render() {
-    const { children, className, navItems } = this.props;
+    const { children, className, navItems, id } = this.props;
     return (
-      <nav className={className}>
+      <nav id={id} className={className}>
         <ul>
           <li><Link to="">Home</Link></li>
           <li><Link to="">About</Link></li>
@@ -24,7 +24,7 @@ export class MainNavigation extends Component {
     const { children } = this.props;
     return (
       <Fragment>
-        <Navigation className="main-nav" />
+        <Navigation id="main-nav" />
         {children}
       </Fragment>
     )

@@ -18,9 +18,9 @@ library.add(faTwitter, faTwitch, faGithub, faYoutube);
 
 class Layout extends React.Component {
   render() {
-    const { children } = this.props;
+    const { children, className } = this.props;
     return (
-      <Fragment>
+      <div id="app" className={className}>
         <Helmet
           htmlAttributes={{ lang: 'en' }}
           meta={[
@@ -33,7 +33,7 @@ class Layout extends React.Component {
           {children}
         </SkipNavContent>
         <Footer />
-      </Fragment>
+      </div>
     )
   }
 }

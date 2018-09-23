@@ -7,7 +7,7 @@
         font-weight: 300;
         @content;
         &::before {
-            content: str-insert(repeat("#", $i), " ", $i+1);
+            content: str-insert(sass-repeat("#", $i), " ", $i+1);
         }
       }
     }

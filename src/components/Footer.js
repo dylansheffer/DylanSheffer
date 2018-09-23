@@ -6,7 +6,7 @@ export default class Footer extends Component {
   render() {
     const date = new Date();
     return (
-      <footer>
+      <footer id="footer">
         <Navigation />
         &copy; {date.getFullYear()} Dylan Sheffer. All Rights Reserved.
       </footer>

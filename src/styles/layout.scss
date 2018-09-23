@@ -1,0 +1,30 @@
+#app {
+  // ** Grid Fall Back ** //
+  display: flex;
+  flex-direction: column;
+
+  // ** Main Layout ** //
+  display: grid;
+
+  // ** Home Layout ** //
+  &.app__home {
+    min-height: 100vh;
+    min-width: 100vw;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto;
+    grid-template-areas: "nav nav nav nav""content content content content""footer footer footer footer";
+
+
+    #main-nav {
+      grid-area: nav;
+    }
+
+    #content {
+      grid-area: content;
+    }
+
+    #footer {
+      grid-area: footer;
+    }
+  }
+}

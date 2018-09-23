@@ -18,15 +18,20 @@ class Index extends React.Component {
     )
 
     return (
-      <Layout>
+      <Layout className="app__home">
         <Helmet
           meta={[{ name: 'description', content: siteDescription }]}
           title={siteTitle}
         />
-        <Avatar image={dylan} alt="Dylan Sheffer aggressively looking at the camera" />
-        <h1>Dylan Sheffer</h1>
-        <p className="">Web Developer. A11y Advocate. Tea Enthusiast.</p>
-        <SocialIcons />
+        <div id="content">
+          <Avatar
+            image={dylan}
+            alt="Dylan Sheffer aggressively looking at the camera"
+          />
+          <h1>Dylan Sheffer</h1>
+          <p className="">Web Developer. A11y Advocate. Tea Enthusiast.</p>
+          <SocialIcons />
+        </div>
       </Layout>
     )
   }
