@@ -29,9 +29,8 @@ class Layout extends React.Component {
         />
         <SkipNavLink>Skip To Main Content</SkipNavLink>
         <MainNavigation />
-        <SkipNavContent>
-          {children}
-        </SkipNavContent>
+        <SkipNavContent />
+        {children}
         <Footer />
       </div>
     )

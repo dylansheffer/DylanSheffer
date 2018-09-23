@@ -1,5 +1,7 @@
 @import '_normalize';
 @import 'branding';
-@import 'base';
-@import 'layout';
-@import 'navigation';
+@import '_base';
+@import '_layout';
+@import '_navigation';
+@import '_content';
+@import '_footer';

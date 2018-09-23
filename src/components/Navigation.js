@@ -7,10 +7,10 @@ export class Navigation extends Component {
     return (
       <nav id={id} className={className}>
         <ul>
-          <li><Link to="">Home</Link></li>
-          <li><Link to="">About</Link></li>
-          <li><Link to="">Work</Link></li>
-          <li><Link to="">Blog</Link></li>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/about">About</Link></li>
+          <li><Link to="/work">Work</Link></li>
+          <li><Link to="/blog">Blog</Link></li>
           {navItems}
         </ul>
         {children}

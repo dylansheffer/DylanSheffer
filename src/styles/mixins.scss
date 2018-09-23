@@ -29,3 +29,7 @@
       @content
   }
 }
+
+@mixin max-width(){
+    max-width: 1200px;
+}

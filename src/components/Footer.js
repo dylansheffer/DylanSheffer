@@ -8,7 +8,7 @@ export default class Footer extends Component {
     return (
       <footer id="footer">
         <Navigation />
-        &copy; {date.getFullYear()} Dylan Sheffer. All Rights Reserved.
+        <p>&copy; {date.getFullYear()} Dylan Sheffer. All Rights Reserved.</p>
       </footer>
     )
   }

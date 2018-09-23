@@ -11,12 +11,18 @@
     min-height: 100vh;
     min-width: 100vw;
     grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: auto;
-    grid-template-areas: "nav nav nav nav""content content content content""footer footer footer footer";
+    grid-template-rows: 50px 0px auto 70px;
+    grid-template-areas: "nav nav nav nav""skip . . .""content content content content""footer footer footer footer";
+    justify-items: center;
+    align-items: center;
 
 
     #main-nav {
       grid-area: nav;
+    }
+
+    #reach-skip-nav {
+      grid-area: skip;
     }
 
     #content {

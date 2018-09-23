@@ -23,7 +23,7 @@ class Index extends React.Component {
           meta={[{ name: 'description', content: siteDescription }]}
           title={siteTitle}
         />
-        <div id="content">
+        <div id="content" className="content__home">
           <Avatar
             image={dylan}
             alt="Dylan Sheffer aggressively looking at the camera"
