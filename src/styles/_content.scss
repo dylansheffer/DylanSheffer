@@ -7,15 +7,18 @@
     margin: 20px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    .avatar {
+      margin: 15px 0;
+    }
     h1 {
-      margin: 10px 0;
+      margin: 15px 0;
+      font-size: 2.2em;
     }
     p {
       text-align: center;
-      font-size: 1rem;
-      margin: 10px 0;
+      font-size: 1.25rem;
+      margin: 15px 0;
     }
   }
 }

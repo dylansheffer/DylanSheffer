@@ -15,7 +15,7 @@ export default class SocialIcons extends Component {
 }
 
 const SocialIcon = ({ link, icon, label }) => (
-    <a href={link} aria-label={label} >
+    <a className="social-icon" href={link} aria-label={label} >
         <FontAwesomeIcon icon={icon} />
     </a>
 )
