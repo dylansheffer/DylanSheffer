@@ -7,6 +7,11 @@
     "url": "https://github.com/dylansheffer/DylanSheffer/issues"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.4",
+    "@fortawesome/free-brands-svg-icons": "^5.3.1",
+    "@fortawesome/free-regular-svg-icons": "^5.3.1",
+    "@fortawesome/free-solid-svg-icons": "^5.3.1",
+    "@fortawesome/react-fontawesome": "^0.1.3",
     "@reach/menu-button": "^0.1.7",
     "@reach/skip-nav": "^0.1.1",
     "gatsby": "^2.0.0",
@@ -27,8 +32,10 @@
     "gatsby-source-filesystem": "^2.0.1",
     "gatsby-transformer-remark": "^2.1.1",
     "gatsby-transformer-sharp": "^2.1.1",
+    "i": "^0.3.6",
     "lodash": "^4.17.11",
     "node-sass": "^4.9.3",
+    "npm": "^6.4.1",
     "prismjs": "^1.15.0",
     "react": "^16.5.1",
     "react-dom": "^16.5.1",
