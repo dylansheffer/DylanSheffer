@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 export default class SocialIcons extends Component {
   render() {
     return (
-      <div className="flex">
+      <div className="flex social-icons">
         <SocialIcon link='https://twitter.com/dylansheffer' icon={['fab', 'twitter']} label='View Twitter Page'/>
         <SocialIcon link='https://twitch.tv/dylansheffer' icon={['fab', 'twitch']} label='View Twitch Page'/>
         <SocialIcon link='https://github.com/dylansheffer/' icon={['fab', 'github']} label='View GitHub Page'/>

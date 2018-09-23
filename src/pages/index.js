@@ -29,7 +29,7 @@ class Index extends React.Component {
             alt="Dylan Sheffer aggressively looking at the camera"
           />
           <h1>Dylan Sheffer</h1>
-          <p className="">Web Developer. A11y Advocate. Tea Enthusiast.</p>
+          <p className="">Web Developer. A11y Advocate. <br />Tea Enthusiast.</p>
           <SocialIcons />
         </div>
       </Layout>

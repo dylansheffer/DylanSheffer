@@ -1,10 +1,18 @@
 * {
     font-family: $monospace;
+    color: $white;
 }
 
 body {
     margin: 0;
     background: $main-bg;
+}
+
+a {
+    color: $blue;
+    &:visited {
+        color: $purple;
+    }
 }
 
 nav {
@@ -20,6 +28,9 @@ nav {
                 text-decoration: none;
                 &:hover{
                     text-decoration: underline;
+                }
+                &:visited {
+                    color: $white;
                 }
             }
         }
