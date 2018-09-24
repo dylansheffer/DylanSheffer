@@ -11,6 +11,9 @@
     ul {
       width: 320px;
       justify-content: space-around;
+      .nav-item--icon {
+        display: none;
+      }
     }
   }
 

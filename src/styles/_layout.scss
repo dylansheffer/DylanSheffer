@@ -33,8 +33,14 @@
       grid-area: footer;
     }
 
-    // @media only screen and (min-width: 800px) {
-    //   grid-template-areas: "nav  content  content  content""nav  skip       .       .""nav  content content content""nav  footer  footer  footer";
-    // }
+    @media only screen and (min-width: 800px) {
+      grid-template-columns: 100px;
+      grid-template-rows: 0 50px auto 70px;
+      grid-template-areas: "skip skip skip skip""nav content content content""nav content content content""nav footer footer footer";
+
+      #main-nav ul {
+        flex-direction: column;
+      }
+    }
   }
 }

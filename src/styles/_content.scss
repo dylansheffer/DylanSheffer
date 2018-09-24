@@ -5,20 +5,32 @@
     @include max-width;
     width: 100%;
     margin: 20px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    .avatar {
-      margin: 15px 0;
-    }
-    h1 {
-      margin: 15px 0;
-      font-size: 2.2em;
-    }
-    p {
-      text-align: center;
-      font-size: 1.25rem;
-      margin: 15px 0;
+    .content--wrapper__home {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: fit-content;
+      margin: 0 auto;
+      .avatar {
+        margin: 15px 0;
+      }
+      h1 {
+        margin: 15px 0;
+        font-size: 2.2em;
+      }
+      p {
+        text-align: center;
+        font-size: 1.25rem;
+        margin: 15px 0;
+      }
+
+      @media only screen and (min-width: 1200px){
+        transform: scale(1.35);
+      }
+
+      @media only screen and (min-width: 1500px){
+        transform: scale(1.5);
+      }
     }
   }
 }

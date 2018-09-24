@@ -6,6 +6,7 @@ import Helmet from 'react-helmet'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter, faTwitch, faGithub, faYoutube } from '@fortawesome/free-brands-svg-icons'
+import { faHome, faUser, faCode, faPencilAlt } from '@fortawesome/free-solid-svg-icons'
 
 
 import { MainNavigation } from './Navigation';
@@ -14,7 +15,16 @@ import Footer from './Footer';
 import '@reach/skip-nav/styles.css';
 import '../styles/style.scss';
 
-library.add(faTwitter, faTwitch, faGithub, faYoutube);
+library.add(
+  faTwitter,
+  faTwitch,
+  faGithub,
+  faYoutube,
+  faHome,
+  faUser,
+  faCode,
+  faPencilAlt
+);
 
 class Layout extends React.Component {
   render() {

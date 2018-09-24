@@ -10,11 +10,26 @@
         @include max-width;
         width: 100%;
         height: 100%;
-        justify-content: space-evenly;
+        justify-content: space-around;
         align-items: center;
         li {
             a {
-                font-size: 1.25rem;
+                .nav-item--content {
+                    font-size: 1.25rem;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .nav-item--icon {
+                    font-size: 1rem;
+                }
+                @media only screen and (min-width: 800px) {
+                    .nav-item--icon {
+                        font-size: 1.75rem;
+                        margin: 10px;
+                    }
+                }
             }
         }
     }

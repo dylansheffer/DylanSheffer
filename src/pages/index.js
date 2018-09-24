@@ -24,6 +24,7 @@ class Index extends React.Component {
           title={siteTitle}
         />
         <div id="content" className="content__home">
+        <div className="content--wrapper__home">
           <Avatar
             image={dylan}
             alt="Dylan Sheffer aggressively looking at the camera"
@@ -31,6 +32,7 @@ class Index extends React.Component {
           <h1>Dylan Sheffer</h1>
           <p className="">Web Developer. A11y Advocate. <br />Tea Enthusiast.</p>
           <SocialIcons />
+        </div>
         </div>
       </Layout>
     )

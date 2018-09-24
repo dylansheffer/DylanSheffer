@@ -1,5 +1,5 @@
-import React, { Component } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React, { Component } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default class SocialIcons extends Component {
   render() {
@@ -15,7 +15,7 @@ export default class SocialIcons extends Component {
 }
 
 const SocialIcon = ({ link, icon, label }) => (
-    <a className="social-icon" href={link} aria-label={label} >
+    <a className="social-icon" href={ link } aria-label={ label } >
         <FontAwesomeIcon icon={icon} />
     </a>
 )

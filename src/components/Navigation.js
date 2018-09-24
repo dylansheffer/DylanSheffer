@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { Link } from 'gatsby';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 export class Navigation extends Component {
   render() {
@@ -7,10 +8,30 @@ export class Navigation extends Component {
     return (
       <nav id={id} className={className}>
         <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/about">About</Link></li>
-          <li><Link to="/work">Work</Link></li>
-          <li><Link to="/blog">Blog</Link></li>
+          <li><Link to="/">
+            <div className="nav-item--content">
+              <FontAwesomeIcon className="nav-item--icon" icon="home" />
+              Home
+            </div>
+          </Link></li>
+          <li><Link to="/about">
+            <div className="nav-item--content">
+              <FontAwesomeIcon className="nav-item--icon" icon="user" />
+              About
+            </div>
+          </Link></li>
+          <li><Link to="/work">
+            <div className="nav-item--content">
+              <FontAwesomeIcon className="nav-item--icon" icon="code" />
+              Work
+            </div>
+          </Link></li>
+          <li><Link to="/blog">
+            <div className="nav-item--content">
+              <FontAwesomeIcon className="nav-item--icon" icon="pencil-alt" />
+              Blog
+            </div>
+          </Link></li>
           {navItems}
         </ul>
         {children}
