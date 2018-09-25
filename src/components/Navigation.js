@@ -6,11 +6,11 @@ import { LinkedLogo } from '../components/Logo'
 
 export class Navigation extends Component {
   render() {
-    const { children, className, navItems, id } = this.props;
+    const { children, className, navItems, id, beforeItems } = this.props;
     return (
       <nav id={id} className={className}>
+        {beforeItems}
         <ul>
-          {navItems}
           <li><Link to="/">
             <div className="nav-item--content">
               <FontAwesomeIcon className="nav-item--icon" icon="home" />
@@ -29,12 +29,19 @@ export class Navigation extends Component {
               Work
             </div>
           </Link></li>
+          <li><Link to="/talks">
+            <div className="nav-item--content">
+              <FontAwesomeIcon className="nav-item--icon" icon="chalkboard-teacher" />
+              Talks
+            </div>
+          </Link></li>
           <li><Link to="/blog">
             <div className="nav-item--content">
               <FontAwesomeIcon className="nav-item--icon" icon="pencil-alt" />
               Blog
             </div>
           </Link></li>
+          {navItems}
         </ul>
         {children}
       </nav>
@@ -45,10 +52,13 @@ export class Navigation extends Component {
 export class MainNavigation extends Component {
   render() {
     const { children } = this.props;
-    const logo = <li className="nav-item--logo"><LinkedLogo /></li>;
+    const logo = <LinkedLogo className="nav--logo" />;
     return (
       <Fragment>
-        <Navigation id="main-nav" navItems={logo} />
+        <Navigation
+          id="main-nav"
+          beforeItems={logo}
+        />
         {children}
       </Fragment>
     )

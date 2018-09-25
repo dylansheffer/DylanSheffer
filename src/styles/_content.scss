@@ -3,7 +3,6 @@
   // ** Home Content ** //
   &.content__home {
     @include max-width;
-    width: 100%;
     margin: 20px;
     padding: 10px;
     .content--wrapper__home {

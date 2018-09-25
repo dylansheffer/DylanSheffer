@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'gatsby';
 
-export const LinkedLogo = ({ link = '/', label = 'Dylan Sheffer Logo', ariaHidden = false }) => (
-  <Link className="linked-logo" to={link} aria-label={label} aria-hidden={ariaHidden} >
+export const LinkedLogo = ({ link = '/', label = 'Dylan Sheffer Logo', ariaHidden = false, className }) => (
+  <Link className={`linked-logo ${className}`} to={link} aria-label={label} aria-hidden={ariaHidden} >
       <Logo />
   </Link>
 )

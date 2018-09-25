@@ -6,7 +6,7 @@ import Helmet from 'react-helmet'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter, faTwitch, faGithub, faYoutube } from '@fortawesome/free-brands-svg-icons'
-import { faHome, faUser, faCode, faPencilAlt } from '@fortawesome/free-solid-svg-icons'
+import { faHome, faUser, faCode, faPencilAlt, faChalkboardTeacher } from '@fortawesome/free-solid-svg-icons'
 
 
 import { MainNavigation } from './Navigation';
@@ -23,7 +23,8 @@ library.add(
   faHome,
   faUser,
   faCode,
-  faPencilAlt
+  faPencilAlt,
+  faChalkboardTeacher,
 );
 
 class Layout extends React.Component {

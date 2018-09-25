@@ -1,24 +1,31 @@
 @import 'mixins';
 
 div.logo {
-  @include circle();
-  background-color: $main-bg;
-  padding: 15px;
-  height: 50px;
-  width: 50px;
+  // @include circle();
+  // background-color: $main-bg;
+  // padding: 15px;
+  // height: 35px;
+  // width: 35px;
   display: flex;
   justify-content: center;
   align-items: center;
 
   .logo-content {
     color: $yellow;
-    font-size: 4.5rem;
+    font-size: 4.0rem;
+    transition: all .25s;
   }
 
 }
 
 .linked-logo {
+  color: transparent;
   &:hover {
     text-decoration: none;
+    .logo {
+      .logo-content {
+        font-size: 4.2rem;
+      }
+    }
   }
 }

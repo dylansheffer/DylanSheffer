@@ -9,7 +9,6 @@
   // ** Home Layout ** //
   &.app__home {
     min-height: 100vh;
-    min-width: 100vw;
     grid-template-columns: repeat(4, 1fr);
     grid-template-rows: 50px 0px auto 70px;
     grid-template-areas: "nav nav nav nav""skip . . .""content content content content""footer footer footer footer";
