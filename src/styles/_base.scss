@@ -1,7 +1,11 @@
-* {
+@import 'mixins';
+
+body {
     font-family: $monospace;
     color: $white;
     font-size: 16px;
+    margin: 0;
+    background: $main-bg;
 }
 
 h1 {
@@ -18,11 +22,6 @@ h3 {
 
 h4 {
     font-size: 1.5em;
-}
-
-body {
-    margin: 0;
-    background: $main-bg;
 }
 
 a {
@@ -43,7 +42,7 @@ nav {
             a {
                 color: $white;
                 text-decoration: none;
-                &:hover{
+                @include hover-focus(){
                     text-decoration: underline;
                 }
                 &:visited {

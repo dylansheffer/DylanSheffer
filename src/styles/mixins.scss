@@ -30,10 +30,20 @@
   }
 }
 
+@mixin hover-focus() {
+    &:hover, &:focus {
+        @content
+    }
+}
+
 @mixin max-width(){
     max-width: 1200px;
 }
 
 @mixin circle() {
     border-radius: 50%;
+}
+
+@mixin transition() {
+    transition: all .25s;
 }

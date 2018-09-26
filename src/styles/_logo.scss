@@ -13,14 +13,14 @@ div.logo {
   .logo-content {
     color: $yellow;
     font-size: 4.0rem;
-    transition: all .25s;
+    @include transition();
   }
 
 }
 
 .linked-logo {
   color: transparent;
-  &:hover {
+  @include hover-focus() {
     text-decoration: none;
     .logo {
       .logo-content {
