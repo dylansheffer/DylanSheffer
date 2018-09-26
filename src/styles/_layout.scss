@@ -26,6 +26,7 @@
 
     #content {
       grid-area: content;
+      grid-column: span 4;
     }
 
     #footer {
@@ -36,6 +37,10 @@
       grid-template-columns: 100px;
       grid-template-rows: 0 50px auto 70px;
       grid-template-areas: "skip skip skip skip""nav content content content""nav content content content""nav footer footer footer";
+
+      #content {
+        grid-column: span 3;
+      }
 
       #main-nav ul {
         flex-direction: column;
