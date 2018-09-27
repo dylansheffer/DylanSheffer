@@ -47,3 +47,9 @@
 @mixin transition() {
     transition: all .25s;
 }
+
+@mixin content() {
+    @include max-width;
+    margin: 20px;
+    padding: 10px;
+}
