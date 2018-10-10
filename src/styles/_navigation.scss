@@ -2,10 +2,18 @@
 
 #main-nav {
     background: $dark-bg;
-    display: flex;
-    justify-content: center;
     width: 100%;
-    height: 100%;
+    padding: .5rem;
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 1;
+
+    .nav-content {
+        display: flex;
+        justify-content: space-around;
+    }
+
     .nav--logo {
         display: none;
     }
@@ -13,6 +21,7 @@
         @include max-width;
         width: 100%;
         height: 100%;
+        display: flex;
         justify-content: space-around;
         align-items: center;
         li {
@@ -39,7 +48,15 @@
 
 @media only screen and (min-width: 800px) {
     #main-nav {
-        flex-direction: column;
+        height: 100vh;
+        width: 100px;
+        top: 0;
+        right: auto;
+        bottom: 0;
+        .nav-content {
+            height: 100%;
+            flex-direction: column;
+        }
         .nav--logo {
             display: block;
             margin: 20px;
