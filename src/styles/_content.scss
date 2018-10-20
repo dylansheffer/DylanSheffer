@@ -72,12 +72,10 @@
           @include circle();
         }
       }
-
-      @media only screen and (min-width: 800px) {
-        .text{
-          // text-align: left;
-        }
-      }
     }
+  }
+  &.content__cards {
+    @include content;
+    height: 100%;
   }
 }

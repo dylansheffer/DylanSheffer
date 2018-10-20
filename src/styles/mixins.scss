@@ -49,7 +49,6 @@
 }
 
 @mixin content() {
-    @include max-width;
     margin: 20px;
     padding: 10px;
 }

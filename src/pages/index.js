@@ -23,17 +23,17 @@ class Index extends React.Component {
           meta={[{ name: 'description', content: siteDescription }]}
           title={siteTitle}
         />
-        <div id="content" className="content__home">
-        <div className="content--wrapper__home">
-          <Avatar
-            image={dylan}
-            alt="Dylan Sheffer aggressively looking at the camera"
-          />
-          <h1>Dylan&nbsp;Sheffer</h1>
-          <p className="">Web Developer. A11y Advocate. <br />Tea Enthusiast.</p>
-          <SocialIcons />
-        </div>
-        </div>
+        <main id="content" className="content__home">
+          <div className="content--wrapper__home">
+            <Avatar
+              image={dylan}
+              alt="Dylan Sheffer aggressively looking at the camera"
+            />
+            <h1>Dylan&nbsp;Sheffer</h1>
+            <p className="">Web Developer. A11y Advocate. <br />Tea Enthusiast.</p>
+            <SocialIcons />
+          </div>
+        </main>
       </Layout>
     )
   }

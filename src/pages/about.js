@@ -25,7 +25,7 @@ class About extends React.Component {
           meta={[{ name: 'description', content: siteDescription }]}
           title={siteTitle}
         />
-        <div id="content" className="content__about">
+        <main id="content" className="content__about">
           <div className="content--wrapper__about">
             <h1>About</h1>
             <div>
@@ -43,7 +43,7 @@ class About extends React.Component {
               <p>Outside of code, I spend my time playing video games, brewing gongfu tea, and most importantly hanging out with my beautiful girlfriend and dog ❤.</p>
             </div>
           </div>
-        </div>
+        </main>
       </Layout>
     )
   }
