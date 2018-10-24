@@ -15,8 +15,8 @@
   display: grid;
   min-height: 100vh;
   grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 50px 0px auto 70px;
-  grid-template-areas: "nav nav nav nav""skip . . .""content content content content""footer footer footer footer";
+  grid-template-rows: 50px 0px minmax(auto, 100px) auto 70px;
+  grid-template-areas: "nav nav nav nav""skip . . .""notice notice notice notice""content content content content""footer footer footer footer";
   align-items: center;
 
 
@@ -37,10 +37,27 @@
     grid-area: footer;
   }
 
+  #notice {
+    grid-area: notice;
+    background-color: $red;
+    color: $dark-bg;
+    padding: 5px;
+    margin: 0;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p {
+      font-size: 18px;
+      margin: 0;
+    }
+  }
+
   @media only screen and (min-width: 800px) {
     grid-template-columns: 100px;
-    grid-template-rows: 0 50px auto 70px;
-    grid-template-areas: "skip skip skip skip""nav content content content""nav content content content""nav footer footer footer";
+    grid-template-rows: 0 minmax(auto, 100px) auto 70px;
+    grid-template-areas: "skip skip skip skip""nav notice notice notice""nav content content content""nav footer footer footer";
 
     #main-nav ul {
       flex-direction: column;

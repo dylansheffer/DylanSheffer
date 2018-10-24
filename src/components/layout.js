@@ -41,6 +41,7 @@ class Layout extends React.Component {
         <SkipNavLink>Skip To Main Content</SkipNavLink>
         <MainNavigation />
         <SkipNavContent />
+        <div id="notice"><p><strong>Notice:</strong> This site is under active development... Please ignore the mess 😜</p></div>
         {children}
         <Footer />
       </div>
