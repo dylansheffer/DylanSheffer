@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { Link } from 'gatsby';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { graphql } from 'gatsby'
 
 import { LinkedLogo } from '../components/Logo'
 
@@ -61,5 +61,3 @@ export class MainNavigation extends Component {
     )
   }
 }
-
-

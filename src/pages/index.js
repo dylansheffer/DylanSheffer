@@ -1,5 +1,5 @@
 import React from 'react'
-import { graphql } from 'gatsby'
+import { graphql, Link } from 'gatsby'
 import get from 'lodash/get'
 import Helmet from 'react-helmet'
 
@@ -32,6 +32,8 @@ class Index extends React.Component {
             <h1>Dylan&nbsp;Sheffer</h1>
             <p className="">Web Developer. A11y Advocate. <br />Tea Enthusiast.</p>
             <SocialIcons />
+            <br></br>
+            <a class="button" href="https://dylan-sheffer-resume.netlify.com/">Resume</a>
           </div>
         </main>
       </Layout>

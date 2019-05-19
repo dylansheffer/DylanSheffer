@@ -8,15 +8,18 @@
     top: 0;
     right: 0;
     z-index: 1;
+    display:flex;
 
     .nav-content {
+        width: 100%;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
     }
 
     .nav--logo {
-        display: none;
+        height: 3rem;
     }
+
     ul {
         @include max-width;
         width: 100%;

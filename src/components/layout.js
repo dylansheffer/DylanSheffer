@@ -6,7 +6,6 @@ import Helmet from 'react-helmet'
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faTwitter, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons'
-import { faHome, faUser, faCode, faPencilAlt, faChalkboardTeacher } from '@fortawesome/free-solid-svg-icons'
 
 
 import { MainNavigation } from './Navigation';
@@ -18,12 +17,7 @@ import '../styles/style.scss';
 library.add(
   faTwitter,
   faGithub,
-  faLinkedin,
-  faHome,
-  faUser,
-  faCode,
-  faPencilAlt,
-  faChalkboardTeacher
+  faLinkedin
 );
 
 class Layout extends React.Component {
@@ -38,10 +32,10 @@ class Layout extends React.Component {
           ]}
         />
         <SkipNavLink>Skip To Main Content</SkipNavLink>
-        <MainNavigation />
-        <SkipNavContent />
+        {/* <MainNavigation />
+        <SkipNavContent /> */}
         {children}
-        <Footer />
+        {/* <Footer /> */}
       </div>
     )
   }
