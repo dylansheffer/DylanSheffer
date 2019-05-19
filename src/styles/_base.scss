@@ -69,3 +69,13 @@ nav {
 .align-items__center {
     align-items: center;
 }
+
+.button {
+    text-decoration: none;
+    padding: 8px;
+    background: $green;
+    color: $main-bg;
+    &:visited {
+        color: $main-bg;
+    }
+}

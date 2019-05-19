@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react'
 import { Link } from 'gatsby';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { graphql } from 'gatsby'
 
 import { LinkedLogo } from '../components/Logo'
 
@@ -14,32 +14,27 @@ export class Navigation extends Component {
           <ul>
             <li><Link to="/">
               <div className="nav-item--content">
-                <FontAwesomeIcon className="nav-item--icon" icon="home" />
                 Home
               </div>
             </Link></li>
-            <li><Link to="/about">
+            <li><Link to="/experience">
               <div className="nav-item--content">
-                <FontAwesomeIcon className="nav-item--icon" icon="user" />
-                About
+                Experience
               </div>
             </Link></li>
-            <li><Link to="/work">
+            <li><a href="https://youtu.be/a4vb5qeamOk">
               <div className="nav-item--content">
-                <FontAwesomeIcon className="nav-item--icon" icon="code" />
-                Work
-              </div>
-            </Link></li>
-            <li><Link to="/talks">
-              <div className="nav-item--content">
-                <FontAwesomeIcon className="nav-item--icon" icon="chalkboard-teacher" />
                 Talks
               </div>
-            </Link></li>
-            <li><Link to="/blog">
+            </a></li>
+            <li><a href="https://github.com/dylansheffer">
               <div className="nav-item--content">
-                <FontAwesomeIcon className="nav-item--icon" icon="pencil-alt" />
-                Blog
+                Projects
+              </div>
+            </a></li>
+            <li><Link to="/contact">
+              <div className="nav-item--content">
+                Contact
               </div>
             </Link></li>
             {navItems}
@@ -66,5 +61,3 @@ export class MainNavigation extends Component {
     )
   }
 }
-
-

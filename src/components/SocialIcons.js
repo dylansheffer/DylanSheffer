@@ -12,22 +12,16 @@ export default class SocialIcons extends Component {
           className="social-icon__twitter"
         />
         <SocialIcon
-          link='https://twitch.tv/dylansheffer'
-          icon={['fab', 'twitch']}
-          label='View Twitch Page'
-          className="social-icon__twitch"
-        />
-        <SocialIcon
           link='https://github.com/dylansheffer/'
           icon={['fab', 'github']}
           label='View GitHub Page'
           className="social-icon__github"
         />
         <SocialIcon
-          link='https://www.youtube.com/channel/UCMV62k2QwuAN3jumdmv4caQ'
-          icon={['fab', 'youtube']}
-          label='View Youtube Page'
-          className="social-icon__youtube"
+          link='https://www.linkedin.com/in/dylansheffer/'
+          icon={['fab', 'linkedin']}
+          label='View Linkedin Profile'
+          className="social-icon__twitter"
         />
       </div>
     )
