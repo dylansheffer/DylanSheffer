@@ -33,7 +33,7 @@ class Index extends React.Component {
             <p className="">Web Developer. A11y Advocate. <br />Tea Enthusiast.</p>
             <SocialIcons />
             <br></br>
-            <a class="button" href="https://dylan-sheffer-resume.netlify.com/">Resume</a>
+            <a class="button" href="https://resume.dylansheffer.com">Resume</a>
           </div>
         </main>
       </Layout>
