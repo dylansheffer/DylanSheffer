@@ -16,6 +16,7 @@ const GlobalStyles = createGlobalStyle`
     --surface-medium: #221F22;
     --surface-dark: #19181A;
     --text: var(--white);
+    --shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   }
   html {
     font-family: 'Open Sans', sans-serif;
@@ -42,12 +43,11 @@ const GlobalStyles = createGlobalStyle`
   pre[data-language] {
     border-radius: 0;
     padding: 3rem;
-    width: 110%;
-    margin-left: -5%;
+    width: 100%;
     line-height: 1.5;
     border: 3px solid var(--black);
     border-radius: 4px;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    box-shadow: var(--shadow);
   }
   pre {
     white-space: break-spaces;
