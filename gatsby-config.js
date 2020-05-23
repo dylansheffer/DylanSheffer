@@ -10,14 +10,8 @@ module.exports = {
   plugins: [
     {
       resolve: `gatsby-plugin-styled-components`,
-      options: {},
-    },
-    {
-      resolve: `gatsby-plugin-prettier-build`,
       options: {
-        types: ['html'],
-        concurrency: 20,
-        verbose: true,
+        displayName: true,
       },
     },
     {

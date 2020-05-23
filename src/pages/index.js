@@ -32,6 +32,7 @@ const Post = styled.article``;
 
 const Hero = styled.main`
   background-color: var(--surface-light);
+  width: 100%;
   .content-container {
     display: grid;
     justify-items: center;
