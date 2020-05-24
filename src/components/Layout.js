@@ -1,7 +1,6 @@
 import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
 import { Helmet } from 'react-helmet';
-import styled from 'styled-components';
 import { useSiteMetadata } from '../hooks/useSiteMetadata';
 import mdxComponents from './mdxComponents';
 import LayoutStyles, { ContentContainer } from './styles/LayoutStyles';
@@ -21,19 +20,17 @@ function Layout({ path, children, ...rest }) {
       </Helmet>
       <LayoutStyles>
         <Nav />
-        <MDXProvider components={mdxComponents}>
-          {/* Brittle solution to wanting full length colored sections on the home page.
-          Probably should address later */}
-          {path === '/' ? (
-            <>{children}</>
-          ) : (
-            <ContentContainer>{children}</ContentContainer>
-          )}
-        </MDXProvider>
+        <MDXProvider components={mdxComponents}>{children}</MDXProvider>
         <Footer />
       </LayoutStyles>
     </>
   );
 }
+
+export const ContentLayout = ({ children }) => (
+  <Layout>
+    <ContentContainer>{children}</ContentContainer>
+  </Layout>
+);
 
 export default Layout;
