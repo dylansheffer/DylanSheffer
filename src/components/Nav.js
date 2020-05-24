@@ -82,7 +82,7 @@ const NavLinks = ({ children }) => (
       <Link to="/projects">Projects</Link>
     </LinkItem>
     <LinkItem>
-      <Link to="/blog">Blog</Link>
+      <Link to="/posts">Blog</Link>
     </LinkItem>
     <LinkItem>
       <Link to="/contact">Contact</Link>
