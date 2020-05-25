@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
-import Pagination from '../components/Pagination';
+import { PostPageLayout } from '../components/styles/LayoutStyles';
 
 export default function PostsPage({
   data: { allMdx: posts },
@@ -8,12 +8,11 @@ export default function PostsPage({
   path,
 }) {
   return (
-    <>
-      <Pagination
-        currentPage={pageContext.currentPage}
-        totalCount={posts.totalCount}
-        pathPrefix="/posts/"
-      />
+    <PostPageLayout
+      currentPage={pageContext.currentPage}
+      totalCount={posts.totalCount}
+      pathPrefix={path}
+    >
       <div>
         {posts.edges.map(({ node: post }) => (
           <Link key={post.id} to={post.fields.slug}>
@@ -21,7 +20,7 @@ export default function PostsPage({
           </Link>
         ))}
       </div>
-    </>
+    </PostPageLayout>
   );
 }
 

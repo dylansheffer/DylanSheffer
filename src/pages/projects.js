@@ -1,6 +1,6 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
-import Pagination from '../components/Pagination';
+import { PostPageLayout } from '../components/styles/LayoutStyles';
 
 export default function ProjectsPage({
   data: { allMdx: projects },
@@ -8,12 +8,11 @@ export default function ProjectsPage({
   path,
 }) {
   return (
-    <>
-      <Pagination
-        currentPage={pageContext.currentPage}
-        totalCount={projects.totalCount}
-        pathPrefix="/projects/"
-      />
+    <PostPageLayout
+      currentPage={pageContext.currentPage}
+      totalCount={projects.totalCount}
+      pathPrefix={path}
+    >
       <div>
         {projects.edges.map(({ node: project }) => (
           <Link key={project.id} to={project.fields.slug}>
@@ -21,7 +20,7 @@ export default function ProjectsPage({
           </Link>
         ))}
       </div>
-    </>
+    </PostPageLayout>
   );
 }
 

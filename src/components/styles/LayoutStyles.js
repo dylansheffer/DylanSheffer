@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import Pagination from '../Pagination';
 
 const LayoutStyles = styled.div`
   min-height: 100vh;
@@ -22,6 +23,29 @@ export const ContentContainer = ({ children }) => (
   <ContentContainerStyle className="content-container">
     {children}
   </ContentContainerStyle>
+);
+
+const PostPageLayoutStyles = styled.div``;
+
+export const PostPageLayout = ({
+  currentPage,
+  totalCount,
+  pathPrefix,
+  children,
+}) => (
+  <PostPageLayoutStyles>
+    <Pagination
+      currentPage={currentPage}
+      totalCount={totalCount}
+      pathPrefix={pathPrefix}
+    />
+    {children}
+    <Pagination
+      currentPage={currentPage}
+      totalCount={totalCount}
+      pathPrefix={pathPrefix}
+    />
+  </PostPageLayoutStyles>
 );
 
 export default LayoutStyles;
