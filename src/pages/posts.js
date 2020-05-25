@@ -18,6 +18,7 @@ export default function PostsPage({
       <div>
         {posts.edges.map(({ node: post }) => (
           <PostCard
+            key={post.id}
             title={post.frontmatter.title}
             tags={post.frontmatter.tags}
             link={post.fields.slug}

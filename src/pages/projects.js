@@ -18,6 +18,7 @@ export default function ProjectsPage({
       <div>
         {projects.edges.map(({ node: project }) => (
           <PostCard
+            key={project.id}
             title={project.frontmatter.title}
             tags={project.frontmatter.tags}
             link={project.fields.slug}
