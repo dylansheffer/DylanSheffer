@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import { PostPageLayout } from '../components/styles/LayoutStyles';
+import { PostCard } from '../components/PostCard';
 
 export default function PostsPage({
   data: { allMdx: posts },
@@ -12,12 +13,19 @@ export default function PostsPage({
       currentPage={pageContext.currentPage}
       totalCount={posts.totalCount}
       pathPrefix={path}
+      title="Blog"
     >
       <div>
         {posts.edges.map(({ node: post }) => (
-          <Link key={post.id} to={post.fields.slug}>
-            {post.frontmatter.title}
-          </Link>
+          <PostCard
+            title={post.frontmatter.title}
+            tags={post.frontmatter.tags}
+            link={post.fields.slug}
+            image={post.frontmatter.image}
+            publishedDate={post.frontmatter.date}
+          >
+            {post.excerpt}
+          </PostCard>
         ))}
       </div>
     </PostPageLayout>
@@ -35,13 +43,18 @@ export const pageQuery = graphql`
       totalCount
       edges {
         node {
-          body
           id
+          excerpt(pruneLength: 350)
           fields {
             slug
           }
           frontmatter {
             title
+            tags
+            image {
+              ...ImageFields
+            }
+            date
           }
         }
       }

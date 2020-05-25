@@ -6,7 +6,7 @@ import { ContentContainer } from '../components/styles/LayoutStyles';
 import { Dot } from '../components/Dot';
 import { Button } from '../components/Button';
 import { H, MarkdownHeading } from '../components/mdxComponents/Headings';
-import { PostCard } from '../components/PostCard';
+import { MiniPostCard } from '../components/PostCard';
 import { Text } from '../components/mdxComponents/Text';
 
 const StatusStyle = styled.p`
@@ -128,14 +128,14 @@ const Site = ({ data: { me, projects }, ...props }) => (
         <div className="projects-container">
           {projects.nodes.map(
             ({ excerpt, frontmatter, id, fields: { slug } }) => (
-              <PostCard
+              <MiniPostCard
                 key={id}
                 title={frontmatter.title}
                 link={slug}
                 tags={frontmatter.tags}
               >
                 {excerpt}
-              </PostCard>
+              </MiniPostCard>
             )
           )}
         </div>
@@ -165,7 +165,7 @@ export const query = graphql`
       sort: { fields: [frontmatter___date], order: DESC }
     ) {
       nodes {
-        excerpt(pruneLength: 250)
+        excerpt(pruneLength: 100)
         id
         frontmatter {
           title

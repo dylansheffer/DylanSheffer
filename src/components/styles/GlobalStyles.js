@@ -17,9 +17,11 @@ const GlobalStyles = createGlobalStyle`
     --surface-dark: #19181A;
     --text: var(--white);
     --shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    --sans-serif: 'Open Sans', sans-serif;
+    --monospace: 'Hack', monospace;
   }
   html {
-    font-family: 'Open Sans', sans-serif;
+    font-family: var(--sans-serif);
     box-sizing: border-box;
     font-size: 10px;
   }
@@ -33,7 +35,7 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: inherit;
   }
   h1, h2, h3, h4, h5, h6 {
-    font-family: 'Hack', monospace;
+    font-family: var(--monospace);
     font-weight: normal;
     line-height: 1.5;
   }
@@ -53,7 +55,7 @@ const GlobalStyles = createGlobalStyle`
     white-space: break-spaces;
   }
   code, kbd, samp {
-    font-family: 'Hack';
+    font-family: var(--monospace);
     font-weight: 300;
   }
 
@@ -63,6 +65,17 @@ const GlobalStyles = createGlobalStyle`
   img {
     max-width: 100%;
   }
+
+  .visually-hidden {
+    position: absolute !important;
+    height: 1px;
+    width: 1px;
+    overflow: hidden;
+    clip: rect(1px 1px 1px 1px); /* IE6, IE7 */
+    clip: rect(1px, 1px, 1px, 1px);
+    white-space: nowrap; /* added line */
+  }
+
   /* Scrollbar Styles */
   body::-webkit-scrollbar {
     width: 12px;

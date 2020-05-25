@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Pagination from '../Pagination';
+import { MarkdownHeading } from '../mdxComponents/Headings';
 
 const LayoutStyles = styled.div`
   min-height: 100vh;
@@ -39,9 +40,11 @@ export const PostPageLayout = ({
   currentPage,
   totalCount,
   pathPrefix,
+  title,
   children,
 }) => (
   <PostPageLayoutStyles>
+    <MarkdownHeading>{title}</MarkdownHeading>
     <Pagination
       currentPage={currentPage}
       totalCount={totalCount}

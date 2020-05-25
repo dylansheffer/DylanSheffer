@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
 import { PostPageLayout } from '../components/styles/LayoutStyles';
+import { PostCard } from '../components/PostCard';
 
 export default function ProjectsPage({
   data: { allMdx: projects },
@@ -9,15 +10,22 @@ export default function ProjectsPage({
 }) {
   return (
     <PostPageLayout
+      title="Projects"
       currentPage={pageContext.currentPage}
       totalCount={projects.totalCount}
       pathPrefix={path}
     >
       <div>
         {projects.edges.map(({ node: project }) => (
-          <Link key={project.id} to={project.fields.slug}>
-            {project.frontmatter.title}
-          </Link>
+          <PostCard
+            title={project.frontmatter.title}
+            tags={project.frontmatter.tags}
+            link={project.fields.slug}
+            image={project.frontmatter.image}
+            publishedDate={project.frontmatter.date}
+          >
+            {project.excerpt}
+          </PostCard>
         ))}
       </div>
     </PostPageLayout>
@@ -35,13 +43,18 @@ export const pageQuery = graphql`
       totalCount
       edges {
         node {
-          body
           id
+          excerpt(pruneLength: 350)
           fields {
             slug
           }
           frontmatter {
             title
+            tags
+            image {
+              ...ImageFields
+            }
+            date
           }
         }
       }
