@@ -3,6 +3,17 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 
 const PaginationStyles = styled.div`
+  display: flex;
+  text-align: center;
+  justify-items: center;
+  align-items: center;
+
+  background-color: var(--surface-dark);
+  border-radius: 4px;
+  padding: 0 16px;
+  .page-indicator {
+    flex: 1 1 0;
+  }
   a[disabled] {
     pointer-events: none;
     text-decoration: line-through;
@@ -13,7 +24,8 @@ export default function Pagination({
   currentPage = 1,
   pathPrefix,
 }) {
-  const totalPages = Math.ceil(totalCount / 10);
+  const postsPerPage = 10;
+  const totalPages = Math.ceil(totalCount / postsPerPage);
   const nextPage = currentPage + 1;
   const prevPage = currentPage - 1;
   return (
@@ -22,16 +34,18 @@ export default function Pagination({
         disabled={prevPage <= 0 ? true : null}
         to={`${pathPrefix}${prevPage}`}
       >
-        ← Prev 10 please
+        ← Previous {postsPerPage}
       </Link>
-      <p>
+      <p className="page-indicator">
         Page {currentPage} of {totalPages}
       </p>
       <Link
         disabled={nextPage > totalPages ? true : null}
         to={nextPage > totalPages ? `/` : `${pathPrefix}${nextPage}`}
       >
-        {nextPage > totalPages ? `That's all Folks` : `10 More please →`}
+        {nextPage > totalPages
+          ? `GAME OVER 👾`
+          : `${postsPerPage} More please →`}
       </Link>
     </PaginationStyles>
   );

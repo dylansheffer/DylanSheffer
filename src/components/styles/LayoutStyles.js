@@ -25,7 +25,15 @@ export const ContentContainer = ({ children }) => (
   </ContentContainerStyle>
 );
 
-const PostPageLayoutStyles = styled.div``;
+const PostPageLayoutStyles = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  .posts {
+    flex: 1 1 0;
+  }
+`;
 
 export const PostPageLayout = ({
   currentPage,
@@ -39,7 +47,7 @@ export const PostPageLayout = ({
       totalCount={totalCount}
       pathPrefix={pathPrefix}
     />
-    {children}
+    <div className="posts">{children}</div>
     <Pagination
       currentPage={currentPage}
       totalCount={totalCount}
