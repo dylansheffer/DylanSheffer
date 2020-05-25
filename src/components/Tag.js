@@ -7,6 +7,9 @@ import { getRandomProperty } from '../utilities';
 const TagStyles = styled.span`
   display: flex;
   align-items: center;
+  p {
+    word-wrap: normal;
+  }
   .dot {
     margin-right: 1rem;
   }

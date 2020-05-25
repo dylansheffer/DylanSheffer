@@ -8,11 +8,11 @@ import { Tag } from './Tag';
 const PostCardStyles = styled.article`
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr auto 1fr;
+  grid-template-rows: 1fr 2fr 1fr;
   padding: 8px;
   background: var(--surface-light);
   border: 3px solid var(--black);
-  box-shadow: 2px 4px 4px rgba(0, 0, 0, 0.25);
+  box-shadow: var(--shadow);
   border-radius: 3px;
   .heading {
     color: var(--text);
@@ -27,9 +27,36 @@ const PostCardStyles = styled.article`
       text-decoration: underline;
     }
   }
+  .card-content {
+    overflow: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--yellow) transparent;
+    &::-webkit-scrollbar {
+      width: 4px;
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--yellow);
+      border-radius: 4px;
+    }
+  }
   .tags {
     display: flex;
-    flex-wrap: wrap;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: var(--yellow) transparent;
+    &::-webkit-scrollbar {
+      height: 4px;
+    }
+    &::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+      background-color: var(--yellow);
+      border-radius: 4px;
+    }
     .tag {
       margin-right: 16px;
     }
@@ -43,7 +70,7 @@ export const PostCard = ({ title, tags, children, link, ...rest }) => (
         {title}
       </H>
     </Link>
-    <Text>{children}</Text>
+    <Text className="card-content">{children}</Text>
     <div className="tags">
       {tags && tags.map(t => <Tag className="tag">{t}</Tag>)}
     </div>

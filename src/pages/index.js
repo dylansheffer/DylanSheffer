@@ -83,9 +83,10 @@ const ProjectsSection = styled.section`
   .projects-container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-gap: 24px;
+    grid-gap: 16px;
     @media (min-width: 600px) {
       grid-template-columns: 1fr 1fr;
+      grid-auto-rows: 300px;
     }
   }
 `;
