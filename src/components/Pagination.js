@@ -5,7 +5,7 @@ import { getRandomProperty } from '../utilities';
 
 const PaginationStyles = styled.div`
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  grid-template-columns: 1fr 2fr 1fr;
   text-align: center;
   margin: 2rem 0;
   justify-items: center;
@@ -22,6 +22,10 @@ const PaginationStyles = styled.div`
   a[disabled] {
     pointer-events: none;
     text-decoration: line-through;
+  }
+
+  @media (max-width: 500px) {
+    grid-template-columns: 1fr;
   }
 `;
 const Message = ({ message: { message, emoji } }) => (
