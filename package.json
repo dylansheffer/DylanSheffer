@@ -6,6 +6,8 @@
   "scripts": {
     "start": "gatsby develop",
     "dev": "npm start",
+    "clean": "gatsby clean",
+    "serve": "gatsby build && gatsby serve",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
