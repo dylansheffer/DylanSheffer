@@ -18,7 +18,7 @@ const NavStyles = styled.nav`
   }
   @media (min-width: 500px) {
     z-index: 10;
-    height: 64px;
+    height: 7rem;
     position: sticky;
     top: 0;
     .content-container {
@@ -34,8 +34,8 @@ const NavStyles = styled.nav`
 const Logo = styled.div`
   background-image: url(${LogoImage});
   background-size: contain;
-  width: 88px;
-  height: 88px;
+  width: 9rem;
+  height: 9rem;
 `;
 
 const LinkContainer = styled.ul`
@@ -49,12 +49,7 @@ const LinkContainer = styled.ul`
 `;
 
 const LinkItem = styled.li`
-  margin: 4px 8px;
-  /* &::after {
-    color: var(--yellow);
-    margin-left: 4px;
-    content: '|';
-  } */
+  margin: 0.5rem 1rem;
   a {
     color: var(--yellow);
     font-family: 'Hack', monospace;

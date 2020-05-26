@@ -17,6 +17,7 @@ const GlobalStyles = createGlobalStyle`
     --surface-dark: #19181A;
     --text: var(--white);
     --shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    --border: 0.25rem solid var(--black);
     --sans-serif: 'Open Sans', sans-serif;
     --monospace: 'Hack', monospace;
   }
@@ -47,8 +48,8 @@ const GlobalStyles = createGlobalStyle`
     padding: 3rem;
     width: 100%;
     line-height: 1.5;
-    border: 3px solid var(--black);
-    border-radius: 4px;
+    border: 0.25rem solid var(--black);
+    border-radius: 0.5rem;
     box-shadow: var(--shadow);
   }
   pre {

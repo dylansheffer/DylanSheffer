@@ -14,8 +14,8 @@ const PaginationStyles = styled.div`
   font-family: var(--monospace);
   background-color: var(--surface-dark);
   box-shadow: var(--shadow);
-  border-radius: 4px;
-  padding: 0 16px;
+  border-radius: 0.5rem;
+  padding: 0 2rem;
   .page-indicator {
     flex: 1 1 0;
   }

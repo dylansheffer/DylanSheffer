@@ -9,13 +9,13 @@ import {
 import { ContentContainer } from './styles/LayoutStyles';
 
 const SocialLinks = styled.nav`
-  padding: 24px 0;
+  padding: 3rem 0;
   display: flex;
   justify-content: center;
   a {
     color: var(--white);
     font-size: 4.5rem;
-    margin: 0 16px;
+    margin: 0 2rem;
   }
 `;
 

@@ -5,8 +5,8 @@ export const Button = styled.button`
   background-color: ${props =>
     props.color ? `var(--${props.color})` : `var(--yellow)`};
   color: var(--main);
-  padding: 8px;
-  border-radius: 4px;
+  padding: 1rem;
+  border-radius: 0.5rem;
   border: 0;
   width: fit-content;
   text-decoration: none;

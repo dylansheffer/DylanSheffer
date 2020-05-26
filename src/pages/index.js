@@ -12,7 +12,7 @@ import { Text } from '../components/mdxComponents/Text';
 const StatusStyle = styled.p`
   font-weight: bold;
   .dot {
-    margin-right: 8px;
+    margin-right: 1rem;
   }
 `;
 
@@ -40,7 +40,7 @@ const Hero = styled.main`
     margin: 0 auto;
     .hero-content {
       display: grid;
-      grid-gap: 16px;
+      grid-gap: 2rem;
       justify-items: center;
       align-items: center;
       h1 {
@@ -56,9 +56,9 @@ const Hero = styled.main`
     @media (min-width: 700px) {
       justify-items: left;
       grid-template-columns: auto 1fr;
-      grid-gap: 24px;
+      grid-gap: 3rem;
       .hero-content {
-        grid-gap: 24px;
+        grid-gap: 3rem;
         justify-items: left;
         align-items: unset;
         h1 {
@@ -73,8 +73,8 @@ const Hero = styled.main`
 `;
 
 const CircleImg = styled(Img)`
-  width: 320px;
-  height: 320px;
+  width: 32rem;
+  height: 32rem;
   border-radius: 50%;
 `;
 
@@ -83,10 +83,10 @@ const ProjectsSection = styled.section`
   .projects-container {
     display: grid;
     grid-template-columns: 1fr;
-    grid-gap: 16px;
+    grid-gap: 2rem;
     @media (min-width: 600px) {
       grid-template-columns: 1fr 1fr;
-      grid-auto-rows: 300px;
+      grid-auto-rows: 30rem;
     }
   }
 `;

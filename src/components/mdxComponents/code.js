@@ -2,10 +2,10 @@ import styled from 'styled-components';
 
 const Code = styled.code`
   background: var(--surface-medium);
-  border: 1px solid var(--text);
-  border-radius: 4px;
-  padding: 2px 6px;
-  font-size: 0.9375em;
+  border: 0.25rem solid var(--black);
+  border-radius: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.9rem;
 `;
 
 export default Code;

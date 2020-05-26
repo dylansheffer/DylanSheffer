@@ -23,7 +23,7 @@ const Tags = styled.div`
     border-radius: 4px;
   }
   .tag {
-    margin-right: 16px;
+    margin-right: 2rem;
   }
 `;
 
@@ -31,11 +31,11 @@ const MiniPostCardStyles = styled.article`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 2fr 1fr;
-  padding: 8px;
+  padding: 1rem;
   background: var(--surface-light);
-  border: 3px solid var(--black);
+  border: var(--border);
   box-shadow: var(--shadow);
-  border-radius: 3px;
+  border-radius: 0.5rem;
   .heading {
     color: var(--text);
     text-decoration: none;
