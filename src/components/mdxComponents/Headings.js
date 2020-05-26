@@ -21,6 +21,8 @@ const markdownContent = {
 };
 
 export const H = styled.h1`
+  display: flex;
+  align-items: center;
   /* Default h1 */
   font-size: ${headingSizes.h1}rem;
   /* Default allow to change */
@@ -33,6 +35,25 @@ export const H = styled.h1`
     :focus {
       text-decoration: underline;
     }
+  }
+  .header-anchor {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    transform: translateX(-120%);
+    text-decoration: none;
+    opacity: 0;
+    path {
+      fill: var(--text);
+    }
+  }
+  &:hover .header-anchor,
+  &:focus .header-anchor {
+    opacity: 1;
+  }
+  .header-anchor:focus,
+  .header-anchor:hover {
+    opacity: 1;
   }
 `;
 
