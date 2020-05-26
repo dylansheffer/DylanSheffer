@@ -64,18 +64,23 @@ const TagsStyle = styled.div`
     background-color: var(--yellow);
     border-radius: 4px;
   }
-  .tag {
+  .tag:not(:last-child) {
     margin-right: 1.5rem;
   }
 `;
 
-export const Tags = ({ tags }) => (
-  <TagsStyle className="tags">
-    {tags &&
-      tags.map(t => (
-        <Tag key={t} className="tag">
-          {t}
-        </Tag>
-      ))}
-  </TagsStyle>
-);
+export const Tags = ({ tags }) => {
+  if (tags) {
+    return (
+      <TagsStyle className="tags">
+        {tags.map(t => (
+          <Tag key={t} className="tag">
+            {t}
+          </Tag>
+        ))}
+      </TagsStyle>
+    );
+  }
+
+  return <></>;
+};
