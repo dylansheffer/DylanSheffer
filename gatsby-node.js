@@ -31,6 +31,9 @@ async function makeProjectsFromMdx({ graphql, actions }) {
         ) {
           edges {
             node {
+              frontmatter {
+                title
+              }
               body
               fields {
                 slug
@@ -51,12 +54,12 @@ async function makeProjectsFromMdx({ graphql, actions }) {
     actions.createPage({
       path: `${project.node.fields.slug}`,
       component: ProjectTemplate,
-      prev,
       collection: `projects`,
-      next,
-      pathPrefix: `/projects`,
       context: {
         slug: project.node.fields.slug,
+        pathPrefix: `/projects`,
+        prev,
+        next,
       },
     });
   });
@@ -74,6 +77,9 @@ async function makePostsFromMdx({ graphql, actions }) {
           edges {
             node {
               body
+              frontmatter {
+                title
+              }
               fields {
                 slug
               }
@@ -93,12 +99,12 @@ async function makePostsFromMdx({ graphql, actions }) {
     actions.createPage({
       path: `${project.node.fields.slug}`,
       component: ProjectTemplate,
-      prev,
       collection: `posts`,
-      next,
-      pathPrefix: `/posts`,
       context: {
         slug: project.node.fields.slug,
+        prev,
+        next,
+        pathPrefix: `/posts`,
       },
     });
   });

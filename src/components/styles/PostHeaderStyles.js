@@ -13,16 +13,6 @@ export const PostHeaderStyles = styled.header`
     grid-auto-flow: column;
     justify-content: start;
     align-items: center;
-    .edit {
-      display: flex;
-      align-items: center;
-      & > *:not(:last-child) {
-        margin-right: 1rem;
-      }
-      .edit-icon {
-        color: var(--text);
-      }
-    }
     & > * {
       :not(:last-child):after {
         content: '#';

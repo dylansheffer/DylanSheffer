@@ -1,13 +1,15 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { IoLogoGithub } from 'react-icons/io';
 
 import Img from '../components/Img';
 import { PostHeaderStyles } from '../components/styles/PostHeaderStyles';
+import { EditDialogStyles } from '../components/styles/EditDialogStyles';
 import { MarkdownHeading } from '../components/mdxComponents/Headings';
 import { Tags } from '../components/Tag';
 import { PostMetaTags } from '../components/MetaTags';
+import { EditOnGitHub } from '../components/EditOnGitHub';
+import { ContentNav } from '../components/ContentNav';
 
 export const pageQuery = graphql`
   query($slug: String!) {
@@ -54,17 +56,26 @@ export default function PostTemplate({ data: { mdx: post }, pageContext }) {
         <div className="post-metadata">
           <time dateTime={post.frontmatter.date}>{post.frontmatter.date}</time>
           <Tags tags={post.frontmatter.tags} />
-          <a
-            className="edit"
-            rel="noopener noreferrer"
-            target="_blank"
-            href={editURL}
-          >
-            <span>Edit Post</span> <IoLogoGithub className="edit-icon" />
-          </a>
+          <EditOnGitHub url={editURL} />
         </div>
       </PostHeaderStyles>
       <MDXRenderer>{post.body}</MDXRenderer>
+      <EditDialogStyles>
+        <p>
+          Find an issue with this post? Think you could clarify, update or add
+          something?
+        </p>
+        <p>
+          All my posts are available to edit on GitHub. Any fix, little or
+          small, is appreciated!
+        </p>
+        <EditOnGitHub url={editURL} />
+      </EditDialogStyles>
+      <ContentNav
+        pathPrefix={pageContext.pathPrefix}
+        prev={pageContext.prev}
+        next={pageContext.next}
+      />
     </>
   );
 }

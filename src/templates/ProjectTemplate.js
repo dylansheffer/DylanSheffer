@@ -1,13 +1,14 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
-import { IoLogoGithub } from 'react-icons/io';
 
 import Img from '../components/Img';
 import { PostHeaderStyles } from '../components/styles/PostHeaderStyles';
 import { MarkdownHeading } from '../components/mdxComponents/Headings';
 import { Tags } from '../components/Tag';
 import { PostMetaTags } from '../components/MetaTags';
+import { ContentNav } from '../components/ContentNav';
+import { EditOnGitHub } from '../components/EditOnGitHub';
 
 export const pageQuery = graphql`
   query($slug: String!) {
@@ -59,17 +60,15 @@ export default function ProjectTemplate({
             {project.frontmatter.date}
           </time>
           <Tags tags={project.frontmatter.tags} />
-          <a
-            className="edit"
-            rel="noopener noreferrer"
-            target="_blank"
-            href={editURL}
-          >
-            <span>Edit Post</span> <IoLogoGithub className="edit-icon" />
-          </a>
+          <EditOnGitHub url={editURL} />
         </div>
       </PostHeaderStyles>
       <MDXRenderer>{project.body}</MDXRenderer>
+      <ContentNav
+        pathPrefix={pageContext.pathPrefix}
+        prev={pageContext.prev}
+        next={pageContext.next}
+      />
     </>
   );
 }
