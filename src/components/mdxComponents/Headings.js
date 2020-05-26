@@ -58,6 +58,7 @@ export const H = styled.h1`
 `;
 
 export const MarkdownHeading = styled(H)`
+  display: block;
   color: var(--yellow);
   &:before {
     content: '${({ as }) => (as ? markdownContent[as] : markdownContent.h1)}';
