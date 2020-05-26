@@ -28,8 +28,6 @@ const Status = ({ available }) => (
   </>
 );
 
-const Post = styled.article``;
-
 const Hero = styled.main`
   background-color: var(--surface-light);
   width: 100%;
