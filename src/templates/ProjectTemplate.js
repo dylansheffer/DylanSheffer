@@ -4,6 +4,7 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import Img from '../components/Img';
 import { PostHeaderStyles } from '../components/styles/PostHeaderStyles';
+import { EditDialogStyles } from '../components/styles/EditDialogStyles';
 import { MarkdownHeading } from '../components/mdxComponents/Headings';
 import { Tags } from '../components/Tag';
 import { PostMetaTags } from '../components/MetaTags';
@@ -64,6 +65,17 @@ export default function ProjectTemplate({
         </div>
       </PostHeaderStyles>
       <MDXRenderer>{project.body}</MDXRenderer>
+      <EditDialogStyles>
+        <p>
+          Find an issue with this post? Think you could clarify, update or add
+          something?
+        </p>
+        <p>
+          All my posts are available to edit on GitHub. Any fix, little or
+          small, is appreciated!
+        </p>
+        <EditOnGitHub url={editURL} />
+      </EditDialogStyles>
       <ContentNav
         pathPrefix={pageContext.pathPrefix}
         prev={pageContext.prev}
