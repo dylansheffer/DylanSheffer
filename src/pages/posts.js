@@ -55,7 +55,7 @@ export const pageQuery = graphql`
             image {
               ...ImageFields
             }
-            date
+            date(formatString: "MMMM DD, YYYY")
           }
         }
       }

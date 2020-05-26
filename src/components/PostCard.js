@@ -105,14 +105,7 @@ export const PostCard = ({
         </Link>
         <DatePublished>
           <span className="visually-hidden">Date Published:</span>
-          <time dateTime={publishedDate}>
-            {new Date(publishedDate).toLocaleDateString(undefined, {
-              weekday: 'long',
-              year: 'numeric',
-              month: 'long',
-              day: 'numeric',
-            })}
-          </time>
+          <time dateTime={publishedDate}>{publishedDate}</time>
         </DatePublished>
       </div>
       <Text>{children}</Text>
