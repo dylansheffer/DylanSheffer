@@ -1,11 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faGithub,
-  faTwitter,
-  faLinkedin,
-} from '@fortawesome/free-brands-svg-icons';
+import { FaGithub, FaTwitter, FaLinkedin } from 'react-icons/fa';
 import { ContentContainer } from './styles/LayoutStyles';
 
 const SocialLinks = styled.nav`
@@ -36,19 +31,19 @@ export const Footer = () => (
           href="http://github.com/dylansheffer"
           aria-label="Dylan Sheffer's GitHub"
         >
-          <FontAwesomeIcon icon={faGithub} />
+          <FaGithub />
         </a>
         <a
           href="http://twitter.com/dylansheffer"
           aria-label="Dylan Sheffer's Twitter"
         >
-          <FontAwesomeIcon icon={faTwitter} />
+          <FaTwitter />
         </a>
         <a
           href="https://www.linkedin.com/in/dylansheffer/"
           aria-label="Dylan Sheffer's LinkedIn"
         >
-          <FontAwesomeIcon icon={faLinkedin} />
+          <FaLinkedin />
         </a>
       </SocialLinks>
       <div className="copyright">
