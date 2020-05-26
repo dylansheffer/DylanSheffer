@@ -3,29 +3,8 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 import { Text } from './mdxComponents/Text';
 import { H } from './mdxComponents/Headings';
-import { Tag } from './Tag';
+import { Tag, Tags } from './Tag';
 import Img from './Img';
-
-const Tags = styled.div`
-  display: flex;
-  overflow-x: auto;
-  scrollbar-width: thin;
-  scrollbar-color: var(--yellow) transparent;
-  max-width: calc(100vw - 4rem);
-  &::-webkit-scrollbar {
-    height: 4px;
-  }
-  &::-webkit-scrollbar-track {
-    background: transparent;
-  }
-  &::-webkit-scrollbar-thumb {
-    background-color: var(--yellow);
-    border-radius: 4px;
-  }
-  .tag {
-    margin-right: 1.5rem;
-  }
-`;
 
 const MiniPostCardStyles = styled.article`
   display: grid;
@@ -79,14 +58,7 @@ export const MiniPostCard = ({ title, tags, children, link, ...rest }) => (
     <div className="card-content">
       <Text>{children}</Text>
     </div>
-    <Tags className="tags">
-      {tags &&
-        tags.map(t => (
-          <Tag key={t} className="tag">
-            {t}
-          </Tag>
-        ))}
-    </Tags>
+    <Tags tags={tags} />
   </MiniPostCardStyles>
 );
 
@@ -144,14 +116,7 @@ export const PostCard = ({
         </DatePublished>
       </div>
       <Text>{children}</Text>
-      <Tags className="tags">
-        {tags &&
-          tags.map(t => (
-            <Tag key={t} className="tag">
-              {t}
-            </Tag>
-          ))}
-      </Tags>
+      <Tags tags={tags} />
     </div>
   </PostCardStyles>
 );

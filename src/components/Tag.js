@@ -46,3 +46,35 @@ export const Tag = ({ color, children, ...rest }) => {
     </TagStyles>
   );
 };
+
+const TagsStyle = styled.div`
+  display: flex;
+  overflow-x: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--yellow) transparent;
+  max-width: calc(100vw - 4rem);
+  &::-webkit-scrollbar {
+    height: 4px;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    background-color: var(--yellow);
+    border-radius: 4px;
+  }
+  .tag {
+    margin-right: 1.5rem;
+  }
+`;
+
+export const Tags = ({ tags }) => (
+  <TagsStyle className="tags">
+    {tags &&
+      tags.map(t => (
+        <Tag key={t} className="tag">
+          {t}
+        </Tag>
+      ))}
+  </TagsStyle>
+);
