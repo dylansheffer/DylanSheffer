@@ -79,7 +79,12 @@ export const MiniPostCard = ({ title, tags, children, link, ...rest }) => (
       <Text>{children}</Text>
     </div>
     <Tags className="tags">
-      {tags && tags.map(t => <Tag className="tag">{t}</Tag>)}
+      {tags &&
+        tags.map(t => (
+          <Tag key={t} className="tag">
+            {t}
+          </Tag>
+        ))}
     </Tags>
   </MiniPostCardStyles>
 );
@@ -136,7 +141,12 @@ export const PostCard = ({
       </div>
       <Text>{children}</Text>
       <Tags className="tags">
-        {tags && tags.map(t => <Tag className="tag">{t}</Tag>)}
+        {tags &&
+          tags.map(t => (
+            <Tag key={t} className="tag">
+              {t}
+            </Tag>
+          ))}
       </Tags>
     </div>
   </PostCardStyles>
