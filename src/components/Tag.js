@@ -9,9 +9,10 @@ const TagStyles = styled.span`
   align-items: center;
   p {
     word-wrap: normal;
+    font-size: 1.75rem;
   }
   .dot {
-    margin-right: 1rem;
+    margin-right: 0.75rem;
   }
 `;
 

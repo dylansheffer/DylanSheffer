@@ -23,7 +23,7 @@ const Tags = styled.div`
     border-radius: 4px;
   }
   .tag {
-    margin-right: 2rem;
+    margin-right: 1.5rem;
   }
 `;
 
