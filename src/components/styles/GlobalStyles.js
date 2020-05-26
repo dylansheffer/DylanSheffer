@@ -26,10 +26,15 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
     font-size: 10px;
   }
+  @media (max-width: 500px) {
+    html {
+      font-size: 9px;
+    }
+  }
   body {
     min-height: 100vh;
     font-size: 2rem;
-    background-color: var(--surface-medium);
+    background-color: var(--surface-light);
     color: var(--text);
   }
   *, *:before, *:after {

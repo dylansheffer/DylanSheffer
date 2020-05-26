@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { graphql, Link } from 'gatsby';
-import Img from 'gatsby-image';
+import Img from '../components/Img';
 import { ContentContainer } from '../components/styles/LayoutStyles';
 import { Dot } from '../components/Dot';
 import { Button } from '../components/Button';
@@ -55,7 +55,7 @@ const Hero = styled.main`
     }
     @media (min-width: 700px) {
       justify-items: left;
-      grid-template-columns: auto 1fr;
+      grid-template-columns: 32rem 1fr;
       grid-gap: 3rem;
       .hero-content {
         grid-gap: 3rem;
@@ -73,9 +73,9 @@ const Hero = styled.main`
 `;
 
 const CircleImg = styled(Img)`
-  width: 32rem;
-  height: 32rem;
   border-radius: 50%;
+  width: 100%;
+  max-width: 32rem;
 `;
 
 const ProjectsSection = styled.section`
@@ -109,7 +109,7 @@ const Site = ({ data: { me, projects }, ...props }) => (
   <>
     <Hero>
       <ContentContainer>
-        <CircleImg fixed={me.childImageSharp.fixed} />
+        <CircleImg image={me} />
         <div className="hero-content">
           <H>Dylan Sheffer</H>
           <p>
@@ -178,8 +178,8 @@ export const query = graphql`
     }
     me: file(relativePath: { eq: "me.jpg" }) {
       childImageSharp {
-        fixed(width: 320, height: 320) {
-          ...GatsbyImageSharpFixed
+        fluid(maxWidth: 320) {
+          ...GatsbyImageSharpFluid
         }
       }
     }
