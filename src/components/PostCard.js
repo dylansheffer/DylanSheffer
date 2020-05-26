@@ -11,6 +11,7 @@ const Tags = styled.div`
   overflow-x: auto;
   scrollbar-width: thin;
   scrollbar-color: var(--yellow) transparent;
+  max-width: calc(100vw - 4rem);
   &::-webkit-scrollbar {
     height: 4px;
   }
@@ -95,6 +96,9 @@ const PostCardStyles = styled.article`
   grid-gap: 3rem;
   margin: 5rem 0;
   border-block-end: 1px solid var(--yellow);
+  .image {
+    max-width: calc(100vw - 3rem);
+  }
   h2 {
     margin-top: 0;
   }
