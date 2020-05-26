@@ -66,7 +66,7 @@ const PostCardStyles = styled.article`
   display: grid;
   grid-template-columns: 30% 1fr;
   grid-gap: 3rem;
-  margin: 5rem 0;
+  padding: 5rem 0;
   border-block-end: 1px solid var(--yellow);
   .image {
     max-width: calc(100vw - 3rem);

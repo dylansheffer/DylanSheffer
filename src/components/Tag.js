@@ -10,6 +10,7 @@ const TagStyles = styled.span`
   p {
     word-wrap: normal;
     font-size: 1.75rem;
+    margin: 0;
   }
   .dot {
     margin-right: 0.75rem;

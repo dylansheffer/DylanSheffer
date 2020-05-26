@@ -7,7 +7,6 @@ const PaginationStyles = styled.div`
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   text-align: center;
-  margin: 2rem 0;
   justify-items: center;
   align-items: center;
 
