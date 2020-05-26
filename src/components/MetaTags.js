@@ -13,7 +13,6 @@ function getBaseURL() {
 const baseURL = getBaseURL();
 
 export function PostMetaTags({ post }) {
-  console.log(post);
   const canonical = pathJoin('https://dylansheffer.com', post.fields.slug);
   const url = pathJoin(baseURL, post.fields.slug);
   // const thumbnailData = {
