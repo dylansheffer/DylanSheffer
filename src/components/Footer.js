@@ -14,7 +14,7 @@ const SocialLinks = styled.nav`
   justify-content: center;
   a {
     color: var(--white);
-    font-size: 5rem;
+    font-size: 4.5rem;
     margin: 0 16px;
   }
 `;
