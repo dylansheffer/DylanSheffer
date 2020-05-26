@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 import { Text } from './mdxComponents/Text';
 import { H } from './mdxComponents/Headings';
-import { Tag, Tags } from './Tag';
+import { Tags } from './Tag';
 import Img from './Img';
 
 const MiniPostCardStyles = styled.article`
