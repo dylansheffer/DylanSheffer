@@ -58,7 +58,7 @@ export default function ContactPage({ pageContext, path }) {
         name="contact"
         method="post"
         data-netlify-honeypot="bot-field"
-        data-netlify-recaptcha="true"
+        // data-netlify-recaptcha="true"
         data-netlify="true"
       >
         <input type="hidden" name="bot-field" />
@@ -76,10 +76,10 @@ export default function ContactPage({ pageContext, path }) {
           <label htmlFor="message">Message</label>
           <textarea id="message" name="message"></textarea>
         </div>
-        <div
+        {/* <div
           className="g-recaptcha"
           data-sitekey="6Ldv2fwUAAAAAAUgSJSKy1gHYHw0EH3OZhP8yImA"
-        ></div>
+        ></div> */}
         <div className="input-container">
           <input type="submit" value="Send Message" className="button" />
         </div>
