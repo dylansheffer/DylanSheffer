@@ -20,7 +20,9 @@ function Layout({ path, children, ...rest }) {
       </Helmet>
       <LayoutStyles>
         <Nav />
-        <MDXProvider components={mdxComponents}>{children}</MDXProvider>
+        <MDXProvider components={mdxComponents}>
+          <main>{children}</main>
+        </MDXProvider>
         <Footer />
       </LayoutStyles>
     </>
