@@ -11,7 +11,8 @@ const ContactPageStyle = styled.section`
     grid-template-columns: 1fr;
     grid-row-gap: 3rem;
     textarea {
-      font-family: var(--sans-serif);
+      min-height: 20rem;
+      height: 100%;
     }
     label {
       font-size: 1.1em;
@@ -21,6 +22,9 @@ const ContactPageStyle = styled.section`
     }
     input:not([type='submit']),
     textarea {
+      color: var(--black);
+      background-color: var(--white);
+      font-family: var(--sans-serif);
       border-radius: 0.3333rem;
       border: 0;
       line-height: 1.77778;
