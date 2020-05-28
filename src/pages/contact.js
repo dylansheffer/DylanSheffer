@@ -1,58 +1,54 @@
 import React from 'react';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
-import { MarkdownHeading } from '../components/mdxComponents/Headings';
+import { MarkdownHeading, H } from '../components/mdxComponents/Headings';
+import { Text } from '../components/mdxComponents/Text';
+import { Code } from '../components/mdxComponents/Code';
+import { Button } from '../components/Button';
 
 const ContactPageStyle = styled.section`
-  display: flex;
-  flex-direction: column;
-  /* align-items: center; */
-
-  label {
-    font-size: 20px;
-    font-weight: 400;
-    margin-bottom: 8px;
-  }
-
-  input:not([type='submit']),
-  textarea {
-    font-size: 18px;
-    line-height: 1.5em;
-    width: 300px;
-
-    @media (min-width: 700px) {
-      width: 500px;
+  form {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 3rem;
+    textarea {
+      font-family: var(--sans-serif);
     }
-
-    @media (min-width: 775px) {
-      width: 350px;
+    label {
+      font-family: var(--monospace);
+      display: block;
+      margin-bottom: 1rem;
     }
-
-    @media (min-width: 850px) {
-      width: 600px;
+    input:not([type='submit']),
+    textarea {
+      width: 100%;
     }
-  }
-
-  textarea {
-    font-family: 'Open Sans', sans-serif;
-  }
-
-  input[type='submit'] {
-    border: 0px;
-    max-width: 30rem;
-  }
-
-  .input-container {
-    display: flex;
-    flex-direction: column;
-    margin: 16px 0;
+    .two-column {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column-gap: 3rem;
+      @media (max-width: 550px) {
+        grid-template-columns: 1fr;
+        grid-row-gap: 3rem;
+      }
+    }
   }
 `;
 
 export default function ContactPage({ pageContext, path }) {
   return (
     <ContactPageStyle>
-      <MarkdownHeading>Say Hey 👋</MarkdownHeading>
+      <MarkdownHeading>Contact</MarkdownHeading>
+      <Text>
+        My preferred method of contact is via{' '}
+        <a href="mailto:dylan@dylansheffer.com">Email</a> or the form below, but
+        I am also reachable on{' '}
+        <a href="https://twitter.com/dylansheffer">Twitter</a>,{' '}
+        <a href="https://linkedin.com/in/dylansheffer">LinkedIn</a>, and on the{' '}
+        <a href="http://slack.cville.co/">CVille</a> and{' '}
+        <a href="https://www.757dev.org/">757Dev</a> Slack channels (
+        <Code as="span">@DylanSheffer</Code>).
+      </Text>
       <form
         className="contact-form"
         name="contact"
@@ -63,16 +59,18 @@ export default function ContactPage({ pageContext, path }) {
       >
         <input type="hidden" name="bot-field" />
         <input type="hidden" name="form-name" value="contact" />
-        <div className="input-container">
-          {/* Replace eslint rule with the updated version https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/label-has-for.md */}
-          <label htmlFor="name">Name</label>
-          <input type="text" id="name" name="name" />
+        {/* Replace eslint rule with the updated version https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/label-has-for.md */}
+        <div className="two-column">
+          <div>
+            <label htmlFor="name">Name</label>
+            <input type="text" id="name" name="name" />
+          </div>
+          <div>
+            <label htmlFor="email">Email</label>
+            <input type="email" id="email" name="email" />
+          </div>
         </div>
-        <div className="input-container">
-          <label htmlFor="email">Email</label>
-          <input type="email" id="email" name="email" />
-        </div>
-        <div className="input-container">
+        <div>
           <label htmlFor="message">Message</label>
           <textarea id="message" name="message"></textarea>
         </div>
@@ -80,9 +78,7 @@ export default function ContactPage({ pageContext, path }) {
           className="g-recaptcha"
           data-sitekey="6Ldv2fwUAAAAAAUgSJSKy1gHYHw0EH3OZhP8yImA"
         ></div> */}
-        <div className="input-container">
-          <input type="submit" value="Send Message" className="button" />
-        </div>
+        <Button as="input" type="submit" value="Send Message" />
       </form>
     </ContactPageStyle>
   );
