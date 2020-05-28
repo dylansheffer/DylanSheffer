@@ -37,7 +37,7 @@ export default function AboutPage({ data, pageContext, path }) {
           Charlottesville, VA.
         </Text>
       </div>
-      <H as="h2">A little about me</H>
+      <H as="h2">A little bit about me</H>
       <Text>
         I have been{' '}
         <a href="https://web.archive.org/web/20160224114658/http://www.dylansheffer.com/">
@@ -62,7 +62,7 @@ export default function AboutPage({ data, pageContext, path }) {
         on my <Link to="/contact">contact page</Link>!
       </Text>
       {/* <H as="h3">
-        A little <em>more</em> about me
+        A little bit <em>more</em> about me
       </H>
       <Text></Text> */}
     </AboutPageStyle>
