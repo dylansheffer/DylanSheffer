@@ -19,7 +19,9 @@ export default function PostsPage({
       {console.log(pageContext)}
       <Helmet>
         <title>
-          {`Blog - Page ${pageContext.currentPage} - Dylan Sheffer`}
+          {`Blog - Page ${
+            pageContext.currentPage ? pageContext.currentPage : 1
+          } - Dylan Sheffer`}
         </title>
       </Helmet>
       <div>
