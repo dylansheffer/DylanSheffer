@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { graphql } from 'gatsby';
-import { MarkdownHeading, H } from '../components/mdxComponents/Headings';
+import { MarkdownHeading } from '../components/mdxComponents/Headings';
 import { Text } from '../components/mdxComponents/Text';
 import { Code } from '../components/mdxComponents/Code';
 import { Button } from '../components/Button';
@@ -83,5 +82,3 @@ export default function ContactPage({ pageContext, path }) {
     </ContactPageStyle>
   );
 }
-
-// export const pageQuery = graphql``;
