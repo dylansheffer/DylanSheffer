@@ -1,9 +1,9 @@
 import React from 'react';
 import { H } from './Headings';
 import { Text } from './Text';
-import Code from './code';
-import Table from './table';
-import Pre from './pre';
+import { Code } from './Code';
+import { Table } from './Table';
+import { Pre } from './Pre';
 
 /* eslint-disable */
 export default {

@@ -1,5 +1,3 @@
 import styled from 'styled-components';
 
-const Pre = styled.pre``;
-
-export default Pre;
+export const Pre = styled.pre``;

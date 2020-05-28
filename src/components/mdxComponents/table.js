@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-const Table = styled.table`
+export const Table = styled.table`
   border: 1px solid var(--grey);
   border-radius: 0.5rem;
   padding: 1rem;
@@ -11,5 +11,3 @@ const Table = styled.table`
     padding: 10px;
   }
 `;
-
-export default Table;
