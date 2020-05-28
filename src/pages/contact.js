@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Helmet } from 'react-helmet';
 import { MarkdownHeading } from '../components/mdxComponents/Headings';
 import { Text } from '../components/mdxComponents/Text';
 import { Code } from '../components/mdxComponents/Code';
@@ -45,6 +46,9 @@ const ContactPageStyle = styled.section`
 export default function ContactPage({ pageContext, path }) {
   return (
     <ContactPageStyle>
+      <Helmet>
+        <title>Contact - Dylan Sheffer</title>
+      </Helmet>
       <MarkdownHeading>Contact</MarkdownHeading>
       <Text>
         My preferred method of contact is via{' '}
