@@ -1,13 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import { graphql, Link } from 'gatsby';
-import Img from '../components/Img';
 import { ContentContainer } from '../components/styles/LayoutStyles';
 import { Dot } from '../components/Dot';
 import { Button } from '../components/Button';
 import { H, MarkdownHeading } from '../components/mdxComponents/Headings';
 import { MiniPostCard } from '../components/PostCard';
 import { Text } from '../components/mdxComponents/Text';
+import { CircleImg } from '../components/CircleImg';
 
 const StatusStyle = styled.p`
   font-weight: bold;
@@ -68,12 +68,6 @@ const Hero = styled.main`
       }
     }
   }
-`;
-
-const CircleImg = styled(Img)`
-  border-radius: 50%;
-  width: 100%;
-  max-width: 32rem;
 `;
 
 const ProjectsSection = styled.section`

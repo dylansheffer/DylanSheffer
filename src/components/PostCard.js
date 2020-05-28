@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import { Text } from './mdxComponents/Text';
 import { H } from './mdxComponents/Headings';
 import { Tags } from './Tag';
-import Img from './Img';
+import { MyImg } from './MyImg';
 
 const MiniPostCardStyles = styled.article`
   display: grid;
@@ -96,7 +96,7 @@ export const PostCard = ({
 }) => (
   <PostCardStyles {...rest}>
     <Link to={link} className="image">
-      <Img image={image} />
+      <MyImg image={image} />
     </Link>
     <div>
       <div>

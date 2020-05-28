@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
-import Img from '../components/Img';
+import { MyImg } from '../components/MyImg';
 import { PostHeaderStyles } from '../components/styles/PostHeaderStyles';
 import { EditDialogStyles } from '../components/styles/EditDialogStyles';
 import { MarkdownHeading } from '../components/mdxComponents/Headings';
@@ -52,7 +52,10 @@ export default function ProjectTemplate({
 
   return (
     <>
-      <Img image={project.frontmatter.image} alt={project.frontmatter.title} />
+      <MyImg
+        image={project.frontmatter.image}
+        alt={project.frontmatter.title}
+      />
       <PostHeaderStyles>
         <PostMetaTags post={project} />
         <MarkdownHeading>{project.frontmatter.title}</MarkdownHeading>

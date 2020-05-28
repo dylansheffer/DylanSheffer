@@ -2,7 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
-import Img from '../components/Img';
+import { MyImg } from '../components/MyImg';
 import { PostHeaderStyles } from '../components/styles/PostHeaderStyles';
 import { EditDialogStyles } from '../components/styles/EditDialogStyles';
 import { MarkdownHeading } from '../components/mdxComponents/Headings';
@@ -49,7 +49,7 @@ export default function PostTemplate({ data: { mdx: post }, pageContext }) {
 
   return (
     <>
-      <Img image={post.frontmatter.image} alt={post.frontmatter.title} />
+      <MyImg image={post.frontmatter.image} alt={post.frontmatter.title} />
       <PostHeaderStyles>
         <PostMetaTags post={post} />
         <MarkdownHeading>{post.frontmatter.title}</MarkdownHeading>

@@ -1,7 +1,7 @@
 import React from 'react';
 import Img from 'gatsby-image';
 
-export default function MyImg({ image, alt, ...theRest }) {
+export function MyImg({ image, alt, ...theRest }) {
   if (!image) {
     return null;
   }
