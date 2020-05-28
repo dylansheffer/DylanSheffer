@@ -14,12 +14,16 @@ const ContactPageStyle = styled.section`
       font-family: var(--sans-serif);
     }
     label {
+      font-size: 1.1em;
       font-family: var(--monospace);
       display: block;
       margin-bottom: 1rem;
     }
     input:not([type='submit']),
     textarea {
+      border-radius: 0.3333rem;
+      border: 0;
+      line-height: 1.77778;
       width: 100%;
     }
     .two-column {
