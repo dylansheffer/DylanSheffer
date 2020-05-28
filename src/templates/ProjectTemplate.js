@@ -7,7 +7,7 @@ import { PostHeaderStyles } from '../components/styles/PostHeaderStyles';
 import { EditDialogStyles } from '../components/styles/EditDialogStyles';
 import { MarkdownHeading } from '../components/mdxComponents/Headings';
 import { Tags } from '../components/Tag';
-import { PostMetaTags } from '../components/MetaTags';
+import { ProjectMetaTags } from '../components/MetaTags';
 import { ContentNav } from '../components/ContentNav';
 import { EditOnGitHub } from '../components/EditOnGitHub';
 
@@ -57,7 +57,7 @@ export default function ProjectTemplate({
         alt={project.frontmatter.title}
       />
       <PostHeaderStyles>
-        <PostMetaTags post={project} />
+        <ProjectMetaTags project={project} />
         <MarkdownHeading>{project.frontmatter.title}</MarkdownHeading>
         <div className="post-metadata">
           <time dateTime={project.frontmatter.date}>

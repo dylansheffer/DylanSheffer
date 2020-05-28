@@ -18,9 +18,9 @@ export default function ProjectsPage({
     >
       <Helmet>
         <title>
-          {`Projects - Page ${
+          {`Page ${
             pageContext.currentPage ? pageContext.currentPage : 1
-          } - Dylan Sheffer`}
+          } - Projects - Dylan Sheffer`}
         </title>
       </Helmet>
       <div>
