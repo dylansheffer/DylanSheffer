@@ -91,6 +91,9 @@ const CTASection = styled.section`
     align-items: center;
     justify-content: center;
     text-align: center;
+    h1 {
+      margin: 0;
+    }
     p {
       line-height: 2;
     }
@@ -137,11 +140,12 @@ const Site = ({ data: { me, projects }, ...props }) => (
       <ContentContainer>
         <H>Let's Build Something Together</H>
         <Text>
-          Nunc vel vehicula ante. Curabitur cursus felis in mi sodales, eget
-          porta magna viverra. Cras molestie sit amet ante quis tempus.{' '}
+          Whether you need someone to help you launch an idea, make your
+          application more accessible, or just provide some assistance on
+          finishing a project, I am here to help! 😄
         </Text>
         <Button as={Link} to="/contact">
-          Get a Quote
+          Let's Talk
         </Button>
       </ContentContainer>
     </CTASection>
