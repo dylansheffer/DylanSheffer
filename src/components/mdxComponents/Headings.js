@@ -21,8 +21,6 @@ const markdownContent = {
 };
 
 export const H = styled.h1`
-  display: flex;
-  align-items: center;
   /* Default h1 */
   font-size: ${headingSizes.h1}rem;
   /* Default allow to change */
@@ -43,6 +41,7 @@ export const H = styled.h1`
     transform: translateX(-120%);
     text-decoration: none;
     opacity: 0;
+    height: 100%;
     path {
       fill: var(--text);
     }
