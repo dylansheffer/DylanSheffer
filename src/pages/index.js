@@ -81,6 +81,10 @@ const ProjectsSection = styled.section`
       grid-auto-rows: 30rem;
     }
   }
+  .view-all {
+    margin: 2rem 0;
+    display: block;
+  }
 `;
 
 const CTASection = styled.section`
@@ -134,6 +138,9 @@ const Site = ({ data: { me, projects }, ...props }) => (
             )
           )}
         </div>
+        <Link className="view-all" to="/projects">
+          View All Projects
+        </Link>
       </ContentContainer>
     </ProjectsSection>
     <CTASection>
@@ -159,6 +166,7 @@ export const query = graphql`
     projects: allMdx(
       filter: { fields: { collection: { eq: "projects" } } }
       sort: { fields: [frontmatter___date], order: DESC }
+      limit: 4
     ) {
       nodes {
         excerpt(pruneLength: 100)
