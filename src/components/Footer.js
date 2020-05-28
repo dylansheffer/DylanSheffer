@@ -6,6 +6,7 @@ import { ContentContainer } from './styles/LayoutStyles';
 const SocialLinks = styled.nav`
   padding: 3rem 0;
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   a {
     color: var(--white);
