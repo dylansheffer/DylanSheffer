@@ -4,7 +4,6 @@ import { graphql, Link } from 'gatsby';
 import { MarkdownHeading, H } from '../components/mdxComponents/Headings';
 import { Text } from '../components/mdxComponents/Text';
 import { CircleImg } from '../components/CircleImg';
-import { MyImg } from '../components/MyImg';
 
 const AboutPageStyle = styled.section`
   .hero {
@@ -18,9 +17,6 @@ const AboutPageStyle = styled.section`
     }
     @media (max-width: 800px) {
       grid-template-columns: 1fr;
-      .image {
-        /* justify-self: center; */
-      }
     }
   }
 `;
@@ -61,7 +57,7 @@ export default function AboutPage({ data, pageContext, path }) {
         on my <Link to="/contact">contact page</Link>!
       </Text>
       {/* <H as="h3">
-        A little <em> more </em> about me
+        A little <em>more</em> about me
       </H>
       <Text></Text> */}
     </AboutPageStyle>
