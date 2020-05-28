@@ -16,6 +16,12 @@ const AboutPageStyle = styled.section`
       width: 250px;
       height: 250px;
     }
+    @media (max-width: 800px) {
+      grid-template-columns: 1fr;
+      .image {
+        /* justify-self: center; */
+      }
+    }
   }
 `;
 

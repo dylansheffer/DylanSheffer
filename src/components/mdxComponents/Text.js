@@ -15,4 +15,7 @@ export const Text = styled.p`
     font-style: italic;
     font-weight: lighter;
   }
+  @media (max-width: 500px) {
+    font-size: ${props => (props.large ? `1.25em` : `1em`)};
+  }
 `;
