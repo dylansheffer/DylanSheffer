@@ -14,7 +14,7 @@ export default function ProjectsPage({
       title="Projects"
       currentPage={pageContext.currentPage}
       totalCount={projects.totalCount}
-      pathPrefix={path}
+      pathPrefix="/projects/"
     >
       <Helmet>
         <title>

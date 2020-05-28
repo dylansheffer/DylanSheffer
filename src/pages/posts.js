@@ -13,7 +13,7 @@ export default function PostsPage({
     <PostPageLayout
       currentPage={pageContext.currentPage}
       totalCount={posts.totalCount}
-      pathPrefix={path}
+      pathPrefix="/posts/"
       title="Blog"
     >
       {console.log(pageContext)}

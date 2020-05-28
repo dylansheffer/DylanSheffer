@@ -66,7 +66,7 @@ export default function Pagination({
         disabled={prevPage <= 0 ? true : null}
         to={`${pathPrefix}${prevPage}`}
       >
-        {prevPage < totalPages ? (
+        {prevPage === 0 ? (
           <Message message={getRandomMessage(noPreviousMessages)} />
         ) : (
           <Message message={{ message: `← Previous ${postsPerPage}` }} />
