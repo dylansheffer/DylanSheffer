@@ -49,7 +49,7 @@ export default function AboutPage({ data, pageContext, path }) {
       </Text>
       <Text>
         My primary focus right now is building accessible applications with{' '}
-        <strong>React.js</strong>, <strong>Gatsby</strong>,{' '}
+        <strong>React.js</strong>, <strong>Gatsby</strong>, and{' '}
         <strong>AWS Lambda functions</strong>.{' '}
       </Text>
       <Text>
