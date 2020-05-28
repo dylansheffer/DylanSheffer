@@ -66,7 +66,7 @@ async function makeProjectsFromMdx({ graphql, actions }) {
 }
 
 async function makePostsFromMdx({ graphql, actions }) {
-  const ProjectTemplate = path.resolve('./src/templates/PostTemplate.js');
+  const PostTemplate = path.resolve('./src/templates/PostTemplate.js');
   const { errors, data } = await graphql(
     `
       query ALL_POSTS_QUERY {
@@ -93,15 +93,15 @@ async function makePostsFromMdx({ graphql, actions }) {
     throw new Error('There was an error', errors);
   }
   const posts = data.allMdx.edges;
-  posts.forEach((project, i) => {
+  posts.forEach((post, i) => {
     const prev = posts[i - 1];
     const next = posts[i + 1];
     actions.createPage({
-      path: `${project.node.fields.slug}`,
-      component: ProjectTemplate,
+      path: `${post.node.fields.slug}`,
+      component: PostTemplate,
       collection: `posts`,
       context: {
-        slug: project.node.fields.slug,
+        slug: post.node.fields.slug,
         prev,
         next,
         pathPrefix: `/posts`,
@@ -153,6 +153,13 @@ exports.createPages = async ({ actions, graphql }) => {
       collection: `projects`,
       pathPrefix: `/projects/`,
       component: path.resolve('./src/pages/projects.js'),
+    }),
+    paginate({
+      graphql,
+      actions,
+      collection: `posts`,
+      pathPrefix: `/posts/`,
+      component: path.resolve('./src/pages/posts.js'),
     }),
   ]);
 };
