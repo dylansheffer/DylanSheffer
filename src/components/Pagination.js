@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 import { getRandomProperty } from '../utilities';
 
-const PaginationStyles = styled.div`
+const PaginationStyles = styled.nav`
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   text-align: center;
