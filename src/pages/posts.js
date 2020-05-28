@@ -1,5 +1,6 @@
 import React from 'react';
 import { graphql, Link } from 'gatsby';
+import { Helmet } from 'react-helmet';
 import { PostPageLayout } from '../components/styles/LayoutStyles';
 import { PostCard } from '../components/PostCard';
 
@@ -15,6 +16,12 @@ export default function PostsPage({
       pathPrefix={path}
       title="Blog"
     >
+      {console.log(pageContext)}
+      <Helmet>
+        <title>
+          {`Blog - Page ${pageContext.currentPage} - Dylan Sheffer`}
+        </title>
+      </Helmet>
       <div>
         {posts.edges.map(({ node: post }) => (
           <PostCard
