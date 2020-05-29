@@ -16,17 +16,18 @@ const NavStyles = styled.nav`
       margin-top: 1rem;
     }
   }
-  @media (min-width: 500px) {
+  @media (min-width: 550px) {
     z-index: 10;
     height: 7rem;
     position: sticky;
     top: 0;
     .content-container {
       flex-direction: row;
-    }
-    .logo {
-      position: absolute;
-      top: 25%;
+      .logo {
+        margin-top: 0;
+        position: absolute;
+        top: 5%;
+      }
     }
   }
 `;
