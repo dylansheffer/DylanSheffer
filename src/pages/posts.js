@@ -47,7 +47,7 @@ export const pageQuery = graphql`
     allMdx(
       filter: { fields: { collection: { eq: "posts" } } }
       sort: { fields: [frontmatter___date], order: DESC }
-      limit: 10
+      limit: 3
       skip: $skip
     ) {
       totalCount

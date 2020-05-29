@@ -128,7 +128,8 @@ async function paginate({
   );
 
   const { totalCount } = data.allMdx;
-  const pages = Math.ceil(totalCount / 10);
+  const postsPerPage = 3;
+  const pages = Math.ceil(totalCount / postsPerPage);
 
   Array.from({ length: pages }).forEach((_, i) => {
     // for each page, use the createPages api to dynamically create that page
@@ -136,7 +137,7 @@ async function paginate({
       path: `${pathPrefix}${i + 1}`,
       component,
       context: {
-        skip: i * 10,
+        skip: i * postsPerPage,
         currentPage: i + 1,
       },
     });

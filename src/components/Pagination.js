@@ -39,7 +39,7 @@ export default function Pagination({
   currentPage = 1,
   pathPrefix,
 }) {
-  const postsPerPage = 10;
+  const postsPerPage = 3;
   const totalPages = Math.ceil(totalCount / postsPerPage);
   const nextPage = currentPage + 1;
   const prevPage = currentPage - 1;

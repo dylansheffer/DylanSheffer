@@ -46,14 +46,14 @@ export const pageQuery = graphql`
     allMdx(
       filter: { fields: { collection: { eq: "projects" } } }
       sort: { fields: [frontmatter___date], order: DESC }
-      limit: 10
+      limit: 3
       skip: $skip
     ) {
       totalCount
       edges {
         node {
           id
-          excerpt(pruneLength: 350)
+          excerpt(pruneLength: 250)
           fields {
             slug
           }
