@@ -13,8 +13,7 @@ const NavStyles = styled.nav`
     flex-direction: column-reverse;
     align-items: center;
     .logo {
-      position: relative;
-      top: 25%;
+      margin-top: 1rem;
     }
   }
   @media (min-width: 500px) {
