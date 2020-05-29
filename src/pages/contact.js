@@ -51,7 +51,7 @@ export default function ContactPage({ pageContext, path }) {
       </Helmet>
       <MarkdownHeading>Contact</MarkdownHeading>
       <Text>
-        My preferred method of contact is via{' '}
+        My preferred methods of contact are via{' '}
         <a href="mailto:dylan@dylansheffer.com">Email</a> or the form below, but
         I am also reachable on{' '}
         <a href="https://twitter.com/dylansheffer">Twitter</a>,{' '}
