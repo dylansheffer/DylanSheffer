@@ -17,6 +17,7 @@ function Layout({ path, children, ...rest }) {
       <GlobalStyles />
       <Helmet>
         <title>{title}</title>
+        <html lang="en-US" />
       </Helmet>
       <LayoutStyles>
         <Nav />
