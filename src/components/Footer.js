@@ -48,7 +48,7 @@ export const Footer = () => (
         </a>
       </SocialLinks>
       <div className="copyright">
-        &copy;{new Date().getFullYear()} - Dylan Sheffer
+        &copy;{new Date().getFullYear()} - Dylan Sheffer Consulting LLC
       </div>
     </ContentContainer>
   </FooterStyles>
