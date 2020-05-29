@@ -152,7 +152,7 @@ const Site = ({ data: { me, projects }, ...props }) => (
           finishing a project, I am here to help! 😄
         </Text>
         <Button as={Link} to="/hire-me">
-          Let's Talk
+          Contact Me
         </Button>
       </ContentContainer>
     </CTASection>
