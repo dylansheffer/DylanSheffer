@@ -48,7 +48,7 @@ export default function AboutPage({ data, pageContext, path }) {
         serverless functions.
       </Text>
       <Text>
-        My primary focus right now is building applications with{' '}
+        My primary focuses right now are building applications with{' '}
         <strong>React.js</strong>, <strong>Gatsby</strong>, and{' '}
         <strong>AWS Lambda functions</strong> and making the digital world a
         more <strong>accessible place.</strong>
