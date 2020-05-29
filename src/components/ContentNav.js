@@ -40,27 +40,33 @@ const ContentNavStyles = styled.div`
   }
 `;
 
-export const ContentNav = ({ prev, next, pathPrefix }) => (
-  <ContentNavStyles>
-    {prev && (
-      <Link to={`${prev.node.fields.slug}`}>
-        <strong>← Prev</strong>
-        {prev.node.frontmatter ? (
-          <p>{prev.node.frontmatter.title}</p>
-        ) : (
-          <MDXRenderer>{prev.node.body}</MDXRenderer>
-        )}
-      </Link>
-    )}
-    {next && (
-      <Link to={`${next.node.fields.slug}`}>
-        <strong>Next →</strong>
-        {next.node.frontmatter ? (
-          <p>{next.node.frontmatter.title}</p>
-        ) : (
-          <MDXRenderer>{next.node.body}</MDXRenderer>
-        )}
-      </Link>
-    )}
-  </ContentNavStyles>
-);
+export const ContentNav = ({ prev, next, pathPrefix }) => {
+  if (!prev && !next) {
+    return <></>;
+  }
+
+  return (
+    <ContentNavStyles>
+      {prev && (
+        <Link to={`${prev.node.fields.slug}`}>
+          <strong>← Prev</strong>
+          {prev.node.frontmatter ? (
+            <p>{prev.node.frontmatter.title}</p>
+          ) : (
+            <MDXRenderer>{prev.node.body}</MDXRenderer>
+          )}
+        </Link>
+      )}
+      {next && (
+        <Link to={`${next.node.fields.slug}`}>
+          <strong>Next →</strong>
+          {next.node.frontmatter ? (
+            <p>{next.node.frontmatter.title}</p>
+          ) : (
+            <MDXRenderer>{next.node.body}</MDXRenderer>
+          )}
+        </Link>
+      )}
+    </ContentNavStyles>
+  );
+};
