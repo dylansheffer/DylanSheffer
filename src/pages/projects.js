@@ -11,7 +11,7 @@ export default function ProjectsPage({
 }) {
   return (
     <PostPageLayout
-      title="Projects"
+      title="My Work"
       currentPage={pageContext.currentPage}
       totalCount={projects.totalCount}
       pathPrefix="/projects/"
@@ -20,7 +20,7 @@ export default function ProjectsPage({
         <title>
           {`Page ${
             pageContext.currentPage ? pageContext.currentPage : 1
-          } - Projects - Dylan Sheffer`}
+          } - Work - Dylan Sheffer`}
         </title>
       </Helmet>
       <div>

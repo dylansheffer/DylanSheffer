@@ -14,14 +14,14 @@ export default function PostsPage({
       currentPage={pageContext.currentPage}
       totalCount={posts.totalCount}
       pathPrefix="/posts/"
-      title="Blog"
+      title="Articles"
     >
       {console.log(pageContext)}
       <Helmet>
         <title>
           {`Page ${
             pageContext.currentPage ? pageContext.currentPage : 1
-          } - Blog - Dylan Sheffer`}
+          } - Articles - Dylan Sheffer`}
         </title>
       </Helmet>
       <div>

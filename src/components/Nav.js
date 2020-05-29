@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 import LogoImage from '../../static/logo.svg';
 import { ContentContainer } from './styles/LayoutStyles';
+import { Button } from './Button';
 
 const NavStyles = styled.nav`
   background-color: var(--surface-dark);
@@ -50,8 +51,8 @@ const LinkContainer = styled.ul`
 
 const LinkItem = styled.li`
   margin: 0.5rem 1rem;
+  color: var(--yellow);
   a {
-    color: var(--yellow);
     font-family: 'Hack', monospace;
     text-decoration: none;
     &:focus,
@@ -71,16 +72,15 @@ const NavLinks = ({ children }) => (
       <Link to="/about">About</Link>
     </LinkItem>
     <LinkItem>
-      <Link to="/services">Services</Link>
+      <Link to="/projects">Work</Link>
     </LinkItem>
     <LinkItem>
-      <Link to="/projects">Projects</Link>
+      <Link to="/posts">Articles</Link>
     </LinkItem>
     <LinkItem>
-      <Link to="/posts">Blog</Link>
-    </LinkItem>
-    <LinkItem>
-      <Link to="/contact">Contact</Link>
+      <Button as={Link} to="/hire-me">
+        Hire Me
+      </Button>
     </LinkItem>
   </LinkContainer>
 );

@@ -48,9 +48,15 @@ export default function AboutPage({ data, pageContext, path }) {
         serverless functions.
       </Text>
       <Text>
+        I have a degree from Christopher Newport University in Information
+        Science, but most of my education has been self-taught. I feel very
+        fortunate to be in an industry that is always changing, so I can keep
+        learning and improving.
+      </Text>
+      <Text>
         My primary focuses right now are building applications with{' '}
         <strong>React.js</strong>, <strong>Gatsby</strong>, and{' '}
-        <strong>AWS Lambda functions</strong> and making the digital world a
+        <strong>Cloud Infrastructure</strong> and making the digital world a
         more <strong>accessible place.</strong>
       </Text>
       <Text>
@@ -58,8 +64,8 @@ export default function AboutPage({ data, pageContext, path }) {
         <a href="https://resume.dylansheffer.com">resume</a> 🤓.
       </Text>
       <Text>
-        If you're interested in bringing me on to your project, please reach out
-        on my <Link to="/contact">contact page</Link>!
+        If you're interested in bringing me on to your project,{' '}
+        <Link to="/hire-me">please reach out to me</Link>!
       </Text>
       {/* <H as="h3">
         A little bit <em>more</em> about me

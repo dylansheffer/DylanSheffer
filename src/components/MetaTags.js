@@ -54,7 +54,7 @@ export function PostMetaTags({ post }) {
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" /> */}
       <meta property="og:locale" content="en_US" />
-      <title>{post.frontmatter.title} - Blog - Dylan Sheffer</title>
+      <title>{post.frontmatter.title} - Articles - Dylan Sheffer</title>
     </Helmet>
   );
 }
@@ -101,7 +101,7 @@ export function ProjectMetaTags({ project }) {
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" /> */}
       <meta property="og:locale" content="en_US" />
-      <title>{project.frontmatter.title} - Projects - Dylan Sheffer</title>
+      <title>{project.frontmatter.title} - Work - Dylan Sheffer</title>
     </Helmet>
   );
 }

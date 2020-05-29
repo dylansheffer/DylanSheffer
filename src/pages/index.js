@@ -22,8 +22,8 @@ const Status = ({ available }) => (
       <Dot className="dot" color={available ? 'green' : 'red'} />
       {available ? `Is Available for Clients 🎉` : `Currently Booked 😅`}
     </StatusStyle>
-    <Button as={Link} to="/contact">
-      {available ? `Get a Quote` : `Schedule a Time`}
+    <Button as={Link} to="/hire-me">
+      {available ? `Hire Me` : `Schedule a Time`}
     </Button>
   </>
 );
@@ -122,7 +122,7 @@ const Site = ({ data: { me, projects }, ...props }) => (
     <ProjectsSection>
       <ContentContainer>
         <MarkdownHeading>
-          <Link to="/projects/">Projects</Link>
+          <Link to="/projects/">My Work</Link>
         </MarkdownHeading>
         <div className="projects-container">
           {projects.nodes.map(
@@ -151,7 +151,7 @@ const Site = ({ data: { me, projects }, ...props }) => (
           application more accessible, or just provide some assistance on
           finishing a project, I am here to help! 😄
         </Text>
-        <Button as={Link} to="/contact">
+        <Button as={Link} to="/hire-me">
           Let's Talk
         </Button>
       </ContentContainer>
