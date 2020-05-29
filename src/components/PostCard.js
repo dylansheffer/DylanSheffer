@@ -95,7 +95,7 @@ export const PostCard = ({
   ...rest
 }) => (
   <PostCardStyles {...rest}>
-    <Link to={link} className="image">
+    <Link to={link} className="image" aria-hidden="true">
       <MyImg image={image} />
     </Link>
     <div>
