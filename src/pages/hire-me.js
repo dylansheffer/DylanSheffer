@@ -7,11 +7,11 @@ import { Text } from '../components/mdxComponents/Text';
 import { Code } from '../components/mdxComponents/Code';
 import { Button } from '../components/Button';
 
-const ValueSection = styled.section``;
-
 const HireMePageStyle = styled.main``;
 
 const AboutMeSection = styled.section``;
+
+const ValueSection = styled.section``;
 
 const ContactFormSection = styled.section`
   form {
@@ -48,6 +48,10 @@ const ContactFormSection = styled.section`
       }
     }
   }
+`;
+
+const InputContainer = styled.div`
+  height: max-content;
 `;
 
 export default function HireMePage({ pageContext, path }) {
@@ -139,19 +143,19 @@ export default function HireMePage({ pageContext, path }) {
           <input type="hidden" name="form-name" value="contact" />
           {/* Replace eslint rule with the updated version https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/label-has-for.md */}
           <div className="two-column">
-            <div>
+            <InputContainer>
               <label htmlFor="name">Name</label>
               <input type="text" id="name" name="name" />
-            </div>
-            <div>
+            </InputContainer>
+            <InputContainer>
               <label htmlFor="email">Email</label>
               <input type="email" id="email" name="email" />
-            </div>
+            </InputContainer>
           </div>
-          <div>
+          <InputContainer>
             <label htmlFor="message">Message</label>
             <textarea id="message" name="message"></textarea>
-          </div>
+          </InputContainer>
           {/* <div
           className="g-recaptcha"
           data-sitekey="6Ldv2fwUAAAAAAUgSJSKy1gHYHw0EH3OZhP8yImA"
