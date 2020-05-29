@@ -82,41 +82,38 @@ export default function HireMePage({ pageContext, path }) {
           I hold myself to high standards, and provide high value for the
           investment you make in me.
         </Text>
-        <Text>
-          All of my work is, by default:
-          <ul>
-            <li>
-              <strong>Optimized for mobile.</strong> All front-ends are fully
-              responsive, and tested across many devices and browsers.
-            </li>
-            <li>
-              <strong>Cross-browser compatible.</strong> My applications will
-              work regardless of the browser your users use. Though I do not
-              optimize for older browsers, the applications I create are usable
-              in those browsers.
-            </li>
-            <li>
-              <strong>Accessible.</strong> The web is for everybody. There is no
-              compromise for creating an inclusive experience. With the{' '}
-              <a href="https://www.adatitleiii.com/2019/01/number-of-federal-website-accessibility-lawsuits-nearly-triple-exceeding-2250-in-2018/">
-                increasing number of accessibility lawsuits
-              </a>{' '}
-              each year, you can thank me later 😜.
-            </li>
-            <li>
-              <strong>Written with Modern code.</strong> All my front-end code
-              is crafted semantic HTML, styled with modern CSS practices, and
-              brought to life with the latest Javascript features. (
-              <strong>Note:</strong> All shiny and new pieces of code come with
-              appropriate fall backs, so they can still be run on older
-              browsers.)
-            </li>
-            <li>
-              <strong>Optimized for performance.</strong> My experiences feel
-              lightweight and fast.
-            </li>
-          </ul>
-        </Text>
+        <Text large>All of my work is, by default:</Text>
+        <ul>
+          <Text as="li">
+            <strong>Optimized for mobile.</strong> All front-ends are fully
+            responsive, and tested across many devices and browsers.
+          </Text>
+          <Text as="li">
+            <strong>Cross-browser compatible.</strong> My applications will work
+            regardless of the browser your users use. Though I do not optimize
+            for older browsers, the applications I create are usable in those
+            browsers.
+          </Text>
+          <Text as="li">
+            <strong>Accessible.</strong> The web is for everybody. There is no
+            compromise for creating an inclusive experience. With the{' '}
+            <a href="https://www.adatitleiii.com/2019/01/number-of-federal-website-accessibility-lawsuits-nearly-triple-exceeding-2250-in-2018/">
+              increasing number of accessibility lawsuits
+            </a>{' '}
+            each year, you can thank me later 😜.
+          </Text>
+          <Text as="li">
+            <strong>Written with Modern code.</strong> All my front-end code is
+            crafted semantic HTML, styled with modern CSS practices, and brought
+            to life with the latest Javascript features. (<strong>Note:</strong>{' '}
+            All shiny and new pieces of code come with appropriate fall backs,
+            so they can still be run on older browsers.)
+          </Text>
+          <Text as="li">
+            <strong>Optimized for performance.</strong> My experiences feel
+            lightweight and fast.
+          </Text>
+        </ul>
       </ValueSection>
       <ContactFormSection>
         <H as="h2">Contact</H>
