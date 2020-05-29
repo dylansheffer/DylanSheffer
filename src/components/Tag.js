@@ -20,7 +20,7 @@ const TagStyles = styled.span`
 export const Tag = ({ color, children, ...rest }) => {
   const tagColors = {
     red: ['figma'],
-    green: ['design'],
+    green: ['design', 'netlify cms'],
     yellow: ['javascript'],
     orange: ['aws'],
     purple: ['gatsby'],

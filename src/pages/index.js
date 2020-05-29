@@ -145,7 +145,7 @@ const Site = ({ data: { me, projects }, ...props }) => (
     </ProjectsSection>
     <CTASection>
       <ContentContainer>
-        <H>Let's Build Something Together</H>
+        <H>Let's Work Together</H>
         <Text>
           Whether you need someone to help you launch an idea, make your
           application more accessible, or just provide some assistance on
