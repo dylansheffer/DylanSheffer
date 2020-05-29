@@ -56,7 +56,8 @@ const LinkItem = styled.li`
     font-family: 'Hack', monospace;
     text-decoration: none;
     &:focus,
-    :hover {
+    :hover,
+    &[aria-current='page'] {
       text-decoration: underline;
     }
   }
