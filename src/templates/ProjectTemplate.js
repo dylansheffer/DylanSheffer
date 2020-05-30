@@ -29,6 +29,8 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
+        url
+        live
         tags
         image {
           ...ImageFields
@@ -63,6 +65,9 @@ export default function ProjectTemplate({
           <time dateTime={project.frontmatter.date}>
             {project.frontmatter.date}
           </time>
+          {project.frontmatter.live && (
+            <a href={project.frontmatter.url}>Live Site</a>
+          )}
           <Tags tags={project.frontmatter.tags} />
           <EditOnGitHub url={editURL} />
         </div>

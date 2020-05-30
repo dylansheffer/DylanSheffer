@@ -16,6 +16,8 @@ export const PostHeaderStyles = styled.header`
     & > * {
       :not(:last-child):after {
         content: '#';
+        text-decoration: none;
+        display: inline-block;
         margin-left: 1.5rem;
         color: var(--yellow);
         font-weight: 600;
