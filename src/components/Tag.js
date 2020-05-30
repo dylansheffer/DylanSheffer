@@ -8,7 +8,7 @@ const TagStyles = styled.span`
   display: flex;
   align-items: center;
   p {
-    word-wrap: normal;
+    white-space: nowrap;
     font-size: 1.75rem;
     margin: 0;
   }
