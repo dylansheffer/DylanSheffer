@@ -19,12 +19,12 @@ const TagStyles = styled.span`
 
 export const Tag = ({ color, children, ...rest }) => {
   const tagColors = {
-    red: ['figma'],
+    red: ['figma', 'styled-components'],
     green: ['design', 'netlify cms'],
     yellow: ['javascript'],
     orange: ['aws'],
     purple: ['gatsby'],
-    blue: ['react', 'accessibility'],
+    blue: ['react', 'accessibility', 'netlify'],
   };
   const getTagColor = tag => {
     const normalizedTag = tag.toLowerCase();
