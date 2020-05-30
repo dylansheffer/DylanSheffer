@@ -23,8 +23,8 @@ export const Tag = ({ color, children, ...rest }) => {
     green: ['design', 'netlify cms'],
     yellow: ['javascript'],
     orange: ['aws'],
-    purple: ['gatsby'],
-    blue: ['react', 'accessibility', 'netlify'],
+    purple: ['gatsby', 'graphql'],
+    blue: ['react', 'accessibility', 'netlify', 'docker', 'postgresql'],
   };
   const getTagColor = tag => {
     const normalizedTag = tag.toLowerCase();
