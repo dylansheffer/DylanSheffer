@@ -3,23 +3,24 @@ import styled from 'styled-components';
 import { IoLogoGithub } from 'react-icons/io';
 
 const EditOnGitHubStyles = styled.a`
-  display: flex;
+  display: inline-flex;
   align-items: center;
   & > *:not(:last-child) {
-    margin-right: 1rem;
+    margin-right: 0.5rem;
   }
   .edit-icon {
     color: var(--text);
   }
 `;
 
-export const EditOnGitHub = ({ url }) => (
+export const EditOnGitHub = ({ url, children }) => (
   <EditOnGitHubStyles
     className="edit"
     rel="noopener noreferrer"
     target="_blank"
     href={url}
   >
-    <span>Edit Post</span> <IoLogoGithub className="edit-icon" />
+    <span>{children || `Edit Post`}</span>{' '}
+    <IoLogoGithub className="edit-icon" />
   </EditOnGitHubStyles>
 );
