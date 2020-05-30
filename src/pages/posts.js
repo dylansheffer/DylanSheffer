@@ -16,7 +16,6 @@ export default function PostsPage({
       pathPrefix="/posts/"
       title="Articles"
     >
-      {console.log(pageContext)}
       <Helmet>
         <title>
           {`Page ${
