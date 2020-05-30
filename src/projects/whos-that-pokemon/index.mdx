@@ -4,24 +4,44 @@ date: 2020-05-14
 live: true
 featured: true
 url: 'https://pokemon.dylansheffer.app'
-tags: ['React', 'AWS']
-image: './whos-that-pokemon.png'
+tags: ['React', 'Docker', 'GraphQL', 'PostgreSQL']
+image: './whos-that-pokemon.jpg'
 ---
 
-## Background
+import { EditOnGitHub } from '../../components/EditOnGitHub.js';
 
-Vivamus convallis quam id tempus elementum. Ut quis sollicitudin velit. Nam scelerisque mauris augue, eu varius nulla auctor sit amet. Duis id congue ante. Nam finibus facilisis magna, eu consequat lorem tincidunt nec. Quisque blandit lacinia turpis, vitae pharetra metus porttitor eget. In sit amet mi a eros molestie congue. Etiam ex risus, semper vel nunc vitae, mattis malesuada felis.
+Who's That Pokemon?!? is a full-stack quiz game based off the famous [segment of the Pokemon Anime](_https://www.youtube.com/watch?v=gOLXYAlC-R8_). It's aesthetic is heavily inspired by the [98.css design system](https://jdan.github.io/98.css/) and my memory of an old Pokemon-themed Microsoft Paint clone called [Pokémon Project Studio Red and Blue](https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Project_Studio_Red_and_Blue) (I actually downloaded an old `.iso` of the game and used the CD's icon and the `favicon` for the application). The artwork I am using is the original [Ken Sugimori](https://en.wikipedia.org/wiki/Ken_Sugimori) watercolor drawings of the original 151 Pokemon. Nothing says nostolgia to me quite like an [OG Ken Sugimori Charizard drawing](https://i.pinimg.com/originals/ea/88/df/ea88df1f18f4f43baba75c1d0315f757.png).
+
+> Please note that this project is still far from finished and is not very polished. This is a fun side project for me to test out some new (to me) tech. If there's any changes or features you'd like to see, feel free to file an issue or a pull request on its <EditOnGitHub url="https://github.com/dylansheffer/Whos-That-Pokemon"> GitHub Page </EditOnGitHub>
 
 ## The Stack
 
-- Proin egestas ipsum mattis eros porttitor,
-- vel suscipit mauris ornare.
-- Nam vestibulum turpis sit amet pharetra consequat.
+The project's back-end utilizes [Docker](https://www.docker.com/), [PostgeSQL](https://www.postgresql.org/), and [GraphQL](https://graphql.org/) ( via [PostGraphile](https://www.graphile.org/postgraphile/)). The project's front-end was initially scaffolded using [Create React App](https://create-react-app.dev/), the data layer is handled by [Apollo Client](https://www.apollographql.com/docs/react/get-started/), and its stying is written with [styled-components](https://styled-components.com/). As for hosting, I have the back-end running on a simple [EC2 instance](https://aws.amazon.com/ec2/) on AWS and the front-end hosted with [Netlify](https://www.netlify.com/) (because I can't get enough of their plug-n-play CI/CD 😍).
 
-## My Process
+## Project's Motivation
 
-Sed bibendum nibh non augue molestie aliquet. Donec vel elementum velit. Nunc interdum mauris nisl, ac dapibus nibh consectetur a. Etiam vitae justo neque. Pellentesque et tristique metus. Vestibulum vitae feugiat neque, quis mattis orci. Nunc tincidunt accumsan convallis. Nunc rhoncus feugiat libero, eu volutpat dolor ultrices id. Etiam sagittis accumsan accumsan. Aliquam erat volutpat. Sed a ligula lectus. Proin quis augue nisl. Pellentesque tincidunt cursus justo, ac varius felis accumsan ac. Sed vitae purus et sem porta vehicula.
+A lot of people build todo apps as a [Rorschach test](https://en.wikipedia.org/wiki/Rorschach_test) for evaluating a new piece of tech, however, I use "Who's That Pokemon?!?" for this purpose. It works for me because the concept is simple, but it really tests a lot of aspects of an application.
 
-## Final Thoughts
+1. Pick 1 mystery Pokemon and 3 wrong answers (array manipulation)
+2. User selects an answer (form handling)
+3. Show if the user is correct and persist that choice (website interaction, APIs, and databases)
 
-Pellentesque in tempus eros. Fusce ut consectetur tortor, eu hendrerit nibh. Duis dignissim eget odio vel fermentum. Aenean a nibh accumsan, lobortis odio ac, tincidunt arcu. Nullam eget blandit justo. Proin est nulla, bibendum quis odio condimentum, condimentum malesuada sem. Nam ut mattis tellus. In feugiat aliquet posuere. Etiam tempus nec massa sit amet elementum. Morbi consectetur laoreet velit, ac commodo enim dignissim a. Aenean viverra tincidunt odio, nec maximus felis maximus eget. Ut et pretium neque, ut bibendum massa. Quisque accumsan lacus eget venenatis blandit. In et placerat dolor. Aliquam iaculis metus in ultrices faucibus.
+This particular implementation of Who's That Pokemon?!? was motivated because I unfortunately had to step away from the world of React for about a year while I worked on different tech stacks for other companies (vanilla web components, and Angular).
+
+While I was away, a lot had changed! Now there's these new things called [React Hooks](https://reactjs.org/docs/hooks-intro.html) and now, it seems uncouth to use stateful components and dare I say [Redux](https://redux.js.org/) 😱. This application was my fun way to break back into the React world while trying out another new toy that I've been meaning to learn, Docker 🐳.
+
+## Current Limitations
+
+There's a lot of rough edges on the current project. Right now, there's one shared session for all users because _I will_ (eventually) add an account system, so each person can 🎵 _be the very best, like no one ever was!_ 🎵
+
+There's some serious accessibility issues with the game in its current state. These will likely be the first issues I tackle. One issue is that the keyboard navigation is awful. I can't skip past the long list of Pokedex Entries and because I am using visually-hidden radio buttons for the multiple choice answers, so the focus ring isn't visible.
+
+Additionally, the mystery Pokemon, literally has the answer to the question in its alt-text. I am going to change that to the Pokedex's description of the Pokemon once I scrape the data and add it to my database. Regardless of whether a person uses their eyes or a screen reader to play the game, they should be equally tested on their Pokemon Mastery 🎆.
+
+I also have found that the native HTML [`dialog`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog) element to be very inconsistent from browser to browser and I am still fixing UI glitches caused by that.
+
+Finally, I would love to add a [proper victory screen](https://cdn.bulbagarden.net/upload/5/5e/Diploma_RB.png) with the ability to start spotting the next generation's Pokemon.
+
+## Conclusion
+
+_Wheww_ that's a lot of issues 😅. These will all be addressed in the future, but this game is not as pressing as my other projects at the moment. This is just a fun project for me and I hope you get some joy out of it as well! 🌹
