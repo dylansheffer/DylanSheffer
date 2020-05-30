@@ -5,6 +5,8 @@ import { Code } from './Code';
 import { Table } from './Table';
 import { Pre } from './Pre';
 import { Blockquote } from './Blockquote';
+import { UL } from './UL';
+import { OL } from './OL';
 
 /* eslint-disable */
 export default {
@@ -15,8 +17,10 @@ export default {
   h5: props => <H as="h5" {...props} />,
   h6: props => <H as="h6" {...props} />,
   p: props => <Text {...props} />,
-  pre: Pre,
+  ul: props => <UL {...props} />,
+  ol: props => <OL {...props} />,
+  pre: props => <Pre {...props} />,
   inlineCode: props => <Code {...props} />,
-  table: Table,
-  blockquote: Blockquote,
+  table: props => <Table {...props} />,
+  blockquote: props => <Blockquote {...props} />,
 };
