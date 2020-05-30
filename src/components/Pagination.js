@@ -64,7 +64,7 @@ export default function Pagination({
     <PaginationStyles>
       <Link
         disabled={prevPage <= 0 ? true : null}
-        to={`${pathPrefix}${prevPage}`}
+        to={prevPage <= 0 ? `/` : `${pathPrefix}${prevPage}`}
       >
         {prevPage === 0 ? (
           <Message message={getRandomMessage(noPreviousMessages)} />
