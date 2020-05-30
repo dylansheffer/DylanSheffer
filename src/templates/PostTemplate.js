@@ -4,8 +4,8 @@ import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import { MyImg } from '../components/MyImg';
 import { PostHeaderStyles } from '../components/styles/PostHeaderStyles';
-import { EditDialogStyles } from '../components/styles/EditDialogStyles';
 import { MarkdownHeading } from '../components/mdxComponents/Headings';
+import { Blockquote } from '../components/mdxComponents/Blockquote';
 import { Tags } from '../components/Tag';
 import { PostMetaTags } from '../components/MetaTags';
 import { EditOnGitHub } from '../components/EditOnGitHub';
@@ -60,7 +60,7 @@ export default function PostTemplate({ data: { mdx: post }, pageContext }) {
         </div>
       </PostHeaderStyles>
       <MDXRenderer>{post.body}</MDXRenderer>
-      <EditDialogStyles>
+      <Blockquote>
         <p>
           Find an issue with this post? Think you could clarify, update or add
           something?
@@ -70,7 +70,7 @@ export default function PostTemplate({ data: { mdx: post }, pageContext }) {
           small, is appreciated!
         </p>
         <EditOnGitHub url={editURL} />
-      </EditDialogStyles>
+      </Blockquote>
       <ContentNav
         pathPrefix={pageContext.pathPrefix}
         prev={pageContext.prev}

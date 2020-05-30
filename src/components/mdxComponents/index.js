@@ -4,6 +4,7 @@ import { Text } from './Text';
 import { Code } from './Code';
 import { Table } from './Table';
 import { Pre } from './Pre';
+import { Blockquote } from './Blockquote';
 
 /* eslint-disable */
 export default {
@@ -17,4 +18,5 @@ export default {
   pre: Pre,
   inlineCode: props => <Code {...props} />,
   table: Table,
+  blockquote: Blockquote,
 };

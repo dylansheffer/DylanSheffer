@@ -1,6 +1,12 @@
 import styled from 'styled-components';
 
-export const blockquote = styled.blockquote`
-  border-left: 0.25rem solid var(--yellow);
-  padding-left: 1rem;
+export const Blockquote = styled.blockquote`
+  border-left: 2px solid var(--yellow);
+  font-size: 1.75rem;
+  padding: 1rem 2rem;
+  margin: 3rem 0;
+  background: var(--surface-medium);
+  p:first-child {
+    margin-top: 0;
+  }
 `;
