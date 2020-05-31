@@ -37,14 +37,13 @@ export function DefaultMetaTags() {
 }
 
 export function PostMetaTags({ post }) {
-  const canonical = pathJoin('https://dylansheffer.com', post.fields.slug);
   const url = pathJoin(baseURL, post.fields.slug);
   return (
     <>
       <DefaultMetaTags />
       <Helmet>
         <meta name="description" content={post.excerpt} />
-        <link rel="canonical" href={canonical} />
+        <link rel="canonical" href={url} />
         <meta name="twitter:url" content={url} />
         <meta
           name="twitter:title"
@@ -70,29 +69,33 @@ export function PostMetaTags({ post }) {
 }
 
 export function ArticleMetaTags({ post }) {
+  const ogImageURL = pathJoin(baseURL, ogArticleImage);
   return (
     <>
       <DefaultMetaTags />
       <PostMetaTags post={post} />
       <Helmet>
-        <meta name="twitter:image" content={ogArticleImage} />
-        <meta property="og:image" content={ogArticleImage} />
+        <meta name="twitter:image" content={ogImageURL} />
+        <meta property="og:image" content={ogImageURL} />
         <title>{post.frontmatter.title} - Articles - Dylan Sheffer</title>
       </Helmet>
     </>
   );
 }
 export function ArticlesMetaTags({ pageContext }) {
+  const url = pathJoin(baseURL, 'posts');
+  const ogImageURL = pathJoin(baseURL, ogArticleImage);
   const description =
     'A collection of articles written by Dylan Sheffer; a full stack developer, accessibility advocate, and speaker.';
   return (
     <>
       <DefaultMetaTags />
       <Helmet>
+        <link rel="canonical" href={url} />
         <meta name="description" content={description} />
         <meta property="og:description" content={description} />
-        <meta name="twitter:image" content={ogArticleImage} />
-        <meta property="og:image" content={ogArticleImage} />
+        <meta name="twitter:image" content={ogImageURL} />
+        <meta property="og:image" content={ogImageURL} />
         <title>
           {`Page ${
             pageContext.currentPage ? pageContext.currentPage : 1
@@ -104,14 +107,17 @@ export function ArticlesMetaTags({ pageContext }) {
 }
 
 export function WorkMetaTags({ pageContext }) {
+  const url = pathJoin(baseURL, 'projects');
+  const ogImageURL = pathJoin(baseURL, ogWorkImage);
   const description =
     'A collection of work by Dylan Sheffer; a full stack developer, accessibility advocate, and speaker.';
   return (
     <>
       <DefaultMetaTags />
       <Helmet>
-        <meta name="twitter:image" content={ogWorkImage} />
-        <meta property="og:image" content={ogWorkImage} />
+        <link rel="canonical" href={url} />
+        <meta name="twitter:image" content={ogImageURL} />
+        <meta property="og:image" content={ogImageURL} />
         <meta name="description" content={description} />
         <meta property="og:description" content={description} />
         <title>
@@ -124,13 +130,14 @@ export function WorkMetaTags({ pageContext }) {
   );
 }
 export function ProjectMetaTags({ project }) {
+  const ogImageURL = pathJoin(baseURL, ogWorkImage);
   return (
     <>
       <DefaultMetaTags />
       <PostMetaTags post={project} />
       <Helmet>
-        <meta name="twitter:image" content={ogWorkImage} />
-        <meta property="og:image" content={ogWorkImage} />
+        <meta name="twitter:image" content={ogImageURL} />
+        <meta property="og:image" content={ogImageURL} />
         <title>{project.frontmatter.title} - Project - Dylan Sheffer</title>
       </Helmet>
     </>
@@ -138,16 +145,19 @@ export function ProjectMetaTags({ project }) {
 }
 
 export function HomeMetaTags() {
+  const url = pathJoin(baseURL);
   const description =
     'Dylan Sheffer; a full stack developer, accessibility advocate, and speaker living in Charlottesville, VA. Dylan is currently available for new clients! 🎉';
+  const ogImageURL = pathJoin(baseURL, ogHomeImage);
   return (
     <>
       <DefaultMetaTags />
       <Helmet>
+        <link rel="canonical" href={url} />
         <meta name="description" content={description} />
         <meta property="og:description" content={description} />
-        <meta name="twitter:image" content={ogHomeImage} />
-        <meta property="og:image" content={ogHomeImage} />
+        <meta name="twitter:image" content={ogImageURL} />
+        <meta property="og:image" content={ogImageURL} />
         <title>Dylan Sheffer - Full Stack Developer</title>
       </Helmet>
     </>
@@ -155,16 +165,19 @@ export function HomeMetaTags() {
 }
 
 export function AboutMetaTags() {
+  const url = pathJoin(baseURL, 'about');
+  const ogImageURL = pathJoin(baseURL, ogAboutImage);
   const description =
     'Dylan Sheffer; a full stack developer, accessibility advocate, and speaker living in Charlottesville, VA. Dylan is currently available for new clients! 🎉';
   return (
     <>
       <DefaultMetaTags />
       <Helmet>
+        <link rel="canonical" href={url} />
         <meta name="description" content={description} />
         <meta property="og:description" content={description} />
-        <meta name="twitter:image" content={ogAboutImage} />
-        <meta property="og:image" content={ogAboutImage} />
+        <meta name="twitter:image" content={ogImageURL} />
+        <meta property="og:image" content={ogImageURL} />
         <title>About - Dylan Sheffer</title>
       </Helmet>
     </>
@@ -172,16 +185,19 @@ export function AboutMetaTags() {
 }
 
 export function HireMeMetaTags() {
+  const url = pathJoin(baseURL, 'hire-me');
+  const ogImageURL = pathJoin(baseURL, ogHireMeImage);
   const description =
     'Dylan Sheffer; a full stack developer, accessibility advocate, and speaker living in Charlottesville, VA. Dylan is currently available for new clients! 🎉';
   return (
     <>
       <DefaultMetaTags />
       <Helmet>
+        <link rel="canonical" href={url} />
         <meta name="description" content={description} />
         <meta property="og:description" content={description} />
-        <meta name="twitter:image" content={ogHireMeImage} />
-        <meta property="og:image" content={ogHireMeImage} />
+        <meta name="twitter:image" content={ogImageURL} />
+        <meta property="og:image" content={ogImageURL} />
         <title>Hire Me - Dylan Sheffer</title>
       </Helmet>
     </>
