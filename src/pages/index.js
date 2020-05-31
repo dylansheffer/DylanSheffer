@@ -1,62 +1,191 @@
-import React from 'react'
-import { graphql, Link } from 'gatsby'
-import get from 'lodash/get'
-import Helmet from 'react-helmet'
+import React from 'react';
+import styled from 'styled-components';
+import { graphql, Link } from 'gatsby';
+import { ContentContainer } from '../components/styles/LayoutStyles';
+import { Dot } from '../components/Dot';
+import { Button } from '../components/Button';
+import { H, MarkdownHeading } from '../components/mdxComponents/Headings';
+import { MiniPostCard } from '../components/PostCard';
+import { Text } from '../components/mdxComponents/Text';
+import { CircleImg } from '../components/CircleImg';
 
-import Layout from '../components/layout';
-import SocialIcons from '../components/SocialIcons';
-import Avatar from '../components/Avatar';
-
-class Index extends React.Component {
-  render() {
-    const { data } = this.props;
-    const { fixed: dylan } = data.profileImage.childImageSharp;
-    const siteTitle = get(this, 'props.data.site.siteMetadata.title')
-    const siteDescription = get(
-      this,
-      'props.data.site.siteMetadata.description'
-    )
-
-    return (
-      <Layout className="app__home">
-        <Helmet
-          meta={[{ name: 'description', content: siteDescription }]}
-          title={siteTitle}
-        />
-        <main id="content" className="content__home">
-          <div className="content--wrapper__home">
-            <Avatar
-              image={dylan}
-              alt="Dylan Sheffer aggressively looking at the camera"
-            />
-            <h1>Dylan&nbsp;Sheffer</h1>
-            <p className="">Web Developer. A11y Advocate. <br />Tea Enthusiast.</p>
-            <SocialIcons />
-            <br></br>
-            <a class="button" href="https://resume.dylansheffer.com">Resume</a>
-          </div>
-        </main>
-      </Layout>
-    )
+const StatusStyle = styled.p`
+  font-weight: bold;
+  .dot {
+    margin-right: 1rem;
   }
-}
+`;
 
-export default Index
+const Status = ({ available }) => (
+  <>
+    <StatusStyle>
+      <Dot className="dot" color={available ? 'green' : 'red'} />
+      {available ? `Is Available for Clients 🎉` : `Currently Booked 😅`}
+    </StatusStyle>
+    <Button as={Link} to="/hire-me">
+      {available ? `Hire Me` : `Schedule a Time`}
+    </Button>
+  </>
+);
 
-export const pageQuery = graphql`
-  query {
-    site {
-      siteMetadata {
-        title
-        description
+const Hero = styled.main`
+  background-color: var(--surface-light);
+  width: 100%;
+  .content-container {
+    display: grid;
+    justify-items: center;
+    align-items: center;
+    margin: 0 auto;
+    .hero-content {
+      display: grid;
+      grid-gap: 2rem;
+      justify-items: center;
+      align-items: center;
+      h1 {
+        text-align: center;
+        margin: 0;
       }
-    },
-    profileImage: file(relativePath: {eq: "me.jpg"}) {
-    childImageSharp {
-      fixed(width: 300, height: 300) {
-        ...GatsbyImageSharpFixed
+      p {
+        text-align: center;
+        line-height: 1.75;
+        margin: 0;
+      }
+    }
+    @media (min-width: 700px) {
+      justify-items: left;
+      grid-template-columns: 32rem 1fr;
+      grid-gap: 3rem;
+      .hero-content {
+        grid-gap: 3rem;
+        justify-items: left;
+        align-items: unset;
+        h1 {
+          text-align: left;
+        }
+        p {
+          text-align: left;
+        }
       }
     }
   }
+`;
+
+const ProjectsSection = styled.section`
+  background-color: var(--surface-medium);
+  .projects-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 2rem;
+    @media (min-width: 600px) {
+      grid-template-columns: 1fr 1fr;
+      grid-auto-rows: 30rem;
+    }
   }
-`
+  .view-all {
+    margin: 2rem 0;
+    display: block;
+  }
+`;
+
+const CTASection = styled.section`
+  background-color: var(--surface-dark);
+  .content-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    h1 {
+      margin: 0;
+    }
+    p {
+      line-height: 2;
+    }
+  }
+`;
+
+const Site = ({ data: { me, projects }, ...props }) => (
+  <>
+    <Hero>
+      <ContentContainer>
+        <CircleImg image={me} />
+        <div className="hero-content">
+          <H>Dylan Sheffer</H>
+          <p>
+            Full Stack Web Developer committed to building performant and
+            inclusive web applications.
+          </p>
+          <Status available />
+        </div>
+      </ContentContainer>
+    </Hero>
+    <ProjectsSection>
+      <ContentContainer>
+        <MarkdownHeading>
+          <Link to="/projects/">My Work</Link>
+        </MarkdownHeading>
+        <div className="projects-container">
+          {projects.nodes.map(
+            ({ excerpt, frontmatter, id, fields: { slug } }) => (
+              <MiniPostCard
+                key={id}
+                title={frontmatter.title}
+                link={slug}
+                tags={frontmatter.tags}
+              >
+                {excerpt}
+              </MiniPostCard>
+            )
+          )}
+        </div>
+        <Link className="view-all" to="/projects">
+          View All Projects
+        </Link>
+      </ContentContainer>
+    </ProjectsSection>
+    <CTASection>
+      <ContentContainer>
+        <H>Let's Work Together</H>
+        <Text>
+          Whether you need someone to help you launch an idea, make your
+          application more accessible, or just provide some assistance on
+          finishing a project, I am here to help! 😄
+        </Text>
+        <Button as={Link} to="/hire-me">
+          Contact Me
+        </Button>
+      </ContentContainer>
+    </CTASection>
+  </>
+);
+
+export default Site;
+
+export const query = graphql`
+  query SITE_INDEX_QUERY {
+    projects: allMdx(
+      filter: { fields: { collection: { eq: "projects" } } }
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: 4
+    ) {
+      nodes {
+        excerpt(pruneLength: 100)
+        id
+        frontmatter {
+          title
+          tags
+        }
+        fields {
+          slug
+        }
+      }
+    }
+    me: file(relativePath: { eq: "me.jpg" }) {
+      childImageSharp {
+        fluid {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`;

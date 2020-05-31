@@ -1,7 +1,0 @@
-@function sass-repeat($character, $n){
-  $c:"";
-  @for $i from 1 through $n {
-    $c: $c + $character;
- }
-    @return $c;
-}

@@ -1,68 +1,166 @@
-const _ = require('lodash')
-const Promise = require('bluebird')
-const path = require('path')
-const { createFilePath } = require('gatsby-source-filesystem')
-
-exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions
-
-  return new Promise((resolve, reject) => {
-    const blogPost = path.resolve('./src/templates/blog-post.js')
-    resolve(
-      graphql(
-        `
-          {
-            allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }, limit: 1000) {
-              edges {
-                node {
-                  fields {
-                    slug
-                  }
-                  frontmatter {
-                    title
-                  }
-                }
-              }
-            }
-          }
-        `
-      ).then(result => {
-        if (result.errors) {
-          console.log(result.errors)
-          reject(result.errors)
-        }
-
-        // Create blog posts pages.
-        const posts = result.data.allMarkdownRemark.edges;
-
-        _.each(posts, (post, index) => {
-          const previous = index === posts.length - 1 ? null : posts[index + 1].node;
-          const next = index === 0 ? null : posts[index - 1].node;
-
-          createPage({
-            path: post.node.fields.slug,
-            component: blogPost,
-            context: {
-              slug: post.node.fields.slug,
-              previous,
-              next,
-            },
-          })
-        })
-      })
-    )
-  })
-}
+const { createFilePath } = require(`gatsby-source-filesystem`);
+const path = require(`path`);
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
-  const { createNodeField } = actions
-
-  if (node.internal.type === `MarkdownRemark`) {
-    const value = createFilePath({ node, getNode })
+  const { createNodeField } = actions;
+  if (node.internal.type === 'Mdx') {
+    createNodeField({
+      name: `collection`,
+      node,
+      value: getNode(node.parent).sourceInstanceName,
+    });
+    const slug = createFilePath({ node, getNode });
     createNodeField({
       name: `slug`,
       node,
-      value,
-    })
+      value: node.fields.collection
+        ? `/${node.fields.collection}${slug}`
+        : slug,
+    });
   }
+};
+
+async function makeProjectsFromMdx({ graphql, actions }) {
+  const ProjectTemplate = path.resolve('./src/templates/ProjectTemplate.js');
+  const { errors, data } = await graphql(
+    `
+      query ALL_PROJECTS_QUERY {
+        allMdx(
+          filter: { fields: { collection: { eq: "projects" } } }
+          sort: { fields: [frontmatter___date], order: DESC }
+        ) {
+          edges {
+            node {
+              frontmatter {
+                title
+              }
+              body
+              fields {
+                slug
+              }
+            }
+          }
+        }
+      }
+    `
+  );
+  if (errors) {
+    throw new Error('There was an error', errors);
+  }
+  const projects = data.allMdx.edges;
+  projects.forEach((project, i) => {
+    const prev = projects[i - 1];
+    const next = projects[i + 1];
+    actions.createPage({
+      path: `${project.node.fields.slug}`,
+      component: ProjectTemplate,
+      collection: `projects`,
+      context: {
+        slug: project.node.fields.slug,
+        pathPrefix: `/projects`,
+        prev,
+        next,
+      },
+    });
+  });
 }
+
+async function makePostsFromMdx({ graphql, actions }) {
+  const PostTemplate = path.resolve('./src/templates/PostTemplate.js');
+  const { errors, data } = await graphql(
+    `
+      query ALL_POSTS_QUERY {
+        allMdx(
+          filter: { fields: { collection: { eq: "posts" } } }
+          sort: { fields: [frontmatter___date], order: DESC }
+        ) {
+          edges {
+            node {
+              body
+              frontmatter {
+                title
+              }
+              fields {
+                slug
+              }
+            }
+          }
+        }
+      }
+    `
+  );
+  if (errors) {
+    throw new Error('There was an error', errors);
+  }
+  const posts = data.allMdx.edges;
+  posts.forEach((post, i) => {
+    const prev = posts[i - 1];
+    const next = posts[i + 1];
+    actions.createPage({
+      path: `${post.node.fields.slug}`,
+      component: PostTemplate,
+      collection: `posts`,
+      context: {
+        slug: post.node.fields.slug,
+        prev,
+        next,
+        pathPrefix: `/posts`,
+      },
+    });
+  });
+}
+
+async function paginate({
+  graphql,
+  actions,
+  collection,
+  pathPrefix,
+  component,
+}) {
+  const { errors, data } = await graphql(
+    `
+      {
+        allMdx(filter: { fields: { collection: { eq: "${collection}" } } }) {
+          totalCount
+        }
+      }
+    `
+  );
+
+  const { totalCount } = data.allMdx;
+  const postsPerPage = 3;
+  const pages = Math.ceil(totalCount / postsPerPage);
+
+  Array.from({ length: pages }).forEach((_, i) => {
+    // for each page, use the createPages api to dynamically create that page
+    actions.createPage({
+      path: `${pathPrefix}${i + 1}`,
+      component,
+      context: {
+        skip: i * postsPerPage,
+        currentPage: i + 1,
+      },
+    });
+  });
+}
+
+exports.createPages = async ({ actions, graphql }) => {
+  await Promise.all([
+    makeProjectsFromMdx({ graphql, actions }),
+    makePostsFromMdx({ graphql, actions }),
+    paginate({
+      graphql,
+      actions,
+      collection: `projects`,
+      pathPrefix: `/projects/`,
+      component: path.resolve('./src/pages/projects.js'),
+    }),
+    paginate({
+      graphql,
+      actions,
+      collection: `posts`,
+      pathPrefix: `/posts/`,
+      component: path.resolve('./src/pages/posts.js'),
+    }),
+  ]);
+};
