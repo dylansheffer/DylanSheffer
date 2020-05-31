@@ -47,8 +47,7 @@ export default function ProjectTemplate({
   if (!project) {
     return <p>No Project Found? This should be a 404</p>;
   }
-  // TODO: Change to master when merged
-  const editURL = `https://github.com/dylansheffer/dylansheffer/tree/v2/src/${
+  const editURL = `https://github.com/dylansheffer/dylansheffer/tree/master/src/${
     project.fileAbsolutePath.split('/src/')[1]
   }`;
 
