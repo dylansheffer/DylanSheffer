@@ -1,5 +1,5 @@
 ---
-title: Who's That Pokemon
+title: Who's That Pokemon?!?
 date: 2020-05-14
 live: true
 featured: true
@@ -10,9 +10,9 @@ image: './whos-that-pokemon.jpg'
 
 import { EditOnGitHub } from '../../components/EditOnGitHub.js';
 
-Who's That Pokemon?!? is a full-stack quiz game based off the famous [segment of the Pokemon Anime](_https://www.youtube.com/watch?v=gOLXYAlC-R8_). It's aesthetic is heavily inspired by the [98.css design system](https://jdan.github.io/98.css/) and my memory of an old Pokemon-themed Microsoft Paint clone called [Pokémon Project Studio Red and Blue](https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Project_Studio_Red_and_Blue) (I actually downloaded an old `.iso` of the game and used the CD's icon and the `favicon` for the application). The artwork I am using is the original [Ken Sugimori](https://en.wikipedia.org/wiki/Ken_Sugimori) watercolor drawings of the original 151 Pokemon. Nothing says nostolgia to me quite like an [OG Ken Sugimori Charizard drawing](https://i.pinimg.com/originals/ea/88/df/ea88df1f18f4f43baba75c1d0315f757.png).
+Who's That Pokemon?!? is a full-stack quiz game based off of the famous [segment of the Pokemon Anime](_https://www.youtube.com/watch?v=gOLXYAlC-R8_). Its aesthetic is heavily inspired by the [98.css design system](https://jdan.github.io/98.css/) and my memory of an old Pokemon-themed Microsoft Paint clone called [Pokémon Project Studio Red and Blue](https://bulbapedia.bulbagarden.net/wiki/Pok%C3%A9mon_Project_Studio_Red_and_Blue) (I actually downloaded an old `.iso` of the game and used the CD's icon and the `favicon` for the application). The artwork I am using is the original [Ken Sugimori](https://en.wikipedia.org/wiki/Ken_Sugimori) watercolor drawings of the original 151 Pokemon. Nothing says nostolgia to me quite like an [OG Ken Sugimori Charizard drawing](https://i.pinimg.com/originals/ea/88/df/ea88df1f18f4f43baba75c1d0315f757.png).
 
-> Please note that this project is still far from finished and is not very polished. This is a fun side project for me to test out some new (to me) tech. If there's any changes or features you'd like to see, feel free to file an issue or a pull request on its <EditOnGitHub url="https://github.com/dylansheffer/Whos-That-Pokemon"> GitHub Page </EditOnGitHub>
+> Please note that this project is still far from finished and is not very polished. This is a fun side project for me to test out some new (to me) tech. If there are any changes or features you'd like to see, feel free to file an issue or a pull request on its <EditOnGitHub url="https://github.com/dylansheffer/Whos-That-Pokemon"> GitHub Page </EditOnGitHub>
 
 ## The Stack
 
@@ -20,7 +20,7 @@ The project's back-end utilizes [Docker](https://www.docker.com/), [PostgeSQL](h
 
 ## Project's Motivation
 
-A lot of people build todo apps as a [Rorschach test](https://en.wikipedia.org/wiki/Rorschach_test) for evaluating a new piece of tech, however, I use "Who's That Pokemon?!?" for this purpose. It works for me because the concept is simple, but it really tests a lot of aspects of an application.
+A lot of people build todo list apps as a [Rorschach test](https://en.wikipedia.org/wiki/Rorschach_test) for evaluating a new piece of tech, however, I use "Who's That Pokemon?!?" for this purpose. It works for me because the concept is simple, but it tests a lot of aspects of an application such as the following:
 
 1. Pick 1 mystery Pokemon and 3 wrong answers (array manipulation)
 2. User selects an answer (form handling)
@@ -28,15 +28,15 @@ A lot of people build todo apps as a [Rorschach test](https://en.wikipedia.org/w
 
 This particular implementation of Who's That Pokemon?!? was motivated because I unfortunately had to step away from the world of React for about a year while I worked on different tech stacks for other companies (vanilla web components, and Angular).
 
-While I was away, a lot had changed! Now there's these new things called [React Hooks](https://reactjs.org/docs/hooks-intro.html) and now, it seems uncouth to use stateful components and dare I say [Redux](https://redux.js.org/) 😱. This application was my fun way to break back into the React world while trying out another new toy that I've been meaning to learn, Docker 🐳.
+While I was away, a lot had changed! There are these new things called [React Hooks](https://reactjs.org/docs/hooks-intro.html) and now, it seems uncouth to use stateful components and dare I say [Redux](https://redux.js.org/) 😱. This application was my fun way to break back into the React world while trying out another new toy that I've been meaning to learn, Docker 🐳.
 
-## Current Limitations
+## Things to Work On
 
-There's a lot of rough edges on the current project. Right now, there's one shared session for all users because _I will_ (eventually) add an account system, so each person can 🎵 _be the very best, like no one ever was!_ 🎵
+Currently, there are a lot of rough edges on the project. There's one shared session for all users because _I will_ (eventually) add an account system, so each person can 🎵 _be the very best, like no one ever was!_ 🎵
 
-There's some serious accessibility issues with the game in its current state. These will likely be the first issues I tackle. One issue is that the keyboard navigation is awful. I can't skip past the long list of Pokedex Entries and because I am using visually-hidden radio buttons for the multiple choice answers, so the focus ring isn't visible.
+There are some serious accessibility issues with the game in its current state. These will likely be the first issues I tackle. One issue is that the keyboard navigation is awful. I can't skip past the long list of Pokedex Entries and because I am using visually-hidden radio buttons for the multiple choice answers the focus ring isn't visible.
 
-Additionally, the mystery Pokemon, literally has the answer to the question in its alt-text. I am going to change that to the Pokedex's description of the Pokemon once I scrape the data and add it to my database. Regardless of whether a person uses their eyes or a screen reader to play the game, they should be equally tested on their Pokemon Mastery 🎆.
+Additionally, the mystery Pokemon literally has the answer to the question in its alt-text. I am going to change that to the Pokedex's description of the Pokemon once I scrape the data and add it to my database. Regardless of whether a person uses their eyes or a screen reader to play the game, they should be equally tested on their Pokemon Mastery 🎆.
 
 I also have found that the native HTML [`dialog`](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog) element to be very inconsistent from browser to browser and I am still fixing UI glitches caused by that.
 
