@@ -23,7 +23,7 @@ export const Tag = ({ color, children, ...rest }) => {
     green: ['design', 'netlify cms'],
     yellow: ['javascript'],
     orange: ['aws'],
-    purple: ['gatsby', 'graphql'],
+    purple: ['gatsby', 'graphql', 'misc'],
     blue: ['react', 'accessibility', 'netlify', 'docker', 'postgresql'],
   };
   const getTagColor = tag => {
