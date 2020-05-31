@@ -3,6 +3,7 @@ import { graphql, Link } from 'gatsby';
 import { Helmet } from 'react-helmet';
 import { PostPageLayout } from '../components/styles/LayoutStyles';
 import { PostCard } from '../components/PostCard';
+import { WorkMetaTags } from '../components/MetaTags';
 
 export default function ProjectsPage({
   data: { allMdx: projects },
@@ -16,13 +17,7 @@ export default function ProjectsPage({
       totalCount={projects.totalCount}
       pathPrefix="/projects/"
     >
-      <Helmet>
-        <title>
-          {`Page ${
-            pageContext.currentPage ? pageContext.currentPage : 1
-          } - Work - Dylan Sheffer`}
-        </title>
-      </Helmet>
+      <WorkMetaTags pageContext={pageContext} />
       <div>
         {projects.edges.map(({ node: project }) => (
           <PostCard

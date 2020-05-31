@@ -7,7 +7,7 @@ import { PostHeaderStyles } from '../components/styles/PostHeaderStyles';
 import { MarkdownHeading } from '../components/mdxComponents/Headings';
 import { Blockquote } from '../components/mdxComponents/Blockquote';
 import { Tags } from '../components/Tag';
-import { PostMetaTags } from '../components/MetaTags';
+import { ArticleMetaTags } from '../components/MetaTags';
 import { EditOnGitHub } from '../components/EditOnGitHub';
 import { ContentNav } from '../components/ContentNav';
 
@@ -22,6 +22,7 @@ export const pageQuery = graphql`
     mdx(fields: { slug: { eq: $slug } }) {
       id
       body
+      excerpt(pruneLength: 250)
       fileAbsolutePath
       fields {
         slug
@@ -50,7 +51,7 @@ export default function PostTemplate({ data: { mdx: post }, pageContext }) {
     <>
       <MyImg image={post.frontmatter.image} alt={post.frontmatter.title} />
       <PostHeaderStyles>
-        <PostMetaTags post={post} />
+        <ArticleMetaTags post={post} />
         <MarkdownHeading>{post.frontmatter.title}</MarkdownHeading>
         <div className="post-metadata">
           <time dateTime={post.frontmatter.date}>{post.frontmatter.date}</time>

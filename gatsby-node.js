@@ -1,5 +1,10 @@
-const { createFilePath } = require(`gatsby-source-filesystem`);
+require('dotenv').config();
+
 const path = require(`path`);
+const { createFilePath } = require(`gatsby-source-filesystem`);
+
+// This surfaces backend env variables to the front end by prefixing them with GATSBY_
+process.env.GATSBY_URL = process.env.URL;
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions;

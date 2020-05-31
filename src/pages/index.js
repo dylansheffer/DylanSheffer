@@ -8,6 +8,7 @@ import { H, MarkdownHeading } from '../components/mdxComponents/Headings';
 import { MiniPostCard } from '../components/PostCard';
 import { Text } from '../components/mdxComponents/Text';
 import { CircleImg } from '../components/CircleImg';
+import { HomeMetaTags } from '../components/MetaTags';
 
 const StatusStyle = styled.p`
   font-weight: bold;
@@ -107,6 +108,7 @@ const CTASection = styled.section`
 const Site = ({ data: { me, projects }, ...props }) => (
   <>
     <Hero>
+      <HomeMetaTags />
       <ContentContainer>
         <CircleImg image={me} />
         <div className="hero-content">

@@ -22,6 +22,7 @@ export const pageQuery = graphql`
     mdx(fields: { slug: { eq: $slug } }) {
       id
       body
+      excerpt(pruneLength: 250)
       fileAbsolutePath
       fields {
         slug

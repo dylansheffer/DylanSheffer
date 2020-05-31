@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Helmet } from 'react-helmet';
 import { graphql, Link } from 'gatsby';
 import { MarkdownHeading, H } from '../components/mdxComponents/Headings';
 import { Text } from '../components/mdxComponents/Text';
 import { CircleImg } from '../components/CircleImg';
+import { AboutMetaTags } from '../components/MetaTags';
 
 const AboutPageStyle = styled.section`
   .hero {
@@ -25,9 +25,7 @@ const AboutPageStyle = styled.section`
 export default function AboutPage({ data, pageContext, path }) {
   return (
     <AboutPageStyle>
-      <Helmet>
-        <title>About - Dylan Sheffer</title>
-      </Helmet>
+      <AboutMetaTags />
       <MarkdownHeading>About</MarkdownHeading>
       <div className="hero">
         <CircleImg className="image" image={data.me} />

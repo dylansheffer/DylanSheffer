@@ -1,8 +1,8 @@
 import React from 'react';
-import { graphql, Link } from 'gatsby';
-import { Helmet } from 'react-helmet';
+import { graphql } from 'gatsby';
 import { PostPageLayout } from '../components/styles/LayoutStyles';
 import { PostCard } from '../components/PostCard';
+import { ArticlesMetaTags } from '../components/MetaTags';
 
 export default function PostsPage({
   data: { allMdx: posts },
@@ -16,13 +16,7 @@ export default function PostsPage({
       pathPrefix="/posts/"
       title="Articles"
     >
-      <Helmet>
-        <title>
-          {`Page ${
-            pageContext.currentPage ? pageContext.currentPage : 1
-          } - Articles - Dylan Sheffer`}
-        </title>
-      </Helmet>
+      <ArticlesMetaTags pageContext={pageContext} />
       <div>
         {posts.edges.map(({ node: post }) => (
           <PostCard

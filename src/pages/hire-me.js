@@ -1,11 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Helmet } from 'react-helmet';
-import { graphql } from 'gatsby';
 import { MarkdownHeading, H } from '../components/mdxComponents/Headings';
 import { Text } from '../components/mdxComponents/Text';
 import { Code } from '../components/mdxComponents/Code';
 import { Button } from '../components/Button';
+import { HireMeMetaTags } from '../components/MetaTags';
 
 const HireMePageStyle = styled.main``;
 
@@ -57,9 +56,7 @@ const InputContainer = styled.div`
 export default function HireMePage({ pageContext, path }) {
   return (
     <HireMePageStyle>
-      <Helmet>
-        <title>Hire Me - Dylan Sheffer</title>
-      </Helmet>
+      <HireMeMetaTags />
       <MarkdownHeading>Hire Me</MarkdownHeading>
       <AboutMeSection>
         <H as="h2" className="visually-hidden">
