@@ -21,6 +21,7 @@ const baseURL = getBaseURL();
 export function DefaultMetaTags() {
   return (
     <Helmet>
+      <html lang="en-US" />
       <meta name="generator" content="Dylan Sheffer on Gatsby!" />
       <meta name="twitter:card" content="summary" />
       <meta name="twitter:site" content="@dylansheffer" />
