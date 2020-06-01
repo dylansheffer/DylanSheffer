@@ -90,6 +90,7 @@ const ProjectsSection = styled.section`
 `;
 
 const CTASection = styled.section`
+  padding: 8rem 0;
   background-color: var(--surface-dark);
   .content-container {
     display: flex;
@@ -172,7 +173,7 @@ export const query = graphql`
       limit: 4
     ) {
       nodes {
-        excerpt(pruneLength: 100)
+        excerpt(pruneLength: 80)
         id
         frontmatter {
           title
