@@ -140,6 +140,7 @@ export default function HireMePage({ pageContext, path }) {
           data-netlify-honeypot="bot-field"
           // data-netlify-recaptcha="true"
           data-netlify="true"
+          action="/"
         >
           <input type="hidden" name="bot-field" />
           <input type="hidden" name="form-name" value="contact" />
