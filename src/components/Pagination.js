@@ -61,6 +61,11 @@ export default function Pagination({
     },
   ];
   const getRandomMessage = array => array[getRandomProperty({ ...array })];
+
+  if (totalPages === 1) {
+    return <></>;
+  }
+
   return (
     <PaginationStyles>
       <Link
