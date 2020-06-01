@@ -6,7 +6,11 @@ import { Code } from '../components/mdxComponents/Code';
 import { Button } from '../components/Button';
 import { HireMeMetaTags } from '../components/MetaTags';
 
-const HireMePageStyle = styled.main``;
+const HireMePageStyle = styled.div`
+  h1 {
+    margin-top: 0;
+  }
+`;
 
 const AboutMeSection = styled.section``;
 

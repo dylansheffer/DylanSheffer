@@ -10,7 +10,7 @@ const MiniPostCardStyles = styled.article`
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 2fr 1fr;
-  padding: 1rem;
+  padding: 1rem 2rem;
   background: var(--surface-light);
   border: var(--border);
   box-shadow: var(--shadow);

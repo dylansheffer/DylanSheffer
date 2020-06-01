@@ -8,6 +8,7 @@ const LayoutStyles = styled.div`
   display: flex;
   flex-direction: column;
   main {
+    margin-top: 2rem;
     flex: 1 1 0;
   }
   p {
@@ -33,7 +34,9 @@ const PostPageLayoutStyles = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
-
+  h1 {
+    margin-top: 0;
+  }
   .posts {
     flex: 1 1 0;
   }

@@ -7,6 +7,9 @@ import { CircleImg } from '../components/CircleImg';
 import { AboutMetaTags } from '../components/MetaTags';
 
 const AboutPageStyle = styled.section`
+  h1 {
+    margin-top: 0;
+  }
   .hero {
     display: grid;
     grid-template-columns: auto 1fr;
