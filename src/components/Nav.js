@@ -70,6 +70,7 @@ const LinkItem = styled.li`
     &[aria-current='page'] {
       background: var(--white);
       color: var(--black);
+      box-shadow: none;
     }
   }
 `;
