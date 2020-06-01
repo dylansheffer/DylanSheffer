@@ -68,6 +68,9 @@ const PostCardStyles = styled.article`
   grid-template-columns: 30% 1fr;
   grid-gap: 3rem;
   padding: 5rem 0;
+  &:first-child {
+    padding: 0 0 5rem 0;
+  }
   &:not(:last-child) {
     border-block-end: 1px solid var(--yellow);
   }
