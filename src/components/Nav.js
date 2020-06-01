@@ -14,6 +14,7 @@ const NavStyles = styled.nav`
     align-items: center;
     .logo {
       margin-top: 1rem;
+      box-shadow: none;
     }
   }
   @media (min-width: 550px) {
@@ -24,7 +25,6 @@ const NavStyles = styled.nav`
     .content-container {
       flex-direction: row;
       .logo {
-        box-shadow: none;
         margin-top: 0;
         position: absolute;
         top: 5%;
@@ -51,7 +51,7 @@ const LinkContainer = styled.ul`
 `;
 
 const LinkItem = styled.li`
-  margin: 0.5rem 1rem;
+  margin: 1.5rem;
   color: var(--yellow);
   a {
     font-family: 'Hack', monospace;
