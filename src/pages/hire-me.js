@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { parse } from 'query-string';
 import { MarkdownHeading, H } from '../components/mdxComponents/Headings';
 import { Text } from '../components/mdxComponents/Text';
 import { Code } from '../components/mdxComponents/Code';
@@ -58,10 +59,23 @@ const InputContainer = styled.div`
   height: max-content;
 `;
 
-export default function HireMePage({ pageContext, path }) {
+const SuccessMessage = styled(Text)`
+  background: var(--green);
+  color: var(--black);
+  padding: 3rem;
+`;
+
+export default function HireMePage({ pageContext, path, location }) {
+  const { success: formSuccess } = parse(location.search);
   return (
     <HireMePageStyle>
       <HireMeMetaTags />
+      {formSuccess && (
+        <SuccessMessage>
+          Got It! 📬 Thank you for reaching out! I will be sure to get back to
+          you ASAP.
+        </SuccessMessage>
+      )}
       <MarkdownHeading>Hire Me</MarkdownHeading>
       <AboutMeSection>
         <H as="h2" className="visually-hidden">
@@ -134,13 +148,13 @@ export default function HireMePage({ pageContext, path }) {
           <Code as="span">@DylanSheffer</Code>).
         </Text>
         <form
-          className="contact-form"
+          id="contact-form"
           name="contact"
           method="post"
           data-netlify-honeypot="bot-field"
           // data-netlify-recaptcha="true"
           data-netlify="true"
-          action="/"
+          action="/hire-me/?success=🎉"
         >
           <input type="hidden" name="bot-field" />
           <input type="hidden" name="form-name" value="contact" />
