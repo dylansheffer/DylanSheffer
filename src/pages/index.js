@@ -29,9 +29,11 @@ const Status = ({ available }) => (
   </>
 );
 
-const Hero = styled.main`
+const Hero = styled.section`
   background-color: var(--surface-light);
   width: 100%;
+  /* top padding is less because the page content already has 2rem margin */
+  padding: 1rem 3rem 3rem;
   .content-container {
     display: grid;
     justify-items: center;
@@ -40,19 +42,16 @@ const Hero = styled.main`
     .hero-content {
       display: grid;
       grid-gap: 2rem;
-      justify-items: center;
       align-items: center;
       h1 {
-        text-align: center;
         margin: 0;
       }
       p {
-        text-align: center;
         line-height: 1.75;
         margin: 0;
       }
     }
-    @media (min-width: 700px) {
+    @media (min-width: 675px) {
       justify-items: left;
       grid-template-columns: 32rem 1fr;
       grid-gap: 3rem;
