@@ -21,7 +21,7 @@ const GlobalStyles = createGlobalStyle`
     --sans-serif: 'Open Sans', sans-serif;
     --monospace: 'Hack', monospace;
     --link-underline: inset 0 -0.07em 0 var(--yellow);
-    --link-underline-focus: inset 0 -1.25em 0 var(--yellow);
+    --link-underline-focus: inset 0 -10em 0 var(--yellow);
     --link-transition: box-shadow 270ms cubic-bezier(0.77, 0, 0.175, 1),color 270ms cubic-bezier(0.77, 0, 0.175, 1);
   }
   html {
