@@ -79,19 +79,28 @@ const Spacer = styled.div`
   flex: 1 1 0;
 `;
 
+// this link will be active when itself or deeper routes
+// are current
+const isPartiallyActive = ({ isPartiallyCurrent }) =>
+  isPartiallyCurrent ? { 'aria-current': 'page' } : {};
+
+const PartialNavLink = props => (
+  <Link getProps={isPartiallyActive} {...props} />
+);
+
 const NavLinks = ({ children }) => (
   <LinkContainer>
     <LinkItem>
-      <Link to="/about">About</Link>
+      <PartialNavLink to="/about">About</PartialNavLink>
     </LinkItem>
     <LinkItem>
-      <Link to="/projects">Work</Link>
+      <PartialNavLink to="/projects">Work</PartialNavLink>
     </LinkItem>
     <LinkItem>
-      <Link to="/posts">Articles</Link>
+      <PartialNavLink to="/posts">Articles</PartialNavLink>
     </LinkItem>
     <LinkItem>
-      <Button className="cta" as={Link} to="/hire-me">
+      <Button className="cta" as={PartialNavLink} to="/hire-me">
         Hire Me
       </Button>
     </LinkItem>
