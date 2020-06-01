@@ -21,6 +21,7 @@ const PaginationStyles = styled.nav`
   a[disabled] {
     pointer-events: none;
     text-decoration: line-through;
+    box-shadow: none;
   }
 
   @media (max-width: 500px) {

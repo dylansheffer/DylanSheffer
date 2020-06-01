@@ -18,6 +18,7 @@ const MiniPostCardStyles = styled.article`
   .heading {
     color: var(--text);
     text-decoration: none;
+    box-shadow: none;
     h2 {
       font-family: var(--sans-serif);
       font-weight: bold;
@@ -72,9 +73,23 @@ const PostCardStyles = styled.article`
   }
   .image {
     max-width: calc(100vw - 3rem);
+    box-shadow: none;
   }
-  h2 {
-    margin-top: 0;
+  .heading {
+    transition: none;
+    color: var(--yellow);
+    width: fit-content;
+    h2 {
+      width: fit-content;
+      margin-top: 0;
+      box-shadow: var(--link-underline);
+      transition: var(--link-transition);
+      &:hover,
+      :focus {
+        box-shadow: var(--link-underline-focus);
+        color: var(--black);
+      }
+    }
   }
   @media (max-width: 800px) {
     grid-template-columns: 1fr;

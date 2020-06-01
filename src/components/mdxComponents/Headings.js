@@ -31,9 +31,11 @@ export const H = styled.h1`
   hyphens: auto;
   a {
     text-decoration: none;
+    box-shadow: none;
     &:hover,
     :focus {
-      text-decoration: underline;
+      color: var(--yellow);
+      box-shadow: var(--link-underline);
     }
   }
   .header-anchor {
@@ -42,6 +44,7 @@ export const H = styled.h1`
     position: absolute;
     transform: translateX(-120%);
     text-decoration: none;
+    box-shadow: none;
     opacity: 0;
     height: 100%;
     path {
@@ -51,10 +54,12 @@ export const H = styled.h1`
   &:hover .header-anchor,
   &:focus .header-anchor {
     opacity: 1;
+    box-shadow: none;
   }
   .header-anchor:focus,
   .header-anchor:hover {
     opacity: 1;
+    box-shadow: none;
   }
 `;
 

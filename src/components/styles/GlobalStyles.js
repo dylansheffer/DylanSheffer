@@ -20,6 +20,9 @@ const GlobalStyles = createGlobalStyle`
     --border: 0.25rem solid var(--black);
     --sans-serif: 'Open Sans', sans-serif;
     --monospace: 'Hack', monospace;
+    --link-underline: inset 0 -0.07em 0 var(--yellow);
+    --link-underline-focus: inset 0 -1.25em 0 var(--yellow);
+    --link-transition: box-shadow 270ms cubic-bezier(0.77, 0, 0.175, 1),color 270ms cubic-bezier(0.77, 0, 0.175, 1);
   }
   html {
     font-family: var(--sans-serif);
@@ -42,6 +45,18 @@ const GlobalStyles = createGlobalStyle`
   }
   a {
     color: var(--yellow);
+    transition: var(--link-transition);
+    box-shadow: var(--link-underline);
+    text-decoration: none;
+    &:hover, :focus {
+      color: var(--black);
+      box-shadow: var(--link-underline-focus);
+    }
+    code {
+      text-decoration: underline;
+      box-shadow: none;
+      color: var(--yellow);
+    }
   }
   pre[data-language] {
     border-radius: 0;

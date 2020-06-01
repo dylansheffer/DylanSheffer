@@ -85,6 +85,7 @@ const ProjectsSection = styled.section`
   .view-all {
     margin: 2rem 0;
     display: block;
+    width: fit-content;
   }
 `;
 

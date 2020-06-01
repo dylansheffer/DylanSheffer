@@ -13,10 +13,19 @@ export const PostHeaderStyles = styled.header`
     grid-auto-flow: column;
     justify-content: start;
     align-items: center;
+    a {
+      box-shadow: none;
+      color: var(--yellow);
+      text-decoration: underline;
+      .edit-icon {
+        color: var(--white);
+      }
+    }
     & > * {
       :not(:last-child):after {
         content: '#';
         text-decoration: none;
+        box-shadow: none;
         display: inline-block;
         margin-left: 1.5rem;
         color: var(--yellow);

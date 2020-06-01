@@ -9,16 +9,24 @@ const EditOnGitHubStyles = styled.a`
     margin-right: 0.5rem;
   }
   .edit-icon {
+    transition: var(--link-transition);
     color: var(--text);
+  }
+  &:hover,
+  :focus {
+    .edit-icon {
+      color: var(--black);
+    }
   }
 `;
 
-export const EditOnGitHub = ({ url, children }) => (
+export const EditOnGitHub = ({ url, children, ...props }) => (
   <EditOnGitHubStyles
     className="edit"
     rel="noopener noreferrer"
     target="_blank"
     href={url}
+    {...props}
   >
     <span>{children || `Edit Post`}</span>{' '}
     <IoLogoGithub className="edit-icon" />

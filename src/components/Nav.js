@@ -24,6 +24,7 @@ const NavStyles = styled.nav`
     .content-container {
       flex-direction: row;
       .logo {
+        box-shadow: none;
         margin-top: 0;
         position: absolute;
         top: 5%;
@@ -55,10 +56,20 @@ const LinkItem = styled.li`
   a {
     font-family: 'Hack', monospace;
     text-decoration: none;
+    box-shadow: none;
     &:focus,
     :hover,
     &[aria-current='page'] {
-      text-decoration: underline;
+      color: var(--yellow);
+      box-shadow: var(--link-underline);
+    }
+  }
+  a.cta {
+    &:focus,
+    :hover,
+    &[aria-current='page'] {
+      background: var(--white);
+      color: var(--black);
     }
   }
 `;
@@ -79,7 +90,7 @@ const NavLinks = ({ children }) => (
       <Link to="/posts">Articles</Link>
     </LinkItem>
     <LinkItem>
-      <Button as={Link} to="/hire-me">
+      <Button className="cta" as={Link} to="/hire-me">
         Hire Me
       </Button>
     </LinkItem>

@@ -12,6 +12,12 @@ const SocialLinks = styled.nav`
     color: var(--white);
     font-size: 4.5rem;
     margin: 0 2rem;
+    box-shadow: none;
+    :hover,
+    :focus {
+      box-shadow: none;
+      color: var(--white);
+    }
   }
 `;
 

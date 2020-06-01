@@ -25,13 +25,21 @@ const ContentNavStyles = styled.div`
       text-align: right;
     }
     text-decoration: none;
+    box-shadow: none;
+    strong {
+      text-decoration: underline;
+      text-decoration-color: var(--yellow);
+    }
+    &:hover,
+    :focus {
+      box-shadow: inset 0 -100px 0 var(--yellow);
+      strong {
+        text-decoration: none;
+      }
+    }
   }
   p {
     margin: 0;
-  }
-  strong {
-    text-decoration: underline;
-    text-decoration-color: var(--yellow);
   }
 
   p,
