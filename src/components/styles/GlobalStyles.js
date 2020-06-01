@@ -37,10 +37,15 @@ const GlobalStyles = createGlobalStyle`
   }
   *, *:before, *:after {
     box-sizing: inherit;
+    /* Disable Animations for people who request it */
+    @media (prefers-reduced-motion) {
+      transition: none !important;
+      animation: none !important;
+    }
   }
   ::selection {
     color: var(--black);
-    /* Need to set some opacity because Chrome will apply it automatically */
+    /* Setting very little opacity because Chrome will apply their own if I don't */
     background: rgba(255, 216, 102, 0.99);
   }
   h1, h2, h3, h4, h5, h6 {
