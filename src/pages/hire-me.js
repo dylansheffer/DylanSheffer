@@ -36,6 +36,7 @@ const ContactFormSection = styled.section`
       border: 0;
       line-height: 1.77778;
       width: 100%;
+      padding: 0.75rem;
     }
     .two-column {
       display: grid;
