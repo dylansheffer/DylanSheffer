@@ -38,6 +38,11 @@ const GlobalStyles = createGlobalStyle`
   *, *:before, *:after {
     box-sizing: inherit;
   }
+  ::selection {
+    color: var(--black);
+    /* Need to set some opacity because Chrome will apply it automatically */
+    background: rgba(255, 216, 102, 0.99);
+  }
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--monospace);
     font-weight: normal;
