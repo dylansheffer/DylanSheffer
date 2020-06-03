@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import { Dot } from './Dot';
 import { Text } from './mdxComponents/Text';
 import { getRandomProperty } from '../utilities';
+import { SemanticList } from './SemanticList';
 
 const TagStyles = styled.span`
   display: flex;
@@ -48,8 +49,8 @@ export const Tag = ({ color, children, ...rest }) => {
   );
 };
 
-const TagsStyle = styled.div`
-  display: flex;
+const TagsStyle = styled(SemanticList)`
+  flex-wrap: nowrap;
   overflow-x: auto;
   scrollbar-width: thin;
   scrollbar-color: var(--yellow) transparent;
@@ -74,9 +75,9 @@ export const Tags = ({ tags }) => {
     return (
       <TagsStyle className="tags">
         {tags.map(t => (
-          <Tag key={t} className="tag">
-            {t}
-          </Tag>
+          <li key={t} className="tag">
+            <Tag>{t}</Tag>
+          </li>
         ))}
       </TagsStyle>
     );

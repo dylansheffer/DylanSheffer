@@ -29,7 +29,7 @@ const Status = ({ available }) => (
   </>
 );
 
-const Hero = styled.section`
+const Hero = styled.header`
   background-color: var(--surface-light);
   width: 100%;
   /* top padding is less because the page content already has 2rem margin */

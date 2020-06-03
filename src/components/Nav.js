@@ -4,6 +4,7 @@ import { Link } from 'gatsby';
 import LogoImage from '../../static/logo.svg';
 import { ContentContainer } from './styles/LayoutStyles';
 import { Button } from './Button';
+import { SemanticList } from './SemanticList';
 
 const NavStyles = styled.nav`
   background-color: var(--surface-dark);
@@ -40,14 +41,9 @@ const Logo = styled.div`
   height: 9rem;
 `;
 
-const LinkContainer = styled.ul`
-  display: flex;
+const LinkContainer = styled(SemanticList)`
   align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  list-style: none;
-  margin: 0;
-  padding: 0;
 `;
 
 const LinkItem = styled.li`

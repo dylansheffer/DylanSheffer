@@ -59,6 +59,9 @@ export const MiniPostCard = ({ title, tags, children, link, ...rest }) => (
     <div className="card-content">
       <Text>{children}</Text>
     </div>
+    <H as="h3" className="visually-hidden">
+      Post Tags
+    </H>
     <Tags tags={tags} />
   </MiniPostCardStyles>
 );
