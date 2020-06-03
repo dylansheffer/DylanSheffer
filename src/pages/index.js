@@ -134,7 +134,7 @@ const Site = ({ data: { me, projects }, ...props }) => (
                 key={id}
                 title={frontmatter.title}
                 link={slug}
-                tags={frontmatter.tags}
+                tags={frontmatter.tags.slice(0, 3)}
               >
                 {excerpt}
               </MiniPostCard>
