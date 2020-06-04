@@ -7,7 +7,7 @@ export const PostHeaderStyles = styled.header`
   }
 `;
 
-export const PostMetaData = styled.section`
+export const PostMetaData = styled.aside`
   margin: 0.75rem 0;
   font-size: 1.75rem;
   display: grid;
@@ -39,7 +39,8 @@ export const PostMetaData = styled.section`
   }
   & > * {
     :not(:last-child):after {
-      content: '#';
+      /* pseudo elements will be read unless an alt empty alt text is specified */
+      content: '#' / '';
       text-decoration: none;
       box-shadow: none;
       display: inline-block;

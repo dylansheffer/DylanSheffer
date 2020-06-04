@@ -66,6 +66,8 @@ export const MarkdownHeading = styled(H)`
   display: block;
   color: var(--yellow);
   &:before {
-    content: '${({ as }) => (as ? markdownContent[as] : markdownContent.h1)}';
+    /* Additional param removes the :before element from a11y tree */
+  content: "${({ as }) =>
+    as ? markdownContent[as] : markdownContent.h1}" / "";
   }
 `;
