@@ -31,7 +31,11 @@ export default function AboutPage({ data, pageContext, path }) {
       <AboutMetaTags />
       <MarkdownHeading>About</MarkdownHeading>
       <div className="hero">
-        <CircleImg className="image" image={data.me} />
+        <CircleImg
+          className="image"
+          image={data.me}
+          alt="Dylan squinting at the camera"
+        />
         <Text large>
           My name is Dylan Sheffer and I am a full-stack developer, web
           accessibility advocate, and tea enthusiast living in beautiful
