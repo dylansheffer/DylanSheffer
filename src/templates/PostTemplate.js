@@ -57,8 +57,10 @@ export default function PostTemplate({ data: { mdx: post }, pageContext }) {
       <PostHeaderStyles>
         <ArticleMetaTags post={post} />
         <MarkdownHeading>{post.frontmatter.title}</MarkdownHeading>
-        <PostMetaData>
-          <h2 className="visually-hidden">Article Information</h2>
+        <PostMetaData aria-labelledby="post-template-metadata-heading">
+          <h2 id="post-template-metadata-heading" className="visually-hidden">
+            Article Information
+          </h2>
           <time dateTime={post.frontmatter.date}>{post.frontmatter.date}</time>
           <Tags tags={post.frontmatter.tags} />
           <Underline>

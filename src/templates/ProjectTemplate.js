@@ -65,8 +65,13 @@ export default function ProjectTemplate({
       <PostHeaderStyles>
         <ProjectMetaTags project={project} />
         <MarkdownHeading>{project.frontmatter.title}</MarkdownHeading>
-        <PostMetaData>
-          <h2 className="visually-hidden">Project Information</h2>
+        <PostMetaData aria-labelledby="project-template-metadata-heading">
+          <h2
+            id="project-template-metadata-heading"
+            className="visually-hidden"
+          >
+            Project Information
+          </h2>
           <time dateTime={project.frontmatter.date}>
             {project.frontmatter.date}
           </time>

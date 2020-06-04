@@ -4,6 +4,7 @@ import { Dot } from './Dot';
 import { Text } from './mdxComponents/Text';
 import { getRandomProperty } from '../utilities';
 import { SemanticList } from './SemanticList';
+import { H } from './mdxComponents/Headings';
 
 const TagStyles = styled.span`
   display: flex;
@@ -70,10 +71,13 @@ const TagsStyle = styled(SemanticList)`
   }
 `;
 
-export const Tags = ({ tags }) => {
+export const Tags = ({ tags, headingLevel = 'h3' }) => {
   if (tags) {
     return (
-      <TagsStyle className="tags">
+      <TagsStyle className="tags" aria-labelledby="tags-heading">
+        <H as={headingLevel} className="visually-hidden" id="tag-heading">
+          Tags
+        </H>
         {tags.map(t => (
           <li key={t} className="tag">
             <Tag>{t}</Tag>
