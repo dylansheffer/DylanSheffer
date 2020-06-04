@@ -3,7 +3,11 @@ import { graphql } from 'gatsby';
 import { MDXRenderer } from 'gatsby-plugin-mdx';
 
 import { MyImg } from '../components/MyImg';
-import { PostHeaderStyles } from '../components/styles/PostHeaderStyles';
+import {
+  PostHeaderStyles,
+  PostMetaData,
+  Underline,
+} from '../components/styles/PostHeaderStyles';
 import { Blockquote } from '../components/mdxComponents/Blockquote';
 import { MarkdownHeading } from '../components/mdxComponents/Headings';
 import { Tags } from '../components/Tag';
@@ -61,16 +65,21 @@ export default function ProjectTemplate({
       <PostHeaderStyles>
         <ProjectMetaTags project={project} />
         <MarkdownHeading>{project.frontmatter.title}</MarkdownHeading>
-        <div className="post-metadata">
+        <PostMetaData>
+          <h2 className="visually-hidden">Project Information</h2>
           <time dateTime={project.frontmatter.date}>
             {project.frontmatter.date}
           </time>
           {project.frontmatter.live && (
-            <a href={project.frontmatter.url}>Live Site</a>
+            <a href={project.frontmatter.url}>
+              <Underline>Live Site</Underline>
+            </a>
           )}
           <Tags tags={project.frontmatter.tags} />
-          <EditOnGitHub url={editURL} />
-        </div>
+          <Underline>
+            <EditOnGitHub url={editURL} />
+          </Underline>
+        </PostMetaData>
       </PostHeaderStyles>
       <MDXRenderer>{project.body}</MDXRenderer>
       <Blockquote>

@@ -14,6 +14,7 @@ const EditOnGitHubStyles = styled.a`
   }
   &:hover,
   :focus {
+    color: var(--black);
     .edit-icon {
       color: var(--black);
     }
