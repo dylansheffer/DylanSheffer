@@ -74,16 +74,18 @@ const TagsStyle = styled(SemanticList)`
 export const Tags = ({ tags, headingLevel = 'h3' }) => {
   if (tags) {
     return (
-      <TagsStyle className="tags" aria-labelledby="tags-heading">
-        <H as={headingLevel} className="visually-hidden" id="tag-heading">
+      <>
+        <H as={headingLevel} className="visually-hidden">
           Tags
         </H>
-        {tags.map(t => (
-          <li key={t} className="tag">
-            <Tag>{t}</Tag>
-          </li>
-        ))}
-      </TagsStyle>
+        <TagsStyle className="tags">
+          {tags.map(t => (
+            <li key={t} className="tag">
+              <Tag>{t}</Tag>
+            </li>
+          ))}
+        </TagsStyle>
+      </>
     );
   }
 
