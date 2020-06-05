@@ -6,6 +6,7 @@ import { Text } from '../components/mdxComponents/Text';
 import { Code } from '../components/mdxComponents/Code';
 import { Button } from '../components/Button';
 import { HireMeMetaTags } from '../components/MetaTags';
+import FocusMeOnPageLoad from '../components/FocusMeOnPageLoad';
 
 const HireMePageStyle = styled.div`
   h1 {
@@ -77,10 +78,12 @@ export default function HireMePage({ pageContext, path, location }) {
     <HireMePageStyle>
       <HireMeMetaTags />
       {formSuccess && (
-        <SuccessMessage>
-          Got It! 📬 Thank you for reaching out! I will be sure to get back to
-          you ASAP.
-        </SuccessMessage>
+        <FocusMeOnPageLoad>
+          <SuccessMessage>
+            Got It! <span aria-hidden="true">📬</span> Thank you for reaching
+            out! I will be sure to get back to you ASAP.
+          </SuccessMessage>
+        </FocusMeOnPageLoad>
       )}
       <MarkdownHeading>Hire Me</MarkdownHeading>
       <AboutMeSection>
