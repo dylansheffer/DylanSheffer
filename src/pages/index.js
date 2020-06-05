@@ -125,7 +125,7 @@ const Site = ({ data: { me, projects }, ...props }) => (
     <ProjectsSection>
       <ContentContainer>
         <MarkdownHeading>
-          <Link to="/projects/">My Work</Link>
+          <Link to="/projects/">Case Studies</Link>
         </MarkdownHeading>
         <div className="projects-container">
           {projects.nodes.map(

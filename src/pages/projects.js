@@ -12,7 +12,7 @@ export default function ProjectsPage({
 }) {
   return (
     <PostPageLayout
-      title="My Work"
+      title="Case Studies"
       currentPage={pageContext.currentPage}
       totalCount={projects.totalCount}
       pathPrefix="/projects/"
