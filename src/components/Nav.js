@@ -5,6 +5,7 @@ import LogoImage from '../../static/logo.svg';
 import { ContentContainer } from './styles/LayoutStyles';
 import { Button } from './Button';
 import { SemanticList } from './SemanticList';
+import { A11yMenu } from './A11yMenu';
 
 const NavStyles = styled.nav`
   background-color: var(--surface-dark);
@@ -105,6 +106,7 @@ const NavLinks = ({ children }) => (
 
 export const Nav = () => (
   <NavStyles>
+    <A11yMenu />
     <ContentContainer>
       <Link className="logo" to="/" aria-label="Home">
         <Logo />

@@ -14,7 +14,7 @@ function Layout({ path, children, ...rest }) {
       <LayoutStyles>
         <Nav />
         <MDXProvider components={mdxComponents}>
-          <main>{children}</main>
+          <main id="main">{children}</main>
         </MDXProvider>
         <Footer />
       </LayoutStyles>
