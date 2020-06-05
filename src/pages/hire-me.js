@@ -134,7 +134,7 @@ export default function HireMePage({ pageContext, path, location }) {
           <Text as="li">
             <strong>Written with Modern code.</strong> All my front-end code is
             crafted semantic HTML, styled with modern CSS practices, and brought
-            to life with the latest Javascript features. (<strong>Note:</strong>{' '}
+            to life with the latest JavaScript features. (<strong>Note:</strong>{' '}
             All shiny and new pieces of code come with appropriate fall backs,
             so they can still be run on older browsers.)
           </Text>
