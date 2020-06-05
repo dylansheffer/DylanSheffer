@@ -36,7 +36,10 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         tags
         image {
-          ...ImageFields
+          src {
+            ...ImageFields
+          }
+          alt
         }
       }
     }
@@ -53,7 +56,10 @@ export default function PostTemplate({ data: { mdx: post }, pageContext }) {
 
   return (
     <>
-      <MyImg image={post.frontmatter.image} alt={post.frontmatter.title} />
+      <MyImg
+        image={post.frontmatter.image.src}
+        alt={post.frontmatter.image.alt}
+      />
       <PostHeaderStyles>
         <ArticleMetaTags post={post} />
         <MarkdownHeading>{post.frontmatter.title}</MarkdownHeading>

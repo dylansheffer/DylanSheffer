@@ -56,7 +56,10 @@ export const pageQuery = graphql`
             title
             tags
             image {
-              ...ImageFields
+              src {
+                ...ImageFields
+              }
+              alt
             }
             date(formatString: "MMMM DD, YYYY")
           }

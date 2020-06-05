@@ -38,7 +38,10 @@ export const pageQuery = graphql`
         live
         tags
         image {
-          ...ImageFields
+          src {
+            ...ImageFields
+          }
+          alt
         }
       }
     }
@@ -59,8 +62,8 @@ export default function ProjectTemplate({
   return (
     <>
       <MyImg
-        image={project.frontmatter.image}
-        alt={project.frontmatter.title}
+        image={project.frontmatter.image.src}
+        alt={project.frontmatter.image.alt}
       />
       <PostHeaderStyles>
         <ProjectMetaTags project={project} />
