@@ -22,6 +22,12 @@ const ContactFormSection = styled.section`
     display: grid;
     grid-template-columns: 1fr;
     grid-row-gap: 3rem;
+    fieldset {
+      display: contents;
+      margin: 0;
+      padding: 0;
+      border: none;
+    }
     textarea {
       min-height: 20rem;
       height: 100%;
@@ -156,28 +162,31 @@ export default function HireMePage({ pageContext, path, location }) {
           data-netlify="true"
           action="/hire-me/?success=🎉"
         >
-          <input type="hidden" name="bot-field" />
-          <input type="hidden" name="form-name" value="contact" />
-          {/* Replace eslint rule with the updated version https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/label-has-for.md */}
-          <div className="two-column">
+          <fieldset>
+            <legend className="visually-hidden">Contact Form</legend>
+            <input type="hidden" name="bot-field" />
+            <input type="hidden" name="form-name" value="contact" />
+            {/* Replace eslint rule with the updated version https://github.com/jsx-eslint/eslint-plugin-jsx-a11y/blob/master/docs/rules/label-has-for.md */}
+            <div className="two-column">
+              <InputContainer>
+                <label htmlFor="name">Name</label>
+                <input type="text" id="name" name="name" />
+              </InputContainer>
+              <InputContainer>
+                <label htmlFor="email">Email</label>
+                <input type="email" id="email" name="email" />
+              </InputContainer>
+            </div>
             <InputContainer>
-              <label htmlFor="name">Name</label>
-              <input type="text" id="name" name="name" />
+              <label htmlFor="message">Message</label>
+              <textarea id="message" name="message"></textarea>
             </InputContainer>
-            <InputContainer>
-              <label htmlFor="email">Email</label>
-              <input type="email" id="email" name="email" />
-            </InputContainer>
-          </div>
-          <InputContainer>
-            <label htmlFor="message">Message</label>
-            <textarea id="message" name="message"></textarea>
-          </InputContainer>
-          {/* <div
+            {/* <div
           className="g-recaptcha"
           data-sitekey="6Ldv2fwUAAAAAAUgSJSKy1gHYHw0EH3OZhP8yImA"
         ></div> */}
-          <Button as="input" type="submit" value="Send Message" />
+            <Button as="input" type="submit" value="Send Message" />
+          </fieldset>
         </form>
       </ContactFormSection>
     </HireMePageStyle>
