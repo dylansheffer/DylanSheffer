@@ -30,6 +30,7 @@ export const EditOnGitHub = ({ url, children, ...props }) => (
     {...props}
   >
     <span>{children || `Edit Post`}</span>{' '}
+    <span className="visually-hidden"> -- opens in a new window</span>
     <IoLogoGithub className="edit-icon" />
   </EditOnGitHubStyles>
 );
