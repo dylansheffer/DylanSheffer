@@ -48,7 +48,7 @@ export default function AboutPage({ data, pageContext, path }) {
         <a href="https://web.archive.org/web/20160224114658/http://www.dylansheffer.com/">
           building websites for 8 years.
         </a>{' '}
-        I use HTML, CSS, and Javascript for most of my projects, but I am also
+        I use HTML, CSS, and JavaScript for most of my projects, but I am also
         experienced using technologies such as .NET, relational databases, and
         serverless functions.
       </Text>
@@ -59,10 +59,9 @@ export default function AboutPage({ data, pageContext, path }) {
         learning and improving.
       </Text>
       <Text>
-        My primary focuses right now are building applications with{' '}
-        <strong>React.js</strong>, <strong>Gatsby</strong>, and{' '}
-        <strong>Cloud Infrastructure</strong> and making the digital world a
-        more <strong>accessible place.</strong>
+        My primary focus right now is building modern{' '}
+        <strong>JavaScript</strong> applications using inclusive and{' '}
+        <strong>accessible</strong> practices.
       </Text>
       <Text>
         My full list of qualifications can be seen on my{' '}
