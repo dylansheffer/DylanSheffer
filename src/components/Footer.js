@@ -22,6 +22,22 @@ const SocialLinks = styled.nav`
   }
 `;
 
+const SocialLink = styled.a`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  .small-text {
+    margin-top: 1rem;
+    font-size: 1.5rem;
+  }
+  &:focus,
+  :hover {
+    .small-text {
+      font-weight: bold;
+    }
+  }
+`;
+
 const FooterStyles = styled.footer`
   background-color: var(--black);
   color: var(--white);
@@ -38,28 +54,37 @@ export const Footer = () => (
         <h2 className="visually-hidden">Social Links</h2>
         <SemanticList>
           <li>
-            <a
+            <SocialLink
               href="http://github.com/dylansheffer"
               aria-label="Dylan Sheffer's GitHub"
             >
               <FaGithub />
-            </a>
+              <span className="small-text" aria-hidden="true">
+                GitHub
+              </span>
+            </SocialLink>
           </li>
           <li>
-            <a
+            <SocialLink
               href="http://twitter.com/dylansheffer"
               aria-label="Dylan Sheffer's Twitter"
             >
               <FaTwitter />
-            </a>
+              <span className="small-text" aria-hidden="true">
+                Twitter
+              </span>
+            </SocialLink>
           </li>
           <li>
-            <a
+            <SocialLink
               href="https://www.linkedin.com/in/dylansheffer/"
               aria-label="Dylan Sheffer's LinkedIn"
             >
               <FaLinkedin />
-            </a>
+              <span className="small-text" aria-hidden="true">
+                LinkedIn
+              </span>
+            </SocialLink>
           </li>
         </SemanticList>
       </SocialLinks>
