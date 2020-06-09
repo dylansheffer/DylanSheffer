@@ -34,7 +34,7 @@ export default function AboutPage({ data, pageContext, path }) {
         <CircleImg
           className="image"
           image={data.me}
-          alt="Dylan squinting at the camera"
+          alt="Dylan squinting at the camera."
         />
         <Text large>
           My name is Dylan Sheffer and I am a full-stack developer, web

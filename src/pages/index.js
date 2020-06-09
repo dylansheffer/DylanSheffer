@@ -111,7 +111,7 @@ const Site = ({ data: { me, projects }, ...props }) => (
     <Hero>
       <HomeMetaTags />
       <ContentContainer>
-        <CircleImg image={me} alt="Dylan squinting at the camera" />
+        <CircleImg image={me} alt="Dylan squinting at the camera." />
         <div className="hero-content">
           <H>Dylan Sheffer</H>
           <p>
