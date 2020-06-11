@@ -25,6 +25,7 @@
     "gatsby-image": "^2.4.3",
     "gatsby-plugin-manifest": "^2.4.3",
     "gatsby-plugin-mdx": "^1.2.7",
+    "gatsby-plugin-netlify": "^2.3.5",
     "gatsby-plugin-prettier-build": "^0.4.3",
     "gatsby-plugin-react-helmet": "^3.3.1",
     "gatsby-plugin-sharp": "^2.6.3",

@@ -23,7 +23,7 @@ const Status = ({ available }) => (
       <Dot className="dot" color={available ? 'green' : 'red'} />
       {available ? `Is Available for Clients 🎉` : `Currently Booked 😅`}
     </StatusStyle>
-    <Button as={Link} to="/hire-me">
+    <Button as={Link} to="/contact">
       {available ? `Hire Me` : `Schedule a Time`}
     </Button>
   </>
@@ -154,7 +154,7 @@ const Site = ({ data: { me, projects }, ...props }) => (
           application more accessible, or just provide some assistance on
           finishing a project, I am here to help! 😄
         </Text>
-        <Button as={Link} to="/hire-me">
+        <Button as={Link} to="/contact">
           Contact Me
         </Button>
       </ContentContainer>

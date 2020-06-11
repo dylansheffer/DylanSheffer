@@ -70,7 +70,7 @@ export default function AboutPage({ data, pageContext, path }) {
         </Text>
         <Text>
           If you're interested in bringing me on to your project,{' '}
-          <Link to="/hire-me">please reach out to me</Link>!
+          <Link to="/contact">please reach out to me</Link>!
         </Text>
       </section>
       {/* <H as="h3">

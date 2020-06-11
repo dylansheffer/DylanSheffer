@@ -100,8 +100,8 @@ const NavLinks = ({ children }) => (
       <PartialNavLink to="/posts">Articles</PartialNavLink>
     </LinkItem>
     <LinkItem>
-      <Button className="cta" as={PartialNavLink} to="/hire-me">
-        Hire Me
+      <Button className="cta" as={PartialNavLink} to="/contact">
+        Contact
       </Button>
     </LinkItem>
   </LinkContainer>

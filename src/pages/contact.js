@@ -5,10 +5,10 @@ import { MarkdownHeading, H } from '../components/mdxComponents/Headings';
 import { Text } from '../components/mdxComponents/Text';
 import { Code } from '../components/mdxComponents/Code';
 import { Button } from '../components/Button';
-import { HireMeMetaTags } from '../components/MetaTags';
+import { ContactMetaTags } from '../components/MetaTags';
 import FocusMeOnPageLoad from '../components/FocusMeOnPageLoad';
 
-const HireMePageStyle = styled.div`
+const ContactPageStyle = styled.div`
   h1 {
     margin-top: 0;
   }
@@ -72,11 +72,11 @@ const SuccessMessage = styled(Text)`
   padding: 3rem;
 `;
 
-export default function HireMePage({ pageContext, path, location }) {
+export default function ContactPage({ pageContext, path, location }) {
   const { success: formSuccess } = parse(location.search);
   return (
-    <HireMePageStyle>
-      <HireMeMetaTags />
+    <ContactPageStyle>
+      <ContactMetaTags />
       {formSuccess && (
         <FocusMeOnPageLoad>
           <SuccessMessage>
@@ -85,7 +85,7 @@ export default function HireMePage({ pageContext, path, location }) {
           </SuccessMessage>
         </FocusMeOnPageLoad>
       )}
-      <MarkdownHeading>Hire Me</MarkdownHeading>
+      <MarkdownHeading>Contact</MarkdownHeading>
       <AboutMeSection>
         <H as="h2" className="visually-hidden">
           About
@@ -163,7 +163,7 @@ export default function HireMePage({ pageContext, path, location }) {
           data-netlify-honeypot="bot-field"
           // data-netlify-recaptcha="true"
           data-netlify="true"
-          action="/hire-me/?success=🎉"
+          action="/contact/?success=🎉"
         >
           <fieldset>
             <legend className="visually-hidden">Contact Form</legend>
@@ -192,7 +192,7 @@ export default function HireMePage({ pageContext, path, location }) {
           </fieldset>
         </form>
       </ContactFormSection>
-    </HireMePageStyle>
+    </ContactPageStyle>
   );
 }
 
