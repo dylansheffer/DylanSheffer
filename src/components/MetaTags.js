@@ -7,6 +7,7 @@ import ogArticleImage from '../../static/og-images/OG-Articles.png';
 import ogAboutImage from '../../static/og-images/OG-About.png';
 import ogWorkImage from '../../static/og-images/OG-Work.png';
 import ogHireMeImage from '../../static/og-images/OG-Hire-Me.png';
+import ogServicesImage from '../../static/og-images/OG-Services.png';
 
 function getBaseURL() {
   const url = process.env.GATSBY_URL;
@@ -180,6 +181,26 @@ export function AboutMetaTags() {
         <meta name="twitter:image" content={ogImageURL} />
         <meta property="og:image" content={ogImageURL} />
         <title>About - Dylan Sheffer</title>
+      </Helmet>
+    </>
+  );
+}
+
+export function ServicesMetaTags() {
+  const url = pathJoin(baseURL, 'services');
+  const ogImageURL = pathJoin(baseURL, ogServicesImage);
+  const description =
+    'Dylan Sheffer; a full stack developer, accessibility advocate, and speaker living in Charlottesville, VA. Dylan is currently available for new clients! 🎉';
+  return (
+    <>
+      <DefaultMetaTags />
+      <Helmet>
+        <link rel="canonical" href={url} />
+        <meta name="description" content={description} />
+        <meta property="og:description" content={description} />
+        <meta name="twitter:image" content={ogImageURL} />
+        <meta property="og:image" content={ogImageURL} />
+        <title>Services - Dylan Sheffer</title>
       </Helmet>
     </>
   );
