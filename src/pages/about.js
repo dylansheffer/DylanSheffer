@@ -3,25 +3,12 @@ import styled from 'styled-components';
 import { graphql, Link } from 'gatsby';
 import { MarkdownHeading, H } from '../components/mdxComponents/Headings';
 import { Text } from '../components/mdxComponents/Text';
-import { CircleImg } from '../components/CircleImg';
 import { AboutMetaTags } from '../components/MetaTags';
+import { MyImg } from '../components/MyImg';
 
 const AboutPageStyle = styled.div`
   h1 {
     margin-top: 0;
-  }
-  .hero {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    grid-gap: 2rem;
-    align-items: center;
-    .image {
-      width: 250px;
-      height: 250px;
-    }
-    @media (max-width: 800px) {
-      grid-template-columns: 1fr;
-    }
   }
 `;
 
@@ -31,11 +18,7 @@ export default function AboutPage({ data, pageContext, path }) {
       <AboutMetaTags />
       <MarkdownHeading>About</MarkdownHeading>
       <section className="hero">
-        <CircleImg
-          className="image"
-          image={data.me}
-          alt="Dylan squinting at the camera."
-        />
+        <MyImg className="image" image={data.me} alt="Dylan widely smiling." />
         <Text large>
           My name is Dylan Sheffer and I am a full-stack developer, web
           accessibility advocate, and tea enthusiast living in beautiful
@@ -83,7 +66,7 @@ export default function AboutPage({ data, pageContext, path }) {
 
 export const query = graphql`
   query ABOUT_PAGE_QUERY {
-    me: file(relativePath: { eq: "me.jpg" }) {
+    me: file(relativePath: { eq: "dylan-smiling.jpg" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
