@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { graphql, Link } from 'gatsby';
+import { MdWeb } from 'react-icons/md';
+import { FaHandsHelping, FaUniversalAccess } from 'react-icons/fa';
+
 import { ContentContainer } from '../components/styles/LayoutStyles';
 import { Dot } from '../components/Dot';
 import { Button } from '../components/Button';
@@ -9,6 +12,8 @@ import { MiniPostCard } from '../components/PostCard';
 import { Text } from '../components/mdxComponents/Text';
 import { CircleImg } from '../components/CircleImg';
 import { HomeMetaTags } from '../components/MetaTags';
+import { SemanticList } from '../components/SemanticList';
+import { ServiceCard } from '../components/ServiceCard';
 
 const StatusStyle = styled.p`
   font-weight: bold;
@@ -32,6 +37,7 @@ const Status = ({ available }) => (
 const Hero = styled.header`
   background-color: var(--surface-light);
   width: 100%;
+  text-align: center;
   /* top padding is less because the page content already has 2rem margin */
   padding: 1rem 3rem 3rem;
   .content-container {
@@ -50,6 +56,9 @@ const Hero = styled.header`
         line-height: 1.75;
         margin: 0;
       }
+      a {
+        margin: 0 auto;
+      }
     }
     @media (min-width: 675px) {
       justify-items: left;
@@ -59,19 +68,38 @@ const Hero = styled.header`
         grid-gap: 3rem;
         justify-items: left;
         align-items: unset;
-        h1 {
+        h1,
+        p,
+        a {
           text-align: left;
-        }
-        p {
-          text-align: left;
+          margin: unset;
         }
       }
     }
   }
 `;
 
+const ServicesSection = styled.section`
+  background-color: var(--surface-medium);
+  h1 {
+    text-align: center;
+    @media (min-width: 675px) {
+      text-align: left;
+    }
+  }
+  li {
+    width: 100%;
+  }
+`;
+
 const ProjectsSection = styled.section`
   background-color: var(--surface-medium);
+  h1 {
+    text-align: center;
+    @media (min-width: 675px) {
+      text-align: left;
+    }
+  }
   .projects-container {
     display: grid;
     grid-template-columns: 1fr;
@@ -122,6 +150,68 @@ const Site = ({ data: { me, projects }, ...props }) => (
         </div>
       </ContentContainer>
     </Hero>
+    <ServicesSection>
+      <ContentContainer>
+        <MarkdownHeading>
+          <Link to="/services/">What I Do</Link>
+        </MarkdownHeading>
+        <SemanticList>
+          <li>
+            <ServiceCard icon={MdWeb} title="Custom Web App Development">
+              <Text>
+                Whether you have an idea you're looking to bring to life or need
+                some help with an existing project, I'm here to help!
+              </Text>
+              <Link to="/services">
+                Learn more{' '}
+                <span className="visually-hidden">
+                  about my custom web app development
+                </span>
+              </Link>
+            </ServiceCard>
+          </li>
+          <li>
+            <ServiceCard icon={FaHandsHelping} title="Help out your team">
+              <Text>
+                Have an important deadline looming and not enough team bandwidth
+                to get the job done?
+              </Text>
+              <Text>
+                I'm available as a developer for hire to add additional
+                resources, so you can meet you company's goals on time.
+              </Text>
+              <Link to="/services">
+                Learn more{' '}
+                <span className="visually-hidden">
+                  about how I can help your team
+                </span>
+              </Link>
+            </ServiceCard>
+          </li>
+          <li>
+            <ServiceCard
+              icon={FaUniversalAccess}
+              title="Accessibility Services"
+            >
+              <Text>
+                Worried about section 508 compliance? Don't know what the WCAG
+                is?
+              </Text>
+              <Text>
+                Bring me for accessibility auditing, remediation services, and
+                tailored workshops for your organization!
+              </Text>
+              <Link to="/services">
+                Learn more{' '}
+                <span className="visually-hidden">
+                  about my my accessibility services
+                </span>
+              </Link>
+            </ServiceCard>
+          </li>
+        </SemanticList>
+      </ContentContainer>
+    </ServicesSection>
     <ProjectsSection>
       <ContentContainer>
         <MarkdownHeading>
