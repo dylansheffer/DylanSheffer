@@ -12,14 +12,13 @@ const NavStyles = styled.nav`
   box-shadow: var(--shadow);
   .content-container {
     display: flex;
-    flex-direction: column-reverse;
     align-items: center;
     .logo {
       margin-top: 1rem;
       box-shadow: none;
     }
   }
-  @media (min-width: 550px) {
+  @media (min-width: 675px) {
     z-index: 10;
     height: 7rem;
     position: sticky;
