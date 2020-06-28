@@ -87,10 +87,10 @@ const PartialNavLink = props => (
 const NavLinks = ({ children }) => (
   <LinkContainer>
     <LinkItem>
-      <PartialNavLink to="/services">Services</PartialNavLink>
+      <PartialNavLink to="/about">About</PartialNavLink>
     </LinkItem>
     <LinkItem>
-      <PartialNavLink to="/about">About</PartialNavLink>
+      <PartialNavLink to="/services">Services</PartialNavLink>
     </LinkItem>
     <LinkItem>
       <PartialNavLink to="/projects">Work</PartialNavLink>

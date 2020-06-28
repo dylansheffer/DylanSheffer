@@ -199,7 +199,10 @@ const Site = ({ data: { me, projects }, ...props }) => (
             </ServiceCard>
           </li>
         </SemanticList>
-        <Link to="/services">More Details About My Services</Link>
+        <Link to="/services">
+          More Details{' '}
+          <span className="visually-hidden">About My Services</span>
+        </Link>
       </ContentContainer>
     </ServicesSection>
     <ProjectsSection>
