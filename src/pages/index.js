@@ -201,7 +201,7 @@ const Site = ({ data: { me, projects }, ...props }) => (
         </SemanticList>
         <Link to="/services">
           More Details{' '}
-          <span className="visually-hidden">About My Services</span>
+          <span className="visually-hidden">about my services.</span>
         </Link>
       </ContentContainer>
     </ServicesSection>

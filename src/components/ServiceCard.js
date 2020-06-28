@@ -4,7 +4,6 @@ import styled from 'styled-components';
 import { H } from './mdxComponents/Headings';
 
 const ServiceCardStyle = styled.div`
-  display: grid;
   margin: 3rem auto;
   width: 100%;
   justify-items: center;
@@ -24,19 +23,20 @@ const ServiceCardStyle = styled.div`
     height: 20rem;
   }
 
-  .icon {
-    grid-area: icon;
-  }
-
-  .content {
-    grid-area: content;
-  }
-
   @media (min-width: 650px) {
+    display: grid;
     grid-template-columns: 20rem auto;
     grid-template-areas: 'icon content';
     grid-gap: 5rem;
     text-align: left;
+
+    .icon {
+      grid-area: icon;
+    }
+
+    .content {
+      grid-area: content;
+    }
   }
 `;
 
