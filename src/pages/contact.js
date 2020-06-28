@@ -5,18 +5,14 @@ import { MarkdownHeading, H } from '../components/mdxComponents/Headings';
 import { Text } from '../components/mdxComponents/Text';
 import { Code } from '../components/mdxComponents/Code';
 import { Button } from '../components/Button';
-import { HireMeMetaTags } from '../components/MetaTags';
+import { ContactMetaTags } from '../components/MetaTags';
 import FocusMeOnPageLoad from '../components/FocusMeOnPageLoad';
 
-const HireMePageStyle = styled.div`
+const ContactPageStyle = styled.div`
   h1 {
     margin-top: 0;
   }
 `;
-
-const AboutMeSection = styled.section``;
-
-const ValueSection = styled.section``;
 
 const ContactFormSection = styled.section`
   form {
@@ -72,11 +68,11 @@ const SuccessMessage = styled(Text)`
   padding: 3rem;
 `;
 
-export default function HireMePage({ pageContext, path, location }) {
+export default function ContactPage({ pageContext, path, location }) {
   const { success: formSuccess } = parse(location.search);
   return (
-    <HireMePageStyle>
-      <HireMeMetaTags />
+    <ContactPageStyle>
+      <ContactMetaTags />
       {formSuccess && (
         <FocusMeOnPageLoad>
           <SuccessMessage>
@@ -85,67 +81,8 @@ export default function HireMePage({ pageContext, path, location }) {
           </SuccessMessage>
         </FocusMeOnPageLoad>
       )}
-      <MarkdownHeading>Hire Me</MarkdownHeading>
-      <AboutMeSection>
-        <H as="h2" className="visually-hidden">
-          About
-        </H>
-        <Text>
-          I am a user-oriented full-stack web developer. This means that I
-          specialize in creating things <strong>for people</strong>.
-        </Text>
-        <Text>
-          My greatest strength is my ability to collaborate with product owners,
-          designers, and developers and translate each party's requirements and
-          constraints into something that ultimately works for the end user.
-        </Text>
-        <Text>
-          I am the happiest when I am working on user-facing features, but I am
-          also able to get my hands dirty and write the APIs, and database
-          schemas needed to turn an idea into a reality.
-        </Text>
-      </AboutMeSection>
-      <ValueSection>
-        <H as="h2">What I Provide</H>
-        <Text>
-          I hold myself to high standards, and provide high value for the
-          investment you make in me.
-        </Text>
-        <Text large>All of my work is, by default:</Text>
-        <ul>
-          <Text as="li">
-            <strong>Optimized for mobile.</strong> All front-ends are fully
-            responsive, and tested across many devices and browsers.
-          </Text>
-          <Text as="li">
-            <strong>Cross-browser compatible.</strong> My applications will work
-            regardless of the browser your users use. Though I do not optimize
-            for older browsers, the applications I create are usable in those
-            browsers.
-          </Text>
-          <Text as="li">
-            <strong>Accessible.</strong> The web is for everybody. There is no
-            compromise for creating an inclusive experience. With the{' '}
-            <a href="https://www.adatitleiii.com/2019/01/number-of-federal-website-accessibility-lawsuits-nearly-triple-exceeding-2250-in-2018/">
-              increasing number of accessibility lawsuits
-            </a>{' '}
-            each year, you can thank me later 😜.
-          </Text>
-          <Text as="li">
-            <strong>Written with Modern code.</strong> All my front-end code is
-            crafted semantic HTML, styled with modern CSS practices, and brought
-            to life with the latest JavaScript features. (<strong>Note:</strong>{' '}
-            All shiny and new pieces of code come with appropriate fall backs,
-            so they can still be run on older browsers.)
-          </Text>
-          <Text as="li">
-            <strong>Optimized for performance.</strong> My experiences feel
-            lightweight and fast.
-          </Text>
-        </ul>
-      </ValueSection>
+      <MarkdownHeading>Contact</MarkdownHeading>
       <ContactFormSection>
-        <H as="h2">Contact</H>
         <Text>
           My preferred methods of contact are via{' '}
           <a href="mailto:dylan@dylansheffer.com">Email</a> or the form below,
@@ -163,7 +100,7 @@ export default function HireMePage({ pageContext, path, location }) {
           data-netlify-honeypot="bot-field"
           // data-netlify-recaptcha="true"
           data-netlify="true"
-          action="/hire-me/?success=🎉"
+          action="/contact/?success=🎉"
         >
           <fieldset>
             <legend className="visually-hidden">Contact Form</legend>
@@ -192,7 +129,7 @@ export default function HireMePage({ pageContext, path, location }) {
           </fieldset>
         </form>
       </ContactFormSection>
-    </HireMePageStyle>
+    </ContactPageStyle>
   );
 }
 

@@ -6,7 +6,8 @@ import ogHomeImage from '../../static/og-images/OG-Home.png';
 import ogArticleImage from '../../static/og-images/OG-Articles.png';
 import ogAboutImage from '../../static/og-images/OG-About.png';
 import ogWorkImage from '../../static/og-images/OG-Work.png';
-import ogHireMeImage from '../../static/og-images/OG-Hire-Me.png';
+import ogContactImage from '../../static/og-images/OG-Hire-Me.png';
+import ogServicesImage from '../../static/og-images/OG-Services.png';
 
 function getBaseURL() {
   const url = process.env.GATSBY_URL;
@@ -185,9 +186,9 @@ export function AboutMetaTags() {
   );
 }
 
-export function HireMeMetaTags() {
-  const url = pathJoin(baseURL, 'hire-me');
-  const ogImageURL = pathJoin(baseURL, ogHireMeImage);
+export function ServicesMetaTags() {
+  const url = pathJoin(baseURL, 'services');
+  const ogImageURL = pathJoin(baseURL, ogServicesImage);
   const description =
     'Dylan Sheffer; a full stack developer, accessibility advocate, and speaker living in Charlottesville, VA. Dylan is currently available for new clients! 🎉';
   return (
@@ -199,7 +200,27 @@ export function HireMeMetaTags() {
         <meta property="og:description" content={description} />
         <meta name="twitter:image" content={ogImageURL} />
         <meta property="og:image" content={ogImageURL} />
-        <title>Hire Me - Dylan Sheffer</title>
+        <title>Services - Dylan Sheffer</title>
+      </Helmet>
+    </>
+  );
+}
+
+export function ContactMetaTags() {
+  const url = pathJoin(baseURL, 'contact');
+  const ogImageURL = pathJoin(baseURL, ogContactImage);
+  const description =
+    'Dylan Sheffer; a full stack developer, accessibility advocate, and speaker living in Charlottesville, VA. Dylan is currently available for new clients! 🎉';
+  return (
+    <>
+      <DefaultMetaTags />
+      <Helmet>
+        <link rel="canonical" href={url} />
+        <meta name="description" content={description} />
+        <meta property="og:description" content={description} />
+        <meta name="twitter:image" content={ogImageURL} />
+        <meta property="og:image" content={ogImageURL} />
+        <title>Contact - Dylan Sheffer</title>
       </Helmet>
     </>
   );

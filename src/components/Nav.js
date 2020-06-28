@@ -12,14 +12,13 @@ const NavStyles = styled.nav`
   box-shadow: var(--shadow);
   .content-container {
     display: flex;
-    flex-direction: column-reverse;
     align-items: center;
     .logo {
       margin-top: 1rem;
       box-shadow: none;
     }
   }
-  @media (min-width: 550px) {
+  @media (min-width: 675px) {
     z-index: 10;
     height: 7rem;
     position: sticky;
@@ -91,14 +90,17 @@ const NavLinks = ({ children }) => (
       <PartialNavLink to="/about">About</PartialNavLink>
     </LinkItem>
     <LinkItem>
+      <PartialNavLink to="/services">Services</PartialNavLink>
+    </LinkItem>
+    <LinkItem>
       <PartialNavLink to="/projects">Work</PartialNavLink>
     </LinkItem>
     <LinkItem>
       <PartialNavLink to="/posts">Articles</PartialNavLink>
     </LinkItem>
     <LinkItem>
-      <Button className="cta" as={PartialNavLink} to="/hire-me">
-        Hire Me
+      <Button className="cta" as={PartialNavLink} to="/contact">
+        Contact
       </Button>
     </LinkItem>
   </LinkContainer>
