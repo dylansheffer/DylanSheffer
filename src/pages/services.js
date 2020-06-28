@@ -21,19 +21,20 @@ export default function ServicesPage({ data, pageContext, path }) {
         <Text>
           Dylan Sheffer Consulting's Accessibility Services uses a combination
           of industry leading accessibility tools and manual testing methods to
-          ensure that our audits provide the visibility needed to address
-          potential accessibility issues.
+          ensure that our audits <strong>provide the visibility</strong> needed
+          to address potential accessibility issues.
         </Text>
         <H as="h3">Services include:</H>
         <ul>
           <Text as="li">
-            Advanced Audits performed using many of the industry's leading
-            automated accessibility testing tools and proven manual testing
-            methods against the latest WCAG 2.1 standard.
+            <strong>Advanced Audits</strong> performed using many of the
+            industry's leading automated accessibility testing tools and proven
+            manual testing methods against the latest{' '}
+            <strong>WCAG 2.1 standard</strong>.
           </Text>
           <Text as="li">
-            Audit results presented in a web based dashboard that can be easily
-            shared and printed.
+            Audit results presented in a <strong>web based dashboard</strong>{' '}
+            that can be easily shared and printed.
           </Text>
           <Text as="li">
             Going beyond the audit report and assist you all with writing,
@@ -41,9 +42,10 @@ export default function ServicesPage({ data, pageContext, path }) {
             upon goal.
           </Text>
           <Text as="li">
-            Personally write the code needed to address specific issues and
-            provide code reviews for accessibility-related tickets to verify
-            that the issue has been addressed.
+            Personally write the code needed to{' '}
+            <strong>address specific issues</strong> and provide{' '}
+            <strong>code reviews for accessibility-related</strong> tickets to
+            verify that the issue has been addressed.
           </Text>
         </ul>
       </section>
@@ -79,20 +81,23 @@ export default function ServicesPage({ data, pageContext, path }) {
       <section id="help">
         <H as="h2">Help out your team</H>
         <Text>
-          I am a Full-Stack Engineer with a passion for User Experience and Web
-          Accessibility. I have worked for many companies and I am able to
-          easily drop into an existing codebase or to start a project from
-          scratch.
+          I am a <strong>Full-Stack Engineer</strong> with a passion for{' '}
+          <strong>User Experience</strong> and{' '}
+          <strong>Web Accessibility</strong>. I have worked for many companies
+          and I am able to easily drop into an existing codebase or to start a
+          project from scratch.
         </Text>
         <Text>
-          My greatest strength is my ability to collaborate with product owners,
-          designers, and developers and translate each party's requirements and
-          constraints into something that ultimately works for the end user.
+          My greatest strength is my ability to <strong>collaborate</strong>{' '}
+          with product owners, designers, and developers and{' '}
+          <strong>translate each party's requirements and constraints</strong>{' '}
+          into something that ultimately works for the end user.
         </Text>
         <Text>
           I am the happiest when I am working on user-facing features, but I am
-          also able to get my hands dirty and write the APIs, and database
-          schemas needed to turn an idea into a reality.
+          also able to get my hands dirty and write the <strong>APIs</strong>,
+          and <strong>database schemas</strong> needed to turn an idea into a
+          reality.
         </Text>
       </section>
     </ServicesPageStyle>
