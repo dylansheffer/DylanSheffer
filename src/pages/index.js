@@ -89,6 +89,13 @@ const ServicesSection = styled.section`
   }
   li {
     width: 100%;
+    margin: 2.5rem 0;
+  }
+  li:first-child {
+    margin-top: 0;
+  }
+  li:last-child {
+    margin-bottom: 0;
   }
 `;
 
@@ -162,12 +169,6 @@ const Site = ({ data: { me, projects }, ...props }) => (
                 Whether you have an idea you're looking to bring to life or need
                 some help with an existing project, I'm here to help!
               </Text>
-              <Link to="/services">
-                Learn more{' '}
-                <span className="visually-hidden">
-                  about my custom web app development
-                </span>
-              </Link>
             </ServiceCard>
           </li>
           <li>
@@ -180,12 +181,6 @@ const Site = ({ data: { me, projects }, ...props }) => (
                 I'm available as a developer for hire to add additional
                 resources, so you can meet you company's goals on time.
               </Text>
-              <Link to="/services">
-                Learn more{' '}
-                <span className="visually-hidden">
-                  about how I can help your team
-                </span>
-              </Link>
             </ServiceCard>
           </li>
           <li>
@@ -201,15 +196,10 @@ const Site = ({ data: { me, projects }, ...props }) => (
                 Bring me for accessibility auditing, remediation services, and
                 tailored workshops for your organization!
               </Text>
-              <Link to="/services">
-                Learn more{' '}
-                <span className="visually-hidden">
-                  about my my accessibility services
-                </span>
-              </Link>
             </ServiceCard>
           </li>
         </SemanticList>
+        <Link to="/services">More Details About My Services</Link>
       </ContentContainer>
     </ServicesSection>
     <ProjectsSection>
