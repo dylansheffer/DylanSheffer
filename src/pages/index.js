@@ -164,6 +164,21 @@ const Site = ({ data: { me, projects }, ...props }) => (
         </MarkdownHeading>
         <SemanticList>
           <li>
+            <ServiceCard
+              icon={FaUniversalAccess}
+              title="Accessibility Services"
+            >
+              <Text>
+                Worried about section 508 compliance? Don't know what the WCAG
+                is?
+              </Text>
+              <Text>
+                Bring me for accessibility auditing, remediation services, and
+                tailored workshops for your organization!
+              </Text>
+            </ServiceCard>
+          </li>
+          <li>
             <ServiceCard icon={MdWeb} title="Custom Web App Development">
               <Text>
                 Whether you have an idea you're looking to bring to life or need
@@ -180,21 +195,6 @@ const Site = ({ data: { me, projects }, ...props }) => (
               <Text>
                 I'm available as a developer for hire to add additional
                 resources, so you can meet you company's goals on time.
-              </Text>
-            </ServiceCard>
-          </li>
-          <li>
-            <ServiceCard
-              icon={FaUniversalAccess}
-              title="Accessibility Services"
-            >
-              <Text>
-                Worried about section 508 compliance? Don't know what the WCAG
-                is?
-              </Text>
-              <Text>
-                Bring me for accessibility auditing, remediation services, and
-                tailored workshops for your organization!
               </Text>
             </ServiceCard>
           </li>
