@@ -153,7 +153,7 @@ const Site = ({ data: { me, projects }, ...props }) => (
             Full Stack Web Developer committed to building performant and
             inclusive web applications.
           </p>
-          <Status available />
+          <Status available={false} />
         </div>
       </ContentContainer>
     </Hero>
