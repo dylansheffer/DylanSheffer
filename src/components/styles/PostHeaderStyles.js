@@ -7,7 +7,7 @@ export const PostHeaderStyles = styled.header`
   }
 `;
 
-export const PostMetaData = styled.aside`
+export const PostMetaData = styled.div`
   margin: 0.75rem 0;
   font-size: 1.75rem;
   display: grid;
