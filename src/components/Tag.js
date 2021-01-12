@@ -75,10 +75,10 @@ export const Tags = ({ tags, headingLevel = 'h3' }) => {
   if (tags) {
     return (
       <>
-        <H as={headingLevel} className="visually-hidden">
+        <H as={headingLevel} className="visually-hidden" id="post-heading">
           Tags
         </H>
-        <TagsStyle className="tags">
+        <TagsStyle className="tags" aria-labelledby="post-heading">
           {tags.map(t => (
             <li key={t} className="tag">
               <Tag>{t}</Tag>
